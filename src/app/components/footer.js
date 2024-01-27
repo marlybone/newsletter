@@ -2,7 +2,7 @@ import React from 'react';
 
  export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer bg-footer">
       <div className="container">
         <div className="footer-logo">
           <a href="/">
