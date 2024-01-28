@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        custom: '29rem'
+      },
+      width: {
+        big: '42rem'
+      },
         colors: {
           primary: '#FBF9F1',
           footer: '#E5E1DA'

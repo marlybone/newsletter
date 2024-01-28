@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from './components/navbar'
 import Footer from "./components/footer";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,11 +16,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.className}>
     <body>
       <header></header>
-      <section className="bg-blue-400 h-96">
-      <Navbar />
-      </section>
-      <main className="flex min-h-screen bg-primary p-24">
-        {/* Green bottom section */}
+      <main className="min-h-screen bg-primary">
+        <Navbar/>
         {children}
       </main>
       <Footer />
