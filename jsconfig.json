@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@lib/*": [ "./lib/*"],
+      "@utils/*": ["./utils/*"],
+      "@/*": ["./src/*"],
+      "@sanity": ["./sanity/*"]
     }
   }
 }

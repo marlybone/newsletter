@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function SpotlightPage() {
+
   return (
     <div className="container">
       <h1>Spotlight</h1>
