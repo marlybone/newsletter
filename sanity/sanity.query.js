@@ -3,20 +3,22 @@ import client from "./sanity.client";
 
 export const profile = await client.fetch(
     groq`*[_type == "post"] {
+        _id,
         title,
         smallDescription,
         "currentSlug": slug.current,
-        "mainImage": mainImage.asset._ref,
+        "mainImage": mainImage.asset->url,
         "author": *[_type == 'author'][0].name,
-        "authorImg":*[_type == 'author'][0].image.asset._ref,
+        "authorImg":*[_type == 'author'][0].image.asset->url,
+        publishedAt
       }`
   );
 
-// export const author = await client.fetch(
-//     groq`*[_type == "author"]{
-//         name,
-//         bio,
-//         image,
-//         _id
-//     }`
-//   );
+export const author = await client.fetch(
+    groq`*[_type == "author"]{
+        name,
+        bio,
+        image,
+        _id
+    }`
+  );

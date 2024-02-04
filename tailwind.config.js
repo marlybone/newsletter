@@ -8,10 +8,13 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        custom: '29rem'
+        custom: '29rem',
+        big: '37rem'
       },
       width: {
-        big: '42rem'
+        big: '42rem',
+        medium: '400px'
+        
       },
         colors: {
           primary: '#FBF9F1',
