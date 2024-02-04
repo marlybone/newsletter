@@ -4,7 +4,7 @@
       "@lib/*": [ "./lib/*"],
       "@utils/*": ["./utils/*"],
       "@/*": ["./src/*"],
-      "@sanity": ["./sanity/*"]
+      "@sanity/*": ["./sanity/*"]
     }
   }
 }

@@ -12,6 +12,7 @@
     "sanity": "cd studio && sanity start"
   },
   "dependencies": {
+    "@sanity/vision": "^3.27.1",
     "next": "14.1.0",
     "next-sanity": "^7.0.17",
     "node": "^21.6.1",

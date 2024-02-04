@@ -40,6 +40,11 @@ export default defineType({
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
     defineField({
+      name: 'smallDescription',
+      title: 'Small Description',
+      type: 'text',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
@@ -48,6 +53,21 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: "github",
+      title: "Github URL",
+      type: "url",
+    }),
+    defineField({
+      name: "linkedin",
+      title: "Linkedin URL",
+      type: "url",
+    }),
+    defineField({
+      name: "twitter",
+      title: "Twitter URL",
+      type: "url",
     }),
   ],
 
