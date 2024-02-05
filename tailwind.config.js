@@ -12,9 +12,9 @@ module.exports = {
         big: '37rem'
       },
       width: {
-        big: '42rem',
-        medium: '400px'
-        
+        larger: '42rem',
+        large: '400px',
+        big: '360px'
       },
         colors: {
           primary: '#FBF9F1',
