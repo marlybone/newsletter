@@ -1,40 +1,45 @@
 "use client"
 import React from 'react';
-import NextLink from 'next/link';
-import { useRouter } from 'next/navigation'
+import { FloatingNav } from "./floating-nav";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { useState } from 'react'
 
 export default function Navbar() {
-  const navigationLinks = [
-    { href: '/', text: 'Home'},
-    { href: '/About', text: 'About'},
-    { href: '/Spotlight', text: 'Spotlight'}
-   ]
-  function Navigate({href, text}) {
-    const router = useRouter();
-    const isActive = router.asPath === href;
-     return (
-      <li>
-      <NextLink href={href}
-      className={`${isActive
-      ? ' text-blue-500' : 'text-emerald-500'}`}>
-        <span className='text-black text-xl'>{text}</span>
-      </NextLink>
-      </li>
-     )
-  };
+  const { scrollYProgress } = useScroll();
+  const [visible, setVisible] = useState(false);
+  
+  useMotionValueEvent(scrollYProgress, "change", () => {
+    // Apply styles as soon as scrolling down starts
+    setVisible(scrollYProgress.get() > 0.05);
+  });
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "About",
+      link: "/About",
+    },
+    {
+      name: "Spotlight",
+      link: "/Spotlight",
+    },
+  ];
+
+  const navbarClasses = `opacity-100 sticky top-0 left-0 w-full z-50 h-16 backdrop-filter backdrop-blur-sm ${visible ? 'border-b-[1px] border-gray-350 shadow-sm' : 'border-gray-200'}`;
 
   return (
-    <div className='opacity-100 shadow-xl sticky top-0 left-0 w-full z-50 h-24 backdrop-filter backdrop-blur-sm'>
-        <div className=''>
-        <nav className=''>
-      <ul className="">
-      {navigationLinks.map((link) => (
-        <Navigate key={link.href} href={link.href} text={link.text}/>
-      ))}
-      </ul>
-      </nav>
+    <div className={navbarClasses}>
+      <div className="relative w-full">
+        <FloatingNav navItems={navItems} />
       </div>
-      </div>
+    </div>
   );
 };
-
