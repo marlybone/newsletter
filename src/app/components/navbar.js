@@ -45,7 +45,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className='relative'>
-          <h1 className="right-0"><span>SeeitDoIt</span></h1>
+          <h1 className="right-0"><span>SearchBar</span></h1>
         </div>
       </div>
     </div>
