@@ -33,13 +33,21 @@ export default function Navbar() {
     },
   ];
 
-  const navbarClasses = `opacity-100 sticky top-0 left-0 w-full z-50 h-16 backdrop-filter backdrop-blur-sm ${visible ? 'border-b-[1px] border-gray-350 shadow-sm' : 'border-gray-200'}`;
+  const navbarClasses = `flex-row opacity-100 sticky top-0 left-0 w-full z-50 h-16 backdrop-filter backdrop-blur-sm ${visible ? 'border-b-[1px] border-gray-350 shadow-sm' : 'border-gray-200'}`;
 
   return (
     <div className={navbarClasses}>
-      <div className="relative w-full">
-        <FloatingNav navItems={navItems} />
+      <div className="max-w-screen-xl container mx-auto py-5 flex justify-between items-center p-2">
+        <div>
+          <div className='hidden md:block'><span>MiniMini</span></div>
+          <div>
+            <FloatingNav navItems={navItems} />
+          </div>
+        </div>
+        <div className='relative'>
+          <h1 className="right-0"><span>SeeitDoIt</span></h1>
+        </div>
       </div>
     </div>
   );
-};
+  }
