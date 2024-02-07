@@ -3,14 +3,17 @@ import NewsletterForm from './signupNews';
 
 export default function Newsletter() {
   return (
-    <section className="bg-blue-100 flex w-big h-56 self-center rounded-md">
-        <div className='flex py-4 mx-4'>
-      <div className="justify-center align-middle items-center">
-        <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-        <p className="text-gray-700">Stay updated with our latest news and promotions. Subscribe to our newsletter now!</p>
-        <NewsletterForm/>
+    <div className="bg-white text-[#333] font-[sans-serif]">
+      <div className="max-w-3xl mx-auto text-center ">
+        <h3 className="text-4xl font-extrabold">Newsletter</h3>
+        <p className="text-sm mt-6">Subscribe to our newsletter and stay up to date with the latest news,
+          updates, and exclusive offers. Get valuable insights. Join our community today!</p>
+        <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left mt-10 border focus-within:border-gray-700">
+          <input type='email' placeholder='Enter your email' className="w-full outline-none bg-transparent text-sm px-4 py-3" />
+          <button type='button'
+            className="bg-white transition-all font-semibold text-sm rounded-full px-8 py-3 text-gray-700 shadow-custom">Submit</button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

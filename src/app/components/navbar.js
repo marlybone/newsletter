@@ -33,7 +33,7 @@ export default function Navbar() {
     },
   ];
 
-  const navbarClasses = `flex-row opacity-100 sticky top-0 left-0 w-full z-50 h-16 backdrop-filter backdrop-blur-sm ${visible ? 'border-b-[1px] border-gray-350 shadow-sm' : 'border-gray-200'}`;
+  const navbarClasses = `mt-4 flex-row opacity-100 fixed top-0 left-0 w-full z-50 h-16 backdrop-filter backdrop-blur-sm ${visible ? 'border-b-[1px] border-gray-350 shadow-custom border-t-[1px]' : 'border-gray-200'}`;
 
   return (
     <div className={navbarClasses}>
