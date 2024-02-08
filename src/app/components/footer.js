@@ -24,7 +24,7 @@ import React from 'react';
             <div className='bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'>
             <a href="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Twitter</span>
-                <svg className="w-6 h-6" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="white" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="white" strokeLinecap="round" strokeLinejoin="round" fill-rule="evenodd">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />

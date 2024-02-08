@@ -23,7 +23,7 @@ export default async function Home() {
               <div className="flex justify-between my-2 text-sm space-x-2">
                   <span >Published<p className="font-semibold">{data.publishedAt.slice(0, 10)}</p></span>
                   <div className="flex self-end content-end justify-end">
-                  <button href={data.slug} class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded shadow-md">Read</button>
+                  <button href={data.slug} class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded shadow-custom border border-transparent">Read</button>
                   </div>
                 </div>
               <h1 className="my-6 text-gray-800 text-2xl font-bold flex">{data.title}</h1>

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function SearchBar() {
     return(
-        <div className="relative">
-        <div className="container flex items-end justify-end shadow-custom rounded-lg border-transparent border md:block sm:hidden">
+        <div className="relative inset-y-1 mr-2">
+        <div className="container items-end justify-end shadow-custom rounded-lg border-transparent border md:block hidden">
           <input type="text" placeholder="" className="max-w-2xl h-8 rounded-lg"/>
           <svg className="absolute inset-y-0 right-0 mr-3 mt-2 h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 3v4a1 1 0 0 0 1 1h4" fillRule="evenodd" clipRule="evenodd" stroke="#2c3e50" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
