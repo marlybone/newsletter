@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        'custom': '0 4px 6px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+        custom: '0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)'
       },
       height: {
         custom: '29rem',

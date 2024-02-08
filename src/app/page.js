@@ -14,7 +14,7 @@ export default async function Home() {
         <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
         {profile
         && profile.map((data) => (
-            <div key={data._id} class="border-gray-300 border-[1px] rounded-md max-w-sm pb-2 overflow-hidden shadow-md transform transition bg-white">
+            <div key={data._id} class="border-b border-transparent rounded-md max-w-sm pb-2 overflow-hidden shadow-custom transform transition bg-white">
               <div class="relative">
                 <img class="w-full block" src={data.mainImage} alt={data.title}/>
                 <p class="absolute top-0 bg-amber-500 text-gray-800 font-semibold py-1 px-3 rounded-br-md">NEW!</p>

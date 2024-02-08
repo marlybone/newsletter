@@ -4,6 +4,7 @@ import NewsletterForm from './signupNews';
 export default function Newsletter() {
   return (
     <div className="bg-white text-[#333] font-[sans-serif]">
+
       <div className="max-w-3xl mx-auto text-center ">
         <h3 className="text-4xl font-extrabold">Newsletter</h3>
         <p className="text-sm mt-6">Subscribe to our newsletter and stay up to date with the latest news,
@@ -14,6 +15,7 @@ export default function Newsletter() {
             className="bg-white transition-all font-semibold text-sm rounded-full px-8 py-3 text-gray-700 shadow-custom">Submit</button>
         </div>
       </div>
+
     </div>
   );
 };

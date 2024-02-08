@@ -13,7 +13,7 @@ import React from 'react';
                     </svg>
                 </a>
             </div>
-            <div className='bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'>
+            <div className='bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom'>
             <a href="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Instagram</span>
                 <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
