@@ -6,7 +6,7 @@ export const profile = await client.fetch(
       _id,
       title,
       smallDescription,
-      "currentSlug": slug.current,
+      "slug": slug.current,
       "mainImage": mainImage.asset->url,
       "author": *[_type == 'author'][0].name,
       "authorImg": *[_type == 'author'][0].image.asset->url,
@@ -14,11 +14,18 @@ export const profile = await client.fetch(
       "body": *[_type == "post"][0].body[].children[0].text
     }`)
 
-export const author = await client.fetch(
-    groq`*[_type == "author"]{
-        name,
-        bio,
-        image,
-        _id
-    }`
-  );
+    export const spotLight = await client.fetch(
+      groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+        _id,
+        title,
+        smallDescription,
+        "slug": slug.current,
+        "mainImage": mainImage.asset->url,
+        "author": *[_type == 'author'][0].name,
+        "authorImg": *[_type == 'author'][0].image.asset->url,
+        publishedAt,
+        "body": *[_type == "post"][0].body[].children[0].text
+      }`)
+
+    
+  
