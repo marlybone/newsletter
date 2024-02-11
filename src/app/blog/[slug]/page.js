@@ -1,40 +1,30 @@
-"use client"
+
 import React from "react";
 import client from "../../../../sanity/sanity.client"
 import { groq } from "next-sanity";
+// import { profile } from "@sanity/sanity.query"
+import { useParams } from 'next/navigation'
 
 
-export async function getStaticPaths({params}) {
-  const { slug } = params;
+// const post = profile.find(slug => )
 
-  const query = `*[_type == "post" && slug.current == "${slug}"] {
+const Post = async ({params}) => {
+  
+
+  const query = await client.fetch(`
+  *[_type == "post" && slug.current == "${params.slug}"] {
     _id,
     title,
-    smallDescription,
-    "slug": slug.current,
-    "mainImage": mainImage.asset->url,
-    "author": *[_type == 'author'][0].name,
-    "authorImg": *[_type == 'author'][0].image.asset->url,
     publishedAt,
-    "body": *[_type == "post" && slug.current == "${slug}"][0].body[].children[0].text
-  }`;
-
-  const post = client.fetch(query);
-
-  return{
-    props:{
-      post,
-    },
+    "body": body[].children[].text
   }
+`);
   
-}
-
-const Post = ({ post }) => {
   if (!Post) {
     return <div>Loading...</div>;
 
   }
-  console.log(post)
+  console.log(query)
   return (
     <div>
       <div>Hi</div>
@@ -43,16 +33,5 @@ const Post = ({ post }) => {
     </div>
   );
 }
-
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  _id,
-  title,
-  smallDescription,
-  "slug": slug.current,
-  "mainImage": mainImage.asset->url,
-  "author": *[_type == 'author'][0].name,
-  "authorImg": *[_type == 'author'][0].image.asset->url,
-  publishedAt,
-}`
 
 export default Post
