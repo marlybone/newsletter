@@ -16,7 +16,10 @@ const Post = async ({params}) => {
     _id,
     title,
     publishedAt,
-    "body": body[].children[].text
+    "body": body[].children[].text,
+    "mainImage": mainImage.asset->url,
+    "author": *[_type == 'author'][0].name,
+    "authorImg": *[_type == 'author'][0].image.asset->url
   }
 `);
   
@@ -26,11 +29,13 @@ const Post = async ({params}) => {
   }
   console.log(query)
   return (
-    <div>
-      <div>Hi</div>
-      <h1></h1>
-      {/* Render other post content using Post data */}
-    </div>
+    <section className="flex justify-center py-20">
+      {query && query.map((post) => (
+        <div className="min-h-screen max-w-4xl flex justify-center mt-16">
+          <img className="h-1/2 min-w-full flex rounded-md" src={post.mainImage} />
+        </div> 
+      ))}
+    </section>
   );
 }
 
