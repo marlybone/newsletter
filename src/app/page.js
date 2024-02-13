@@ -16,7 +16,7 @@ export default async function Home() {
         && profile.map((data) => (
             <div key={data._id} className="border-b border-transparent rounded-md max-w-sm pb-2 overflow-hidden shadow-custom transform transition bg-white">
               <div className="relative">
-                <img className="w-full block" src={data.mainImage} alt={data.title}/>
+                <img className="h-72 w-larger block object-cover" src={data.mainImage} alt={data.title}/>
                 <p className="absolute top-0 bg-amber-500 text-gray-800 font-semibold py-1 px-3 rounded-br-md">NEW!</p>
               </div>
               <div className="p-4">

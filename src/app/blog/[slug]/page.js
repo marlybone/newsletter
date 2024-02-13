@@ -1,9 +1,7 @@
 
 import React from "react";
 import client from "../../../../sanity/sanity.client"
-import { groq } from "next-sanity";
-// import { profile } from "@sanity/sanity.query"
-import { useParams } from 'next/navigation'
+import BlockContent from "@sanity/block-content-to-react"
 
 
 // const post = profile.find(slug => )
@@ -16,7 +14,7 @@ const Post = async ({params}) => {
     _id,
     title,
     publishedAt,
-    "body": body[].children[].text,
+    body,
     "mainImage": mainImage.asset->url,
     "author": *[_type == 'author'][0].name,
     "authorImg": *[_type == 'author'][0].image.asset->url
@@ -42,13 +40,15 @@ const Post = async ({params}) => {
           </div>
           <div className="border border-gray-250 mx-3"></div>
           <div className="flex-col ml-3">
-          <h2 className="flex">{post.author}</h2>
+          <h2 className="flex">By {post.author}</h2>
           <h3 className="text-sm font-semibold">{new Date(post.publishedAt).toDateString().slice(4)}</h3>
           </div>
         </div>
-        <div className="mt-10 flex text-center container">
+        <div className="mt-10 flex justify-center container">
           <p className="">
-            {post.body}
+            <BlockContent
+            blocks={post.body}
+            />
           </p>
         </div>
       </div>
