@@ -15,7 +15,7 @@ module.exports = {
         big: '37rem'
       },
       width: {
-        larger: '42rem',
+        larger: '68rem',
         large: '400px',
         big: '360px'
 

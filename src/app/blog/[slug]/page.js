@@ -29,13 +29,31 @@ const Post = async ({params}) => {
   }
   console.log(query)
   return (
-    <section className="flex justify-center py-20">
-      {query && query.map((post) => (
-        <div className="min-h-screen max-w-4xl flex justify-center mt-16">
-          <img className="h-1/2 min-w-full flex rounded-md" src={post.mainImage} />
-        </div> 
-      ))}
-    </section>
+    <section className="flex py-20 justify-center mx-20">
+    {query && query.map((post) => (
+      <div className="max-w-screen-md mt-16 flex-col content-center mx-6">
+        <img className="h-72 w-larger object-cover rounded-md" src={post.mainImage} alt={post.title} />
+        <div>
+          <h1 className="font-bold text-5xl mt-12 flex text-center">{post.title}</h1>
+        </div>
+        <div className="flex mt-12">
+          <div className="flex">
+            <img alt="avatar" className="w-12 rounded-full border border-transparent shadow-custom" src={post.authorImg} />
+          </div>
+          <div className="border border-gray-250 mx-3"></div>
+          <div className="flex-col ml-3">
+          <h2 className="flex">{post.author}</h2>
+          <h3 className="text-sm font-semibold">{new Date(post.publishedAt).toDateString().slice(4)}</h3>
+          </div>
+        </div>
+        <div className="mt-10 flex text-center container">
+          <p className="">
+            {post.body}
+          </p>
+        </div>
+      </div>
+    ))}
+  </section>
   );
 }
 
