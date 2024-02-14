@@ -2,9 +2,7 @@
 import React from "react";
 import client from "../../../../sanity/sanity.client"
 import BlockContent from "@sanity/block-content-to-react"
-
-
-// const post = profile.find(slug => )
+import { NEXT_PUBLIC_SANITY_PROJECT_ID } from "../../../../config"
 
 const Post = async ({params}) => {
   
@@ -25,7 +23,7 @@ const Post = async ({params}) => {
     return <div>Loading...</div>;
 
   }
-  console.log(query)
+  console.log()
   return (
     <section className="flex py-20 justify-center mx-20">
     {query && query.map((post) => (
@@ -45,11 +43,11 @@ const Post = async ({params}) => {
           </div>
         </div>
         <div className="mt-10 flex justify-center container">
-          <p className="">
             <BlockContent
             blocks={post.body}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+            dataset="production"
             />
-          </p>
         </div>
       </div>
     ))}

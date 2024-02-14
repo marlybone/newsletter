@@ -10,7 +10,7 @@
 /sanity/
 # testing
 /coverage
-
+config.js
 # next.js
 /.next/
 /out/
@@ -29,7 +29,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+sanity.config.js
 # vercel
 .vercel
 
