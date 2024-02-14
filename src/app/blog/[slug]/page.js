@@ -44,9 +44,11 @@ const Post = async ({params}) => {
         </div>
         <div className="mt-10 flex justify-center container">
             <BlockContent
+            className="article"
             blocks={post.body}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"
+            
             />
         </div>
       </div>
