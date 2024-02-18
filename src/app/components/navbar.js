@@ -34,13 +34,13 @@ export default function Navbar() {
     },
   ];
 
-  const navbarClasses = `flex-row opacity-100 fixed top-0 left-0 w-full z-50 h-18 ${visible ? 'border border-transparent shadow-md backdrop-filter backdrop-blur-sm' : 'border-gray-200'}`;
+  const navbarClasses = `flex-row opacity-100 fixed top-0 left-0 w-full z-50 h-16 ${visible ? 'border border-transparent shadow-md backdrop-filter backdrop-blur-sm' : 'border-gray-200'}`;
 
   return (
     <div className={navbarClasses}>
       <div className="max-w-screen-xl container mx-auto flex justify-between items-end p-2">
         <div className='flex'>
-          <img src="super.png" className="w-16 h-16 object-cover rounded-full mr-2" alt="logo"></img>
+          <img src="super.png" className="w-16 h-14 object-cover rounded-full mr-2" alt="logo"></img>
           <div className='hidden md:block self-center font-bold text-xl'><span>Mini Mini</span></div>
           <div>
             <FloatingNav navItems={navItems} />
