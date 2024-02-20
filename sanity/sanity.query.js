@@ -11,7 +11,9 @@ export const profile = await client.fetch(
       "author": *[_type == 'author'][0].name,
       "authorImg": *[_type == 'author'][0].image.asset->url,
       publishedAt,
-      "body": *[_type == "post"][0].body[].children[0].text,
+      body -> {
+        text
+      }
     }`)
 
     export const spotLight = await client.fetch(
@@ -24,7 +26,9 @@ export const profile = await client.fetch(
         "author": *[_type == 'author'][0].name,
         "authorImg": *[_type == 'author'][0].image.asset->url,
         publishedAt,
-        "body": *[_type == "post"][0].body[].children[0].text
+        body -> {
+          text
+        }
       }`)
 
     

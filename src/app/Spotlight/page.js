@@ -15,7 +15,14 @@ export default function SpotlightPage() {
 
     try {
       const results = await client.fetch(
-        `*[_type == 'post' && (title match "${query}" || content match "${query}")]`
+        `*[_type == 'post' && (title match "${query}" || categories[]->title match "${query}")] {
+          _id,
+          title,
+          smallDescription,
+          "mainImage": mainImage.asset->url,
+          publishedAt,
+          categories[]-> {title}
+        }`
       );
       setArticles(results);
     } catch (error) {
@@ -26,7 +33,7 @@ export default function SpotlightPage() {
   return (
     <>
     <div className="relative">
-  <img src="sapphire.jpg" className="absolute inset-0 w-full h-80 object-cover" alt="Background Image" />
+  <img src="sapphire.jpg" className="absolute w-full h-80 object-cover overflow-hidden" alt="Background Image" />
   <div className="relative text-[#333] font-[sans-serif] mb-10 p-4 ">
     <div className ="max-w-5xl mx-auto text-center">
       <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left border mt-44 focus-within:border-gray-700">
@@ -49,17 +56,25 @@ export default function SpotlightPage() {
     {showSearchResults && articles.length > 0 ? (
       <ul>
       {articles.map((article) => (
-        <div key={article._id} className='border border-gray-300 w-4/5 h-44 items-start rounded-md overflow-hidden custom-shadow mt-3'>
+        <div key={article._id} className='border border-gray-300 w-[49rem] h-44 items-start rounded-md overflow-hidden custom-shadow mt-3'>
   <div className='flex'>
-    <div className="h-full flex mt-2 ml-2">
-      <img className='w-16 h-16 object-cover rounded-full' src="nasa.jpg" alt="NASA" />
+    <div className="h-full flex">
+      <img className='w-16 h-16 object-cover overflow-hidden rounded-full' src="nasa.jpg" alt="NASA" />
     </div>
     <h1 className='text-2xl font-semibold items-center flex ml-5'>{article.title}</h1>
   </div>
-  <div className='mt-2 mx-4 ml-12 text-sm'><p>This is a summary, short summary summarising what this article is about and who is is interviewing, for example Einstein, Albert Einstein the great physicist.</p></div>
+  <div className='mt-2 mx-4 ml-12 text-sm'><p>{article.smallDescription}</p></div>
  <div className='flex justify-between mx-4'>
-    <div className='mt-6'>Categories</div>
-    <div className='mt-6'>Published</div>
+ <ul className='flex-row flex mt-10 space-x-2'>
+  {Array.isArray(article.categories) ? (
+    article.categories.map((category) => (
+      <li key={category._id}>{category.title}</li>
+    ))
+  ) : (
+    <li>None</li>
+  )}
+</ul>
+    <div className='mt-10'>{new Date(article.publishedAt).toDateString().slice(4)}</div>
  </div>
 </div>
       ))}
