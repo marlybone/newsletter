@@ -65,9 +65,9 @@ export default function SpotlightPage() {
           </div>
         </div>
       </div>
-      <section className='max-w-5xl mx-auto'>
-        <div className="flex justify-between mt-24 space-x-6">
-          <div className='border border-transparent shadow-custom w-1/5 h-96 justify-start custom-shadow '>
+      <section className='max-w-4xl mx-auto'>
+        <div className="md:flex justify-between mt-24 space-x-6">
+          <div className='border border-transparent shadow-custom md:w-1/5 md:h-96 justify-start custom-shadow mb-2'>
             <div className='justify-center flex flex-col mt-2'>
               <label className='flex justify-start ml-4 font-bold'>Tags</label>
               <select className='border border-transparent h-10 rounded-md w-5/6 justify-center flex mx-4 shadow-custom mt-2 focus-within:border-gray-700 focus:border-gray-700'>
@@ -79,8 +79,8 @@ export default function SpotlightPage() {
           <ul>
             {articles &&
               articles.map((article) => (
-                <li key={article._id}>
-                  <div className='border border-gray-300 w-[49rem] h-44 items-start rounded-md overflow-hidden custom-shadow mt-3'>
+                <li key={`${article._id}-${article._type}`}>
+                  <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3'>
                     <Link href={`/blog/${article.slug}`} >
                       <div className='flex'>
                         <div className="h-full flex">
@@ -93,7 +93,7 @@ export default function SpotlightPage() {
                         <ul className='flex-row flex mt-10 space-x-2'>
                           {Array.isArray(article.categories) ? (
                             article.categories.map((category) => (
-                              <li key={category._id}>{category.title}</li>
+                              <li>{category.title}</li>
                             ))
                           ) : (
                             <li>None</li>
