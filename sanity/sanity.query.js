@@ -13,7 +13,8 @@ export const profile = await client.fetch(
       publishedAt,
       body -> {
         text
-      }
+      },
+      categories[]-> {title}
     }`)
 
     export const spotLight = await client.fetch(
@@ -28,7 +29,8 @@ export const profile = await client.fetch(
         publishedAt,
         body -> {
           text
-        }
+        },
+        categories[]-> {title}
       }`)
 
     

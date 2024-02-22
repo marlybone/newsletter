@@ -2,8 +2,6 @@
 import React from 'react';
 import { FloatingNav } from "./floating-nav";
 import {
-  motion,
-  AnimatePresence,
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
