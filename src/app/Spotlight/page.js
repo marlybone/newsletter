@@ -8,6 +8,8 @@ export default function SpotlightPage() {
   const [articles, setArticles] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
+
+ {/*re factor later to import the groq query from sanity.query instead of writing the query here.*/}
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,7 +54,7 @@ export default function SpotlightPage() {
       setShowSearchResults(true);
     }
   };
-
+    {/* remember to resize images to improve performance*/}
   return (
     <>
       <div className="relative">
@@ -65,6 +67,7 @@ export default function SpotlightPage() {
           </div>
         </div>
       </div>
+       {/* this section needs mobile design*/}
       <section className='max-w-4xl mx-auto'>
         <div className="md:flex justify-between mt-24 space-x-6">
           <div className='border border-transparent shadow-custom md:w-1/5 md:h-96 justify-start custom-shadow mb-2'>
@@ -76,6 +79,7 @@ export default function SpotlightPage() {
               </select>
             </div>
           </div>
+       {/* end of section that needs mobile design*/}
           <ul>
             {articles &&
               articles.map((article) => (

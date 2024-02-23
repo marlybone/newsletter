@@ -24,7 +24,7 @@ export default function Navbar() {
     },
     {
       name: "About",
-      link: "/About",
+      link: "/About/about",
     },
     {
       name: "Spotlight",
