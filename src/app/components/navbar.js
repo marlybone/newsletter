@@ -38,7 +38,7 @@ export default function Navbar() {
     <div className={navbarClasses}>
       <div className="max-w-screen-xl container mx-auto flex justify-between items-end p-2">
         <div className='flex'>
-          <img src="super.png" className="w-16 h-14 object-cover rounded-full mr-2" alt="logo"></img>
+          <img src="/super.png" className="w-16 h-14 object-cover rounded-full mr-2" alt="logo"></img>
           <div className='hidden md:block self-center font-bold text-xl'><span>Mini Mini</span></div>
           <div>
             <FloatingNav navItems={navItems} />
