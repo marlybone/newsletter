@@ -9,11 +9,11 @@ const [showAuthor, setShowAuthor] = ('')
     <div className="container mt-44 min-h-screen max-w-5xl mx-auto">
       <section>
         <div className='flex flex-col items-center'>
-            <img className='rounded-full w-52 h-52 shadow-custom' src='/mainimg.jpg' />
+            <img className='rounded-full w-48 h-48 shadow-custom' src='/mainimg.jpg' />
             <h1>Founder & Author</h1>
         </div>
       </section>
-      <section className='mt-16'>
+      <section className='mt-24'>
         <div className='items-center text-center md:text-start'>
             <div className='md:flex-row flex space-x-4 flex-col items-center space-y-4'>
                 <img className='shadow-custom rounded-2xl flex justify-center justify-items-center h-96 w-96' src="/bgimg.jpg" />
