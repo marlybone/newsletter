@@ -8,7 +8,12 @@ export const profile = await client.fetch(
       smallDescription,
       "slug": slug.current,
       "mainImage": mainImage.asset->url,
-        author->{name, bio, "slug": slug.current, "image": image.asset->url},
+      "author": author-> {
+        name,
+        bio,
+        "slug": slug.current,
+        "image": image.asset->url
+      },
       "authorImg": *[_type == 'author'][0].image.asset->url,
       publishedAt,
       body -> {
