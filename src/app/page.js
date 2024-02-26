@@ -1,10 +1,7 @@
 
 import Newsletter from "./components/newsletter";
-import Hero from "./components/hero"
 import { profile } from "../../sanity/sanity.query"
 import Link from "next/link";
-
-
 
 export default async function Home() {
 
@@ -29,10 +26,10 @@ export default async function Home() {
               <h1 className="my-6 text-gray-800 text-2xl font-bold flex">{data.title}</h1>
               <h2 className="mb-14 my-4 text-sm font-light">{data.smallDescription}</h2>
               <div className="absolute bottom-0 w-full">
-                <Link href={`/About/${data.author.slug}`}>
+                <Link key={data._id} href={`/About/${data.author.slug}`}>
                 <div className="flex space-x-4 my-4">
             <img src={data.author.image} alt="avatar" className="w-8 rounded-full border border-transparent shadow-custom"/>
-            <p ><span className=" text-sm font-semibold"><a href="#">{data.author.name}</a></span></p>
+            <p ><span className=" text-sm font-semibold">{data.author.name}</span></p>
             </div>
             </Link>
             </div>

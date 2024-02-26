@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -9,10 +9,11 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
+import { usePathname } from 'next/navigation'
 
 const authors = [
-    {url: "/mainimg.jpg", name: "Marlon Stevenson", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--fuchsia-600)_40%,transparent_60%)]"},
-    {url: "/bgimg.jpg", name: "Carlos Rimba", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--sky-600)_40%,transparent_60%)]"}
+    {id: "0", url: "/mainimg.jpg", name: "Marlon Stevenson", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--fuchsia-600)_40%,transparent_60%)]", slug: "/About/marlon-stevenson"},
+    {id: "1", url: "/bgimg.jpg", name: "Carlos Rimba", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--sky-600)_40%,transparent_60%)]", slug: "/About/carlos-rami"}
 ];
  
 export function Button({
@@ -26,11 +27,23 @@ export function Button({
   isActive,
   ...otherProps
 }) {
-    const [selectedTab, setSelectedTab] = useState(authors[0]);
+    const [selectedTab, setSelectedTab] = useState();
+    const pathname = usePathname();
+    
+
+    useEffect(() => {
+        const author = authors.find(a => a.slug === pathname);
+        if (author) {
+            const authorId = author.id;
+            setSelectedTab(authors[authorId])
+        }
+    }, [])
+
     return (
         <>
           {authors.map((item) => (
             <Component
+              key={item.id}
               className={cn(
                 "shadow-custom relative h-32 w-32 rounded-full p-[3px] overflow-hidden",
                 containerClassName
@@ -51,7 +64,7 @@ export function Button({
                   isActive={item === selectedTab}
                 >
                       {item == selectedTab && (
-                <div className={cn(`${item.color}`)}>{/* Background color here */}</div>
+                <div className={cn(`${item.color}`)}></div>
               )}
 
                 </MovingBorder>
