@@ -4,19 +4,11 @@ import { useState } from "react";
 import { Button } from "../../components/moving-border";
 
 export default function About() {
-    const [activeButton, setActiveButton] = useState(null);
-
-    const handleButtonClick = (buttonId) => {
-      setActiveButton(buttonId);
-    };
-
   return (
     <div className="container mt-44 min-h-screen max-w-5xl mx-auto">
       <section>
         <div className="flex flex-row items-center justify-center space-x-4">
     <Button/>
-
-
         </div>
       </section>
       <section className="mt-24">

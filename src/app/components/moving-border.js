@@ -23,6 +23,7 @@ export function Button({
   borderClassName,
   duration,
   className,
+  isActive,
   ...otherProps
 }) {
     const [selectedTab, setSelectedTab] = useState(authors[0]);
@@ -49,11 +50,10 @@ export function Button({
                   ry="30%"
                   isActive={item === selectedTab}
                 >
-                  <div
-                    className={cn(
-                      `${item.color}`,
-                    )}
-                  />
+                      {item == selectedTab && (
+                <div className={cn(`${item.color}`)}>{/* Background color here */}</div>
+              )}
+
                 </MovingBorder>
               </div>
     
