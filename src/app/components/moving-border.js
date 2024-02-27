@@ -6,15 +6,12 @@ import {
   useMotionTemplate,
   useMotionValue,
   useTransform,
+  LayoutGroup
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 import { usePathname } from 'next/navigation'
-
-const authors = [
-    {id: "0", url: "/mainimg.jpg", name: "Marlon Stevenson", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--fuchsia-600)_40%,transparent_60%)]", slug: "/About/marlon-stevenson"},
-    {id: "1", url: "/bgimg.jpg", name: "Carlos Rimba", color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--sky-600)_40%,transparent_60%)]", slug: "/About/carlos-rami"}
-];
+import { authors } from './authors'
  
 export function Button({
   borderRadius = "5rem",
@@ -25,12 +22,12 @@ export function Button({
   duration,
   className,
   isActive,
+  isSelected,
   ...otherProps
 }) {
-    const [selectedTab, setSelectedTab] = useState();
+    const [selectedTab, setSelectedTab] = useState(authors[0]);
     const pathname = usePathname();
     
-
     useEffect(() => {
         const author = authors.find(a => a.slug === pathname);
         if (author) {
@@ -40,7 +37,9 @@ export function Button({
     }, [])
 
     return (
-        <>
+        <LayoutGroup>
+        <div className="flex flex-col">
+            <div className="flex flex-row space-x-4 items-center justify-center">
           {authors.map((item) => (
             <Component
               key={item.id}
@@ -90,7 +89,30 @@ export function Button({
               </div>
             </Component>
           ))}
-        </>
+          </div>
+            {selectedTab ? (
+             <Component >
+        <div className="text-center md:text-start m-28">
+          <div className="md:flex-row flex space-x-4 flex-col items-center space-y-4">
+            <img
+              className="shadow-custom rounded-2xl h-96 w-96"
+              src={selectedTab.img}
+              alt="Background image"
+            />
+            <div className="self-center">
+              <h1>{selectedTab.name}</h1>
+              <p>
+                {selectedTab.bio}
+              </p>
+            </div>
+          </div>
+        </div>
+            </Component>
+) : (
+    <div></div>
+)}
+        </div>
+        </LayoutGroup>
       );
     }
  
@@ -105,7 +127,7 @@ export const MovingBorder = ({
   const pathRef = useRef();
   const progress = useMotionValue(0);
   useAnimationFrame((time) => {
-    if (!isActive) return; // Pause animation if isActive is false
+    if (!isActive) return; 
 
     const length = pathRef.current?.getTotalLength();
     if (length) {
