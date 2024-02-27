@@ -25,7 +25,7 @@ export function Button({
   isSelected,
   ...otherProps
 }) {
-    const [selectedTab, setSelectedTab] = useState(authors[0]);
+    const [selectedTab, setSelectedTab] = useState();
     const pathname = usePathname();
     
     useEffect(() => {
@@ -39,7 +39,7 @@ export function Button({
     return (
         <LayoutGroup>
         <div className="flex flex-col">
-            <div className="flex flex-row space-x-4 items-center justify-center">
+            <div className="flex flex-row space-x-6 items-center justify-center">
           {authors.map((item) => (
             <Component
               key={item.id}
@@ -92,7 +92,7 @@ export function Button({
           </div>
             {selectedTab ? (
              <Component >
-        <div className="text-center md:text-start m-28">
+        <div key={selectedTab.id} className="text-center md:text-start m-28">
           <div className="md:flex-row flex space-x-4 flex-col items-center space-y-4">
             <img
               className="shadow-custom rounded-2xl h-96 w-96"
