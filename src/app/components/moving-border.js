@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation'
 import { authors } from './authors'
  
 export function Button({
-  borderRadius = "5rem",
+  borderRadius = "7rem",
   children,
   as: Component = "button",
   containerClassName,
@@ -39,12 +39,12 @@ export function Button({
     return (
         <LayoutGroup>
         <div className="flex flex-col">
-            <div className="flex flex-row space-x-6 items-center justify-center">
+            <div className="flex flex-row space-x-6 justify-center">
           {authors.map((item) => (
             <Component
               key={item.id}
               className={cn(
-                "shadow-custom relative h-32 w-32 rounded-full p-[3px] overflow-hidden",
+                "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
                 containerClassName
               )}
               style={{
@@ -93,17 +93,21 @@ export function Button({
             {selectedTab ? (
              <Component >
         <div key={selectedTab.id} className="text-center md:text-start m-28">
-          <div className="md:flex-row flex space-x-4 flex-col items-center space-y-4">
+          <div className="md:flex-row flex flex-col space-x-2">
             <img
-              className="shadow-custom rounded-2xl h-96 w-96"
+              className="shadow-custom rounded-2xl h-96 w-96 backdrop-blur-xl"
               src={selectedTab.img}
               alt="Background image"
             />
-            <div className="self-center">
+            <div className="font-semibold relative flex flex-col">
+              <div className="self-start">
               <h1>{selectedTab.name}</h1>
-              <p>
+              </div>
+              <div>
+              <p className="self-center flex align-center">
                 {selectedTab.bio}
               </p>
+              </div>
             </div>
           </div>
         </div>
