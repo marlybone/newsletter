@@ -29,7 +29,7 @@ export default async function Home() {
                 <Link key={data._id} href={`/About/${data.author.slug}`}>
                 <div className="flex space-x-4 my-4">
             <img src={data.author.image} alt="avatar" className="w-8 rounded-full border border-transparent shadow-custom"/>
-            <p ><span className=" text-sm font-semibold">{data.author.name}</span></p>
+            <p><span className=" text-sm font-semibold">{data.author.name}</span></p>
             </div>
             </Link>
             </div>

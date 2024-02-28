@@ -23,7 +23,6 @@ const Post = async ({params}) => {
     return <div>Loading...</div>;
 
   }
-  console.log()
   return (
     <section className="flex py-20 justify-center mx-20">
     {query && query.map((post) => (

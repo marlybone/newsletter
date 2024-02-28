@@ -90,31 +90,6 @@ export function Button({
             </Component>
           ))}
           </div>
-            {selectedTab ? (
-             <Component >
-        <div key={selectedTab.id} className="text-center md:text-start m-28">
-          <div className="md:flex-row flex flex-col space-x-2">
-            <img
-              className="shadow-custom rounded-2xl h-96 w-96 backdrop-blur-xl"
-              src={selectedTab.img}
-              alt="Background image"
-            />
-            <div className="font-semibold relative flex flex-col">
-              <div className="self-start">
-              <h1>{selectedTab.name}</h1>
-              </div>
-              <div>
-              <p className="self-center flex align-center">
-                {selectedTab.bio}
-              </p>
-              </div>
-            </div>
-          </div>
-        </div>
-            </Component>
-) : (
-    <div></div>
-)}
         </div>
         </LayoutGroup>
       );
