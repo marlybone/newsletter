@@ -78,7 +78,7 @@ export function Button({
                   borderRadius: `calc(${borderRadius} * 0.96)`,
                 }}
               >
-                <img
+                <motion.img
                   key={item.name}
                   src={item.url}
                   onClick={() => {

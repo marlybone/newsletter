@@ -1,4 +1,7 @@
 import { cn } from "@utils/cn";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React from "react";
 
  
 export const BentoGrid = ({
@@ -22,25 +25,13 @@ export const BentoGridItem = ({
   title,
   description,
   header,
-  icon,
+  image,
 }) => {
   return (
-    <div
-      className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-gray-200 hover:border-transparent justify-between flex flex-col space-y-4",
-        className
-      )}
-    > {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
-          {title}
-        </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-            {description}
-        </div>
-      </div>
-    </div>
+   <>
+    {header}
+    {image}
+   </>
   );
 };
 
@@ -50,13 +41,14 @@ const Skeleton = () => (
 
   export function BentoGridOne() {
     return (
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[18rem] mt-12 backdrop-blur-sm">
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[18rem] mt-12 backdrop-blur-sm ">
         {authorOne.map((item, i) => (
             <BentoGridItem
             key={i}
             title={item.title}
             description={item.description}
             header={item.header}
+            image={item.img}
             className={i === 1|| i === 2 ? "md:col-span-2" : ""}
             />
         ))}
@@ -64,16 +56,6 @@ const Skeleton = () => (
     );
   }
 
-  export function BentoGridTwo() {
-    return (
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[25rem]">
-          <BentoGridItem/>
-          <BentoGridItem/>
-          <BentoGridItem/>
-          <BentoGridItem/>
-        </BentoGrid>
-    );
-  }
 
   export const author = [
     {id: "0",
@@ -90,36 +72,66 @@ const Skeleton = () => (
        color: "h-20 w-20 opacity-[0.9] bg-[radial-gradient(var(--sky-600)_40%,transparent_60%)]",
         slug: "/About/carlos-rami",
          bio: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.",
-          img: "/sapphire.jpg",
+          img: (<img src="/sapphire.jpg" />),
     }
 ];
 
+const SkeltonOne = () => {
+
+
+  return (
+    <motion.div>
+
+
+    </motion.div>
+
+  )
+}
+
+const SkeletonTwo = () => {
+  const variants = {
+    visible: ({
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "linear",
+      },
+    }), 
+    hidden: { opacity: 0 },
+    hover: {
+      y: 4
+    },
+  }
+  
+   
+    return (
+      <motion.div
+      className="border-gray-200 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
+      layout
+      initial="hidden"
+      animate="visible"
+      variants={variants}
+      whileHover="hover"
+      >
+        <motion.img
+        className="w-full h-full object-cover rounded-xl"
+        src="/bgimg.jpg"
+        >
+       </motion.img>
+       </motion.div> 
+    );
+  };
+
 const authorOne =  [
     {
-      title: "The Dawn of Innovation",
-      description: "Explore the birth of groundbreaking ideas and inventions.",
-      className: "md:col-span-2",
-      header: <Skeleton />,
-    },
-    {
-      title: "The Digital Revolution",
-      description: "Dive into the transformative power of technology.",
-      className: "md:col-span-1",
-      header: <Skeleton />,
-    },
-    {
-      title: "The Art of Design",
-      description: "Discover the beauty of thoughtful and functional design.",
-      className: "md:col-span-1",
-      header: <Skeleton />,
-    },
-    {
-      title: "The Power of Communication",
-      description:
-        "Understand the impact of effective communication in our lives.",
-      className: "md:col-span-2",
-      header: <Skeleton />,
-    },
+        header: <SkeletonTwo />,
+        className: "md:col-span-1",
+      },
+      {
+        className: "md:col-span-1",
+        // header: <SkeletonOne />
+
+      }
   ];
 
 const authorTwo = [
