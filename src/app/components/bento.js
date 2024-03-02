@@ -41,7 +41,7 @@ const Skeleton = () => (
 
   export function BentoGridOne() {
     return (
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[18rem] mt-12 backdrop-blur-sm ">
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mt-12 backdrop-blur-sm ">
         {authorOne.map((item, i) => (
             <BentoGridItem
             key={i}
@@ -76,13 +76,77 @@ const Skeleton = () => (
     }
 ];
 
-const SkeltonOne = () => {
+const SkeletonOne = () => {
+  const variants = {
+    visible: ({
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "linear",
+        delay: 0.2
+      },
+      hidden: { opacity: 0 },
+    })
+  }
 
+  const variantOne = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+        type: "smooth",
+        duration: 0.2,
+      }
+    },
+    hidden: {
+      y: -10,
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    }
+  };
 
   return (
-    <motion.div>
-
-
+    <motion.div
+    variants={variantOne}
+    layout
+    initial="hidden"
+    animate="visible"
+    className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
+    >
+      <motion.div
+      variants={variantOne}
+      className="font-semibold text-gray-800 mt-2 mx-1 text-center leading-relaxed font-mono"
+      >
+      <motion.p
+      variants={variantOne}
+      >
+        I'm passionate about sharing the remarkable journeys of people
+      </motion.p>
+      <motion.p
+      variants={variantOne}
+      >
+        who've navigated career shifts. My own transition into development
+      </motion.p>
+      <motion.p
+      variants={variantOne}
+      >
+        sparked this passion. I'm interested in the motivations,
+      </motion.p>
+      <motion.p
+      variants={variantOne}
+      >
+       challenges, and triumphs they've encountered. By telling their
+      </motion.p>
+      <motion.p
+    variants={variantOne}
+    >
+    stories, I hope to inspire others exploring similar career transformations.
+    </motion.p>
+      </motion.div>
     </motion.div>
 
   )
@@ -93,25 +157,22 @@ const SkeletonTwo = () => {
     visible: ({
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.8,
         ease: "linear",
+        type: "smooth"
       },
     }), 
     hidden: { opacity: 0 },
-    hover: {
-      y: 4
-    },
   }
   
    
     return (
       <motion.div
-      className="border-gray-200 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
+      className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
       layout
       initial="hidden"
       animate="visible"
       variants={variants}
-      whileHover="hover"
       >
         <motion.img
         className="w-full h-full object-cover rounded-xl"
@@ -123,15 +184,15 @@ const SkeletonTwo = () => {
   };
 
 const authorOne =  [
+  {
+    className: "md:col-span-2",
+    header: <SkeletonOne />
+
+  },
     {
         header: <SkeletonTwo />,
         className: "md:col-span-1",
       },
-      {
-        className: "md:col-span-1",
-        // header: <SkeletonOne />
-
-      }
   ];
 
 const authorTwo = [
