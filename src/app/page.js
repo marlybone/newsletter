@@ -1,6 +1,6 @@
 
 import Newsletter from "./components/newsletter";
-import { profile } from "../../sanity/sanity.query"
+import { profile } from "@sanity/sanity.query"
 import Link from "next/link";
 
 export default async function Home() {

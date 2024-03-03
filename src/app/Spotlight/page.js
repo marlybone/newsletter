@@ -1,45 +1,30 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import client from '../../../sanity/sanity.client';
+import { AllPostsQuery } from "@sanity/sanity.query" 
+import client from "@sanity/sanity.client";
 
-export default function SpotlightPage() {
+export default async function SpotlightPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [articles, setArticles] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
 
  {/*re factor later to import the groq query from sanity.query instead of writing the query here.*/}
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const allPostsQuery = `*[_type == "post"] | order(publishedAt desc) {
-          _id,
-          title,
-          smallDescription,
-          "slug": slug.current,
-          "mainImage": mainImage.asset->url,
-          "author": *[_type == 'author'][0].name,
-          "authorImg": *[_type == 'author'][0].image.asset->url,
-          publishedAt,
-          body -> {
-            text
-          },
-          categories[]-> {title}
-        }`;
+ useEffect(() => {
+  const fetchData = () => {
+    try {
+      const data = client.fetch(AllPostsQuery);
+      setArticles(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  fetchData();
+}, []);
 
-        const results = await client.fetch(allPostsQuery);
 
-        setArticles(results);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleSearch = async (query) => {
+  const handleSearch = (query) => {
     setSearchQuery(query);
 
     if (query.trim() === '') {
@@ -83,7 +68,7 @@ export default function SpotlightPage() {
           <ul>
             {articles &&
               articles.map((article) => (
-                <li key={`${article._id}-${article._type}`}>
+                <li key={article._id}>
                   <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3'>
                     <Link href={`/blog/${article.slug}`} >
                       <div className='flex'>
@@ -97,7 +82,7 @@ export default function SpotlightPage() {
                         <ul className='flex-row flex mt-10 space-x-2'>
                           {Array.isArray(article.categories) ? (
                             article.categories.map((category) => (
-                              <li>{category.title}</li>
+                              <li key={article.title}>{category.title}</li>
                             ))
                           ) : (
                             <li>None</li>

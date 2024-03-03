@@ -1,7 +1,5 @@
 import { cn } from "@utils/cn";
-import { motion } from "framer-motion";
 import React from "react";
-import { SkeletonOne, SkeletonTwo, SkeletonThree, SkeletonFour } from "./bentoskeleton"
 
  
 export const BentoGrid = ({

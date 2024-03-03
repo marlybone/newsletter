@@ -2,7 +2,6 @@
 import React from "react";
 import client from "../../../../sanity/sanity.client"
 import BlockContent from "@sanity/block-content-to-react"
-import { NEXT_PUBLIC_SANITY_PROJECT_ID } from "../../../../config"
 
 const Post = async ({params}) => {
   
