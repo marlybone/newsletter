@@ -28,7 +28,6 @@ export function Button({
   ...otherProps
 }) {
     const [selectedTab, setSelectedTab] = useState();
-    const [selectedAuthor, setSelectedAuthor] = useState();
     const pathname = usePathname();
     
     useEffect(() => {
@@ -95,8 +94,10 @@ export function Button({
           </div>
           {selectedTab === authors[0] ? (
             <BentoGridOne author={authorOne} />
-          ) : (
+          ) : selectedTab === authors[1] ? (
             <BentoGridOne author={authorTwo} />
+          ) : (
+            <></>
           )}
         </div>
         </LayoutGroup>

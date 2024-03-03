@@ -43,33 +43,11 @@ export const BentoGridItem = ({
             description={item.description}
             header={item.header}
             image={item.img}
-            className={i === 1|| i === 2 ? "md:col-span-2" : ""}
+            className={item.className}
             />
         ))}
        </BentoGrid>
     );
   }
 
-
-const authorOne =  [
-  {
-    className: "md:col-span-2",
-    header: <SkeletonOne />,
-  },
-    {
-        header: <SkeletonTwo />,
-        className: "md:col-span-1",
-      },
-  ];
-
-const authorTwo = [
-  {
-    className: "md:col-span-1",
-    header: <SkeletonThree />,
-  },
-    {
-        header: <SkeletonFour />,
-        className: "md:col-span-1",
-      },
-]
 

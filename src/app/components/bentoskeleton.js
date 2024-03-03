@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { cn } from "@utils/cn";
 import { motion } from "framer-motion";
 
 export const SkeletonOne = ({
@@ -137,67 +136,77 @@ export const SkeletonOne = ({
 
 export const SkeletonTwo = () => {
     const variants = {
-      visible: ({
-        opacity: 1,
-        transition: {
-          duration: 0.8,
-          ease: "linear",
-          type: "smooth"
+        visible: {
+          opacity: 1, 
+          transition: {
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+          },
         },
-      }), 
-      hidden: { opacity: 0 },
-    }
-    
-     
+        hidden: {
+          opacity: 0,
+          transition: {
+            duration: 1,
+            ease: "easeInOut",
+            type: "spring",
+          },
+        },
+      };
+      
       return (
         <motion.div
-        className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
-        layout
-        initial="hidden"
-        animate="visible"
-        variants={variants}
+          layout
+          className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
         >
           <motion.img
-          className="w-full h-full object-cover rounded-xl"
-          src="/bgimg.jpg"
-          >
-         </motion.img>
-         </motion.div> 
-      );
-    };
-
-    export const SkeletonThree = () => {
-        const variants = {
-          visible: ({
-            opacity: 1,
-            transition: {
-              duration: 0.8,
-              ease: "linear",
-              type: "smooth"
-            },
-          }), 
-          hidden: { opacity: 0 },
-        }
-        
-         
-          return (
-            <motion.div
-            className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
-            layout
             initial="hidden"
             animate="visible"
             variants={variants}
+            className="w-full h-full object-cover rounded-xl"
+            src="/bgimg.webp"
+          />
+        </motion.div>
+      );
+    };
+
+    export const SkeletonFour = () => {
+        const variants = {
+            visible: {
+              opacity: 1, 
+              transition: {
+                duration: 2,
+                ease: "easeInOut",
+                type: "spring",
+              },
+            },
+            hidden: {
+              opacity: 0,
+              transition: {
+                duration: 1,
+                ease: "easeInOut",
+                type: "spring",
+              },
+            },
+          };
+          
+          return (
+            <motion.div
+              layout
+              className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
             >
               <motion.img
-              className="w-full h-full object-cover rounded-xl"
-              src="/mainimg.jpg"
-              >
-             </motion.img>
-             </motion.div> 
+                initial="hidden"
+                animate="visible"
+                variants={variants}
+                className="w-full h-full object-cover rounded-xl"
+                src="/mainimg.webp"
+              />
+            </motion.div>
           );
         };
 
-        export const SkeletonFour = ({
+        export const SkeletonThree = ({
         }) => {
           const variants = {
             visible: {
@@ -323,8 +332,6 @@ export const SkeletonTwo = () => {
                 </Link>
               </motion.div>
             </motion.div>
-        
             </motion.div>
-        
           )
         };
