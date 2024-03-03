@@ -1,3 +1,5 @@
+import { SkeletonOne, SkeletonTwo, SkeletonThree, SkeletonFour } from "./bentoskeleton"
+
 export const authors = [
     {id: "0",
      url: "/mainimg.jpg",
@@ -16,3 +18,27 @@ export const authors = [
           img: "/sapphire.jpg",
     }
 ];
+
+export const authorOne =  [
+    {
+      className: "md:col-span-2",
+      header: <SkeletonOne />,
+    },
+      {
+          header: <SkeletonTwo />,
+          className: "md:col-span-1",
+        },
+    ];
+  
+  export const authorTwo = [
+    {
+      className: "md:col-span-1",
+      header: <SkeletonThree />,
+    },
+      {
+          header: <SkeletonFour />,
+          className: "md:col-span-1",
+        },
+  ]
+
+ 

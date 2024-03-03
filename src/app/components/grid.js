@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "./moving-border";
-import { BentoGridOne } from "./bento"
 
 export function GridBackgroundDemo() {
   return (
@@ -10,7 +9,6 @@ export function GridBackgroundDemo() {
         Team
       </p>
       <Button></Button>
-      <BentoGridOne/>
     </div>
   );
 }

@@ -11,7 +11,9 @@ import {
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 import { usePathname } from 'next/navigation'
-import { authors } from './authors'
+import { authors, authorOne, authorTwo } from './authors'
+import { BentoGridOne } from "./bento"
+
  
 export function Button({
   borderRadius = "7rem",
@@ -26,6 +28,7 @@ export function Button({
   ...otherProps
 }) {
     const [selectedTab, setSelectedTab] = useState();
+    const [selectedAuthor, setSelectedAuthor] = useState();
     const pathname = usePathname();
     
     useEffect(() => {
@@ -34,7 +37,7 @@ export function Button({
             const authorId = author.id;
             setSelectedTab(authors[authorId])
         }
-    }, [])
+    }, [pathname])
 
     return (
         <LayoutGroup>
@@ -90,6 +93,11 @@ export function Button({
             </Component>
           ))}
           </div>
+          {selectedTab === authors[0] ? (
+            <BentoGridOne author={authorOne} />
+          ) : (
+            <BentoGridOne author={authorTwo} />
+          )}
         </div>
         </LayoutGroup>
       );
