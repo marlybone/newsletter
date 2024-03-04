@@ -1,53 +1,37 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
 import Link from 'next/link';
-import { AllPostsQuery } from "@sanity/sanity.query" 
-import client from "@sanity/sanity.client";
-
-export default async function SpotlightPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [articles, setArticles] = useState([]);
-  const [showSearchResults, setShowSearchResults] = useState(false);
+import { allPostsQuery } from '../../../sanity/sanity.query';
+import Search from "../components/search"
 
 
- {/*re factor later to import the groq query from sanity.query instead of writing the query here.*/}
- useEffect(() => {
-  const fetchData = () => {
-    try {
-      const data = client.fetch(AllPostsQuery);
-      setArticles(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-  fetchData();
-}, []);
+export default async function SpotlightPage({ articles }) {
 
+  // const handleSearch = (query) => {
+  //   setSearchQuery(query);
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
+  //   if (query.trim() === '') {
+  //     setShowSearchResults(false);
+  //   } else {
+  //     const searchResults = articles.filter(article => {
+  //       return article.title.toLowerCase().includes(query.toLowerCase()) || 
+  //              article.categories.some(category => category.title.toLowerCase().includes(query.toLowerCase()));
+  //     });
 
-    if (query.trim() === '') {
-      setShowSearchResults(false);
-    } else {
-      const searchResults = articles.filter(article => {
-        return article.title.toLowerCase().includes(query.toLowerCase()) || 
-               article.categories.some(category => category.title.toLowerCase().includes(query.toLowerCase()));
-      });
-
-      setArticles(searchResults);
-      setShowSearchResults(true);
-    }
-  };
+  //     setArticles(searchResults);
+  //     setShowSearchResults(true);
+  //   }
+  // };
     {/* remember to resize images to improve performance*/}
   return (
     <>
+       {console.log(allPostsQuery)}
       <div className="relative">
         <img src="sapphire.jpg" className="absolute w-full h-80 object-cover overflow-hidden" alt="Background Image" />
         <div className="relative text-[#333] font-[sans-serif] mb-10 p-4 ">
           <div className="max-w-5xl mx-auto text-center">
             <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left border mt-44 focus-within:border-gray-700">
-              <input type='search' placeholder='Search' className="outline-none w-full bg-transparent text-sm px-4 py-3" onChange={(e) => handleSearch(e.target.value)}/>
+              <input type='search' placeholder='Search' className="outline-none w-full bg-transparent text-sm px-4 py-3"/>
             </div>
           </div>
         </div>
@@ -66,8 +50,8 @@ export default async function SpotlightPage() {
           </div>
        {/* end of section that needs mobile design*/}
           <ul>
-            {articles &&
-              articles.map((article) => (
+            {allPostsQuery &&
+              allPostsQuery.map((article) => (
                 <li key={article._id}>
                   <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3'>
                     <Link href={`/blog/${article.slug}`} >

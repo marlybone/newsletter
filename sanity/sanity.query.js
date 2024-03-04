@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-export const profile = client.fetch(
+export const profile = await client.fetch(
     groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc) [0...3] {
       _id,
       title,
@@ -38,7 +38,7 @@ export const profile = client.fetch(
         categories[]-> {title}
       }`)
 
-      export const AllPostsQuery = client.fetch(
+      export const AllPostsQuery = await client.fetch(
           groq`*[_type == "post"] {
             _id,
             title,
@@ -55,3 +55,18 @@ export const profile = client.fetch(
           }`
         );
   
+        export const allPostsQuery = await client.fetch( groq`*[_type == "post"] {
+          _id,
+          title,
+          smallDescription,
+          "slug": slug.current,
+          "mainImage": mainImage.asset->url,
+          "author": *[_type == 'author'][0].name,
+          "authorImg": *[_type == 'author'][0].image.asset->url,
+          publishedAt,
+          body -> {
+            text
+          },
+          categories[]-> {title}
+        }`
+        )
