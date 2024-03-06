@@ -1,57 +1,75 @@
-
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { allPostsQuery } from '../../../sanity/sanity.query';
-import Search from "../components/search"
+import client from "@sanity/sanity.client";
+
+const allPostsQuery = `*[_type == "post"] {
+  _id,
+  title,
+  smallDescription,
+  "slug": slug.current,
+  "mainImage": mainImage.asset->url,
+  "author": *[_type == 'author'][0].name,
+  "authorImg": *[_type == 'author'][0].image.asset->url,
+  publishedAt,
+  body -> {
+    text
+  },
+  categories[]-> {title}
+}`;
 
 
-export default async function SpotlightPage({ articles }) {
+export default function SpotlightPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [posts, setPosts] = useState([]);
 
-  // const handleSearch = (query) => {
-  //   setSearchQuery(query);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await client.fetch(allPostsQuery);
+      setPosts(result);
+    };
+    fetchData();
+  }, []);
 
-  //   if (query.trim() === '') {
-  //     setShowSearchResults(false);
-  //   } else {
-  //     const searchResults = articles.filter(article => {
-  //       return article.title.toLowerCase().includes(query.toLowerCase()) || 
-  //              article.categories.some(category => category.title.toLowerCase().includes(query.toLowerCase()));
-  //     });
+  const filterPosts = (posts, query) => {
+    if (!query) return posts; 
 
-  //     setArticles(searchResults);
-  //     setShowSearchResults(true);
-  //   }
-  // };
-    {/* remember to resize images to improve performance*/}
+    return posts.filter((post) => {
+      const postTitle = post.title.toLowerCase();
+      const postCategories = post.categories.map(category => category.title.toLowerCase());
+      const searchLower = query.toLowerCase();
+
+      return postTitle.includes(searchLower) || postCategories.some(category => category.includes(searchLower));
+    });
+  };
+
+  const filteredPosts = filterPosts(posts, searchQuery);
+
   return (
     <>
-       {console.log(allPostsQuery)}
-      <div className="relative">
+     {/* this section needs mobile design*/}
+     <div className="relative">
         <img src="sapphire.jpg" className="absolute w-full h-80 object-cover overflow-hidden" alt="Background Image" />
         <div className="relative text-[#333] font-[sans-serif] mb-10 p-4 ">
           <div className="max-w-5xl mx-auto text-center">
             <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left border mt-44 focus-within:border-gray-700">
-              <input type='search' placeholder='Search' className="outline-none w-full bg-transparent text-sm px-4 py-3"/>
+            <input
+          type="search"
+          placeholder="Search by title or category"
+          className="outline-none w-full bg-transparent text-sm px-4 py-3"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
             </div>
           </div>
         </div>
       </div>
-       {/* this section needs mobile design*/}
       <section className='max-w-4xl mx-auto'>
-        <div className="md:flex justify-between mt-24 space-x-6">
-          <div className='border border-transparent shadow-custom md:w-1/5 md:h-96 justify-start custom-shadow mb-2'>
-            <div className='justify-center flex flex-col mt-2'>
-              <label className='flex justify-start ml-4 font-bold'>Tags</label>
-              <select className='border border-transparent h-10 rounded-md w-5/6 justify-center flex mx-4 shadow-custom mt-2 focus-within:border-gray-700 focus:border-gray-700'>
-                <option className='' value="software">Software</option>
-                <option value="Data Analyst">Data Analyst</option>
-              </select>
-            </div>
-          </div>
+        <div className="md:flex justify-center mt-24 space-x-6">
        {/* end of section that needs mobile design*/}
           <ul>
-            {allPostsQuery &&
-              allPostsQuery.map((article) => (
+            {filteredPosts &&
+              filteredPosts.map((article) => (
                 <li key={article._id}>
                   <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3'>
                     <Link href={`/blog/${article.slug}`} >
@@ -66,7 +84,7 @@ export default async function SpotlightPage({ articles }) {
                         <ul className='flex-row flex mt-10 space-x-2'>
                           {Array.isArray(article.categories) ? (
                             article.categories.map((category) => (
-                              <li key={article.title}>{category.title}</li>
+                              <li key={category.title}>{category.title}</li>
                             ))
                           ) : (
                             <li>None</li>
