@@ -19,7 +19,9 @@ export default async function Home() {
               <div className="flex justify-between my-2 text-sm space-x-2">
                   <span >Published<p className="font-semibold">{new Date(data.publishedAt).toDateString().slice(4)}</p></span>
                   <div className="flex self-end content-end justify-end">
-                  <Link href={`/blog/${data.slug}`} key={data._id}><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded shadow-custom border border-transparent">Read</button></Link>
+                  <Link href={`/blog/${data.slug}`} key={data._id}><button className="mb-3 mx-4 px-4 py-2 rounded-md border border-black bg-white text-neutral-700 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
+  Read
+</button></Link>
                   </div>
                 </div>
               <h1 className="my-6 text-gray-800 text-2xl font-bold flex">{data.title}</h1>

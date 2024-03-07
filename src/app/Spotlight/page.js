@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import client from "@sanity/sanity.client";
+import BlogCard from '../components/blogcard'
 
 const allPostsQuery = `*[_type == "post"] {
   _id,
@@ -47,8 +48,7 @@ export default function SpotlightPage() {
 
   return (
     <>
-     {/* this section needs mobile design*/}
-     <div className="relative">
+     <div className="relativ">
         <img src="sapphire.jpg" className="absolute w-full h-80 object-cover overflow-hidden" alt="Background Image" />
         <div className="relative text-[#333] font-[sans-serif] mb-10 p-4 ">
           <div className="max-w-5xl mx-auto text-center">
@@ -64,18 +64,20 @@ export default function SpotlightPage() {
           </div>
         </div>
       </div>
-      <section className='max-w-4xl mx-auto'>
+      <section className='max-w-3xl mx-auto'>
         <div className="md:flex justify-center mt-24 space-x-6">
        {/* end of section that needs mobile design*/}
-          <ul>
+    
+        <BlogCard/>
+          {/* <ul>
             {filteredPosts &&
               filteredPosts.map((article) => (
                 <li key={article._id}>
-                  <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3'>
+                  <div className='border border-gray-300 w-full h-44 rounded-md overflow-hidden custom-shadow mb-3 bg-gray-100'>
                     <Link href={`/blog/${article.slug}`} >
-                      <div className='flex'>
+                      <div className='flex flex-row'>
                         <div className="h-full flex">
-                          <img className='w-16 h-16 object-cover overflow-hidden rounded-full' src="nasa.jpg" alt="NASA" />
+                          <img className='w-full h-16 object-cover overflow-hidden' src="nasa.jpg" alt="NASA" />
                         </div>
                         <h1 className='text-2xl font-semibold items-center flex ml-5'>{article.title}</h1>
                       </div>
@@ -97,7 +99,7 @@ export default function SpotlightPage() {
                 </li>
               ))
             }
-          </ul>
+          </ul> */}
         </div>
       </section>
     </>
