@@ -13,6 +13,7 @@ import { cn } from "../../../utils/cn";
 import { usePathname } from 'next/navigation'
 import { authors, authorOne, authorTwo } from './authors'
 import { BentoGridOne } from "./bento"
+import { TagGridOne } from "../components/gradientBox"
 
  
 export function Button({
@@ -39,68 +40,77 @@ export function Button({
     }, [pathname])
 
     return (
-        <LayoutGroup>
-        <div className="flex flex-col">
-            <div className="flex flex-row space-x-6 justify-center">
+      <LayoutGroup>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex flex-row space-x-6 justify-center">
           {authors.map((item) => (
-            <Component
-              key={item.id}
-              className={cn(
-                "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
-                containerClassName
-              )}
-              style={{
-                borderRadius: borderRadius,
-              }}
-              {...otherProps}
-            >
-              <div
-                className="absolute inset-0"
-                style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-              >
-                <MovingBorder
-                  duration={duration}
-                  rx="30%"
-                  ry="30%"
-                  isActive={item === selectedTab}
-                >
-                      {item == selectedTab && (
-                <div className={cn(`${item.color}`)}></div>
-              )}
-
-                </MovingBorder>
-              </div>
-    
-              <div
-                className={cn(
-                  "relative backdrop-blur-xl flex items-center justify-center w-full h-full text-sm antialiased",
-                  className
-                )}
-                style={{
-                  borderRadius: `calc(${borderRadius} * 0.96)`,
-                }}
-              >
-                <motion.img
-                  key={item.name}
-                  src={item.url}
-                  onClick={() => {
-                    setSelectedTab(item);
+            <div key={item.id} className="flex flex-col items-center">
+              <div className="flex flex-col items-center">
+                <Component
+                  className={cn(
+                    "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
+                    containerClassName
+                  )}
+                  style={{
+                    borderRadius: borderRadius,
                   }}
-                  className={`${item === selectedTab ? "selected" : ""} h-22 w-22 rounded-full`}
-                />
+                  {...otherProps}
+                >
+                  <div
+                    className="absolute inset-0"
+                    style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
+                  >
+                    <MovingBorder
+                      duration={duration}
+                      rx="30%"
+                      ry="30%"
+                      isActive={item === selectedTab}
+                    >
+                      {item === selectedTab && (
+                        <div className={cn(`${item.color}`)}></div>
+                      )}
+                    </MovingBorder>
+                  </div>
+                  <div
+                    className={cn(
+                      "relative backdrop-blur-xl flex items-center justify-center w-full h-full text-sm antialiased",
+                      className
+                    )}
+                    style={{
+                      borderRadius: `calc(${borderRadius} * 0.96)`,
+                    }}
+                  >
+                    <motion.img
+                      src={item.url}
+                      onClick={() => {
+                        setSelectedTab(item);
+                      }}
+                      className={`${item === selectedTab ? "selected" : ""} h-22 w-22 rounded-full`}
+                    />
+                  </div>
+                </Component>
               </div>
-            </Component>
+              <div className="flex flex-col items-center mt-4">
+              <div className='group relative mx-auto items-center self-center justify-center'>
+    <div className={`bg-gradient-to-r ${item.gradient} absolute -inset-[0.10rem] rounded-lg blur-[4px] transition-all opacity-25 duration-500 group-hover:opacity-100 group-hover:duration-200`}   />
+    <div className='relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center'>
+      <h2 className="font-bold">{item.name}</h2>
+    <h3 className="font-semibold text-sm">{item.title}</h3>
+    </div>
+    </div>
+              </div>
+            </div>
           ))}
-          </div>
-          {selectedTab === authors[0] ? (
-            <BentoGridOne author={authorOne} />
-          ) : selectedTab === authors[1] ? (
-            <BentoGridOne author={authorTwo} />
-          ) : (
-            <></>
-          )}
         </div>
-        </LayoutGroup>
+        {selectedTab === authors[0] ? (
+          <BentoGridOne author={authorOne} />
+        ) : selectedTab === authors[1] ? (
+          <BentoGridOne author={authorTwo} />
+        ) : (
+          <></>
+        )}
+      </div>
+    </LayoutGroup>
       );
     }
  

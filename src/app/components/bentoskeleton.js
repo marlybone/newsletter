@@ -237,7 +237,7 @@ export const SkeletonTwo = () => {
               transition: {
                 when: "afterChildren",
               },
-            }
+            },
           };
         
           return (
@@ -246,6 +246,7 @@ export const SkeletonTwo = () => {
             layout
             initial="hidden"
             animate="visible"
+            onHover="hover"
             className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
             >
               <motion.div
@@ -335,3 +336,28 @@ export const SkeletonTwo = () => {
             </motion.div>
           )
         };
+
+        export const SkeletonFive = ({
+
+        }) => {
+
+          const variants = {
+            hover: {
+              rotate: 70,
+            },
+          };
+
+          return (
+            <motion.div
+            className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
+            >
+              <motion.div
+              className="py-8 mx-8 border border-gray-400 rounded-full mt-4"
+              variants={variants}
+              whileHover="hover"
+              >
+                Hi
+              </motion.div>
+              </motion.div>
+          );
+        }
