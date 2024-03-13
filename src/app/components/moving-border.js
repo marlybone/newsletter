@@ -7,13 +7,14 @@ import {
   useMotionValue,
   useTransform,
   LayoutGroup,
+  useInView,
+  useScroll,
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 import { usePathname } from "next/navigation";
-import { authors, authorOne, authorTwo } from "./authors";
+import { authors, authorOne } from "./authors";
 import { BentoGridOne } from "./bento";
-import { TagGridOne } from "../components/gradientBox";
 
 export function Button({
   borderRadius = "7rem",
@@ -27,24 +28,66 @@ export function Button({
   isSelected,
   ...otherProps
 }) {
-  const [selectedTab, setSelectedTab] = useState();
-  const pathname = usePathname();
+  // const [selectedTab, setSelectedTab] = useState();
+  // const pathname = usePathname();
 
-  useEffect(() => {
-    const author = authors.find((a) => a.slug === pathname);
-    if (author) {
-      const authorId = author.id;
-      setSelectedTab(authors[authorId]);
+
+  // useEffect(() => {
+  //   const author = authors.find((a) => a.slug === pathname);
+  //   if (author) {
+  //     const authorId = author.id;
+  //     setSelectedTab(authors[authorId]);
+  //   }
+  // }, [pathname]);
+
+  const variants = {
+    ofscreen: {
+      opacity: 0,
+      y: -150,
+      scale: 0.2,
+
+    },
+    onscreen: {
+      opacity: 1,
+      y: -20,
+      scale: 1,
+      rotateX: 0,
+      transition: {
+        type: "spring",
+        duration: 1.2,
+      },
     }
-  }, [pathname]);
+  }
+
+  const authorOneVariant = {
+    initial: {
+      opacity: 0
+    },
+    load: {
+      opacity: 1,
+      transition : {
+        type: "spring",
+        duration: 1.8,
+      }
+    }
+  }
+
+  const authorTwoVariant = {
+
+  }
 
   return (
     <LayoutGroup>
-      <div className="flex flex-col">
+      <motion.div
+        variants={authorOneVariant}
+        initial="initial"
+        whileInView="load"
+      >
         <div className="flex flex-row space-x-6 justify-center mb-20">
           {authors.map((item) => (
             <div key={item.id} className="flex flex-col items-center">
-              <div className="flex flex-col items-center">
+              <motion.div 
+              className="flex flex-col items-center">
                 <Component
                   className={cn(
                     "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
@@ -55,7 +98,7 @@ export function Button({
                   }}
                   {...otherProps}
                 >
-                  <div
+                  <motion.div
                     className="absolute inset-0"
                     style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
                   >
@@ -63,13 +106,13 @@ export function Button({
                       duration={duration}
                       rx="30%"
                       ry="30%"
-                      isActive={item === selectedTab}
+                      // isActive={item === selectedTab}
                     >
-                      {item === selectedTab && (
+                      {/* {item === selectedTab && ( */}
                         <div className={cn(`${item.color}`)}></div>
-                      )}
+                      {/* // )} */}
                     </MovingBorder>
-                  </div>
+                  </motion.div>
                   <div
                     className={cn(
                       "relative backdrop-blur-xl flex items-center justify-center w-full h-full text-sm antialiased",
@@ -80,37 +123,40 @@ export function Button({
                     }}
                   >
                     <motion.img
+                      variants={authorOneVariant}
+                      initial="initial"
+                      whileInView="load"
                       src={item.url}
-                      onClick={() => {
-                        setSelectedTab(item);
-                      }}
-                      className={`${item === selectedTab ? "selected" : ""} h-22 w-22 rounded-full`}
+                      // onClick={() => {
+                      //   setSelectedTab(item);
+                      // }}
+                      className={`h-22 w-22 rounded-full`}
                     />
                   </div>
                 </Component>
-              </div>
-              <div className="flex flex-col items-center mt-4">
+              </motion.div>
+              <motion.div className="flex flex-col items-center mt-4"
+              initial="ofscreen"
+              whileInView="onscreen"
+              variants={variants}
+              >
                 <div className="group relative mx-auto items-center self-center justify-center">
                   <div
                     className={`bg-gradient-to-r ${item.gradient} absolute -inset-[0.10rem] rounded-lg blur-[4px] transition-all opacity-25 duration-500 group-hover:opacity-100 group-hover:duration-200`}
                   />
-                  <div className="relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center">
+                  <motion.div 
+                  className="relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center"
+                  >
                     <h2 className="font-bold">{item.name}</h2>
                     <h3 className="font-semibold text-sm">{item.title}</h3>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
-        {selectedTab === authors[0] ? (
           <BentoGridOne author={authorOne} />
-        ) : selectedTab === authors[1] ? (
-          <BentoGridOne author={authorTwo} />
-        ) : (
-          <></>
-        )}
-      </div>
+      </motion.div>
     </LayoutGroup>
   );
 }
@@ -123,10 +169,11 @@ export const MovingBorder = ({
   isActive,
   ...otherProps
 }) => {
+
   const pathRef = useRef();
   const progress = useMotionValue(0);
   useAnimationFrame((time) => {
-    if (!isActive) return;
+    // if (!isActive) return;
 
     const length = pathRef.current?.getTotalLength();
     if (length) {

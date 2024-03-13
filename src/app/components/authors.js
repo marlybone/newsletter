@@ -19,18 +19,18 @@ export const authors = [
     title: "Founder & Author",
     gradient: "from-fuchsia-700 via-violet-300 to-rose-600",
   },
-  {
-    id: "1",
-    url: "/bgimg.webp",
-    name: "Carlos Rimba",
-    color:
-      "bg-gradient-to-r from-sky-700 to-teal-400 bg-radial bg-opacity-90 h-20 w-20 flex items-center justify-center rounded-full blur transition-all",
-    slug: "/About/carlos-rami",
-    bio: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.",
-    img: "/sapphire.jpg",
-    title: "Co-Founder, Author",
-    gradient: "from-sky-700 via-cyan-300 to-teal-600",
-  },
+  // {
+  //   id: "1",
+  //   url: "/bgimg.webp",
+  //   name: "Carlos Rimba",
+  //   color:
+  //     "bg-gradient-to-r from-sky-700 to-teal-400 bg-radial bg-opacity-90 h-20 w-20 flex items-center justify-center rounded-full blur transition-all",
+  //   slug: "/About/carlos-rami",
+  //   bio: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.",
+  //   img: "/sapphire.jpg",
+  //   title: "Co-Founder, Author",
+  //   gradient: "from-sky-700 via-cyan-300 to-teal-600",
+  // },
 ];
 
 export const authorOne = [
