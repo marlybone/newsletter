@@ -8,7 +8,7 @@ export function GridBackgroundDemo() {
       <p className="mt-20 text-2xl sm:text-7xl font-bold relative z-20 bg-clip-text py-8">
         Get To Know Us
       </p>
-      <Button/>
+      <Button />
     </div>
   );
 }
