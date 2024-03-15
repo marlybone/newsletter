@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   motion,
   useAnimationFrame,
@@ -12,9 +12,8 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
-import { usePathname } from "next/navigation";
-import { authors, authorOne } from "./authors";
-import { BentoGridOne } from "./bento";
+// import { usePathname } from "next/navigation";
+import { authors } from "./authors";
 
 export function Button({
   borderRadius = "7rem",
@@ -155,7 +154,6 @@ export function Button({
             </div>
           ))}
         </div>
-          <BentoGridOne author={authorOne} />
       </motion.div>
     </LayoutGroup>
   );
