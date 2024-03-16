@@ -48,7 +48,6 @@ export function Button({
       opacity: 1,
       y: -20,
       scale: 1,
-      rotateX: 0,
       transition: {
         type: "spring",
         duration: 1.2,
@@ -69,7 +68,6 @@ export function Button({
     },
   };
 
-  const authorTwoVariant = {};
 
   return (
     <LayoutGroup>
@@ -78,13 +76,13 @@ export function Button({
         initial="initial"
         whileInView="load"
       >
-        <div className="flex flex-row space-x-6 justify-center mb-20">
+        <div className="flex md:flex-row flex-col">
           {authors.map((item) => (
-            <div key={item.id} className="flex flex-col items-center">
-              <motion.div className="flex flex-col items-center">
+            <div key={item.id} className="flex flex-col mb-16 mx-12">
+              <motion.div className="flex flex-col">
                 <Component
                   className={cn(
-                    "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
+                    "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden content-start justify-start",
                     containerClassName,
                   )}
                   style={{
@@ -217,3 +215,8 @@ export const MovingBorder = ({
     </>
   );
 };
+
+export const nameStand = ({}) => {
+
+
+}
