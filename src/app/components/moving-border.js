@@ -30,7 +30,6 @@ export function Button({
   // const [selectedTab, setSelectedTab] = useState();
   // const pathname = usePathname();
 
-
   // useEffect(() => {
   //   const author = authors.find((a) => a.slug === pathname);
   //   if (author) {
@@ -44,7 +43,6 @@ export function Button({
       opacity: 0,
       y: -150,
       scale: 0.2,
-
     },
     onscreen: {
       opacity: 1,
@@ -55,25 +53,23 @@ export function Button({
         type: "spring",
         duration: 1.2,
       },
-    }
-  }
+    },
+  };
 
   const authorOneVariant = {
     initial: {
-      opacity: 0
+      opacity: 0,
     },
     load: {
       opacity: 1,
-      transition : {
+      transition: {
         type: "spring",
         duration: 1.8,
-      }
-    }
-  }
+      },
+    },
+  };
 
-  const authorTwoVariant = {
-
-  }
+  const authorTwoVariant = {};
 
   return (
     <LayoutGroup>
@@ -85,8 +81,7 @@ export function Button({
         <div className="flex flex-row space-x-6 justify-center mb-20">
           {authors.map((item) => (
             <div key={item.id} className="flex flex-col items-center">
-              <motion.div 
-              className="flex flex-col items-center">
+              <motion.div className="flex flex-col items-center">
                 <Component
                   className={cn(
                     "shadow-custom relative h-44 w-44 rounded-full p-[4px] overflow-hidden",
@@ -108,7 +103,7 @@ export function Button({
                       // isActive={item === selectedTab}
                     >
                       {/* {item === selectedTab && ( */}
-                        <div className={cn(`${item.color}`)}></div>
+                      <div className={cn(`${item.color}`)}></div>
                       {/* // )} */}
                     </MovingBorder>
                   </motion.div>
@@ -134,18 +129,17 @@ export function Button({
                   </div>
                 </Component>
               </motion.div>
-              <motion.div className="flex flex-col items-center mt-4"
-              initial="ofscreen"
-              whileInView="onscreen"
-              variants={variants}
+              <motion.div
+                className="flex flex-col items-center mt-4"
+                initial="ofscreen"
+                whileInView="onscreen"
+                variants={variants}
               >
                 <div className="group relative mx-auto items-center self-center justify-center">
                   <div
                     className={`bg-gradient-to-r ${item.gradient} absolute -inset-[0.10rem] rounded-lg blur-[4px] transition-all opacity-25 duration-500 group-hover:opacity-100 group-hover:duration-200`}
                   />
-                  <motion.div 
-                  className="relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center"
-                  >
+                  <motion.div className="relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center">
                     <h2 className="font-bold">{item.name}</h2>
                     <h3 className="font-semibold text-sm">{item.title}</h3>
                   </motion.div>
@@ -167,7 +161,6 @@ export const MovingBorder = ({
   isActive,
   ...otherProps
 }) => {
-
   const pathRef = useRef();
   const progress = useMotionValue(0);
   useAnimationFrame((time) => {
