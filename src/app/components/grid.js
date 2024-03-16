@@ -11,7 +11,6 @@ import { motion,
          MotionConfig,
          AnimatePresence    
 } from "framer-motion"
-import { type } from "os";
 
 export function GridBackgroundDemo() {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,10 +18,10 @@ export function GridBackgroundDemo() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const [isTilted, setIsTilted] = useState(false);
 
+const text = "Here We Have Some text. Here I'm going to talk about how great we are. We doing some cool things and here is where we talk about all the cool stuff we are doing. I wonder why when i put this on a new line it doesn't work? That's super weird but ok whatever. Here we talk about more cool stuff to enlarge the box slightly and to represent what our actual box size would look like once complete. I could of done Lorem ipsum instead right?"
 
-
+const content = text.split(" ")
 
 
   const variants = {
@@ -34,61 +33,92 @@ export function GridBackgroundDemo() {
       x: 0,
       opacity: 1,
       transition: {
-        type: "[0.4,0,0.58,1]",
+        type: "[1,0,0,1]",
         duration: 1
       },
     },
   };
 
+ const textVariants = {
+  hidden: {
+    opacity: 0 
+  },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.01, delayChildren: 0.01 * (i - 0.8)
+    },
+  })
+ } 
+
+ const child = {
+  hidden: {
+    opacity: 0,
+    x: -5,
+    transition: {
+      type: "[1,0,0,1]",
+      damping: 10,
+      stiffness: 100
+    },
+  },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "[1,0,0,1]",
+        damping: 10,
+        stiffness: 100,
+      },
+    }
+ }
+
 
   
 
   return (
-    <MotionConfig transtion ={{ duration: 0.5, type: "spring"}}>
       <AnimatePresence>
-    <motion.div
+    <div
     className="min-h-screen bg-white bg-grid-black/[0.1] bg-grid- relative flex flex-col items-center justify-start align-start"
     >
        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="md:flex-row flex-col flex h-screen items-center w-full">
-      <div className="relative py-4 self-center w-2/3 space-y-6">
+      <div className="relative py-4 w-2/3 space-y-6 self-start mt-56">
+
         <motion.h1 
         variants={variants}
         initial="initial"
         animate="load"
         className="text-2xl sm:text-5xl font-bold "
         >Our Journey</motion.h1>
-        <motion.div
-        style={{ 
-          transform: "rotateY(10deg) rotateX(20deg)",
-          transformStyle: "preserve-3d",
-          background: "bg-violet-500 rounded[24px]"
-        }}
-        >
+
         <motion.div 
-        style={{ 
-          transformStyle: "preserve-3d",
-          transform: "translateZ(30px), translateY(-8px)"
-        }}
-        transition={{
-          repeatType: "mirror"
-        }}
-        initial={{ rotateX: [5, -5], rotateY: 0, translateZ: 0 }} // No transformation in normal state
-
-
-        className=" relative py-4 border max-w-xl rounded-xl bg-white bg-dot-black/[0.1] shadow-custom border-transparent"
+        className=" relative py-4 border max-w-xl rounded-xl bg-white bg-dot-black/[0.1] shadow-custom border-transparent container "
         > 
-         <motion.span
-        className="absolute inset-x-0 w-1/2 mx-auto -top-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        <motion.span
-        className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        <motion.p
-        className="font-light text-lg mx-2 py-2">Here we are to talk about some cool stuff about cool things we're working on. Here we are to talk about some cool stuff about cool things we're working on. 
-        Here we are to talk about some cool stuff about cool things we're working on. Here we are to talk about some cool stuff about cool things we're working on. 
-        Here we are to talk about some cool stuff about cool things we're working on. Here we are to talk about some cool stuff about cool things we're working on. 
-        </motion.p>
+         <motion.div
+        className="absolute inset-x-0 w-1/2 mx-auto -top-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+        <motion.div
+        className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+        <motion.div
+                  variants={textVariants} 
+                  initial="hidden"
+                  animate="visible"
+                  >
+              <motion.div 
+          className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden"
+        >
+          {content.map((word, i) => (
+            <motion.span 
+              variants={child} // Apply child variants
+              key={i} 
+              className="font-light mr-1"
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.div>
         </motion.div>
+        </motion.div>
+
       </div>
       <section className=" flex justify-center">
       <Button />
@@ -97,9 +127,8 @@ export function GridBackgroundDemo() {
       <section>
       <BentoGridOne author={authorOne} />
       </section>
-    </motion.div>
+    </div>
     </AnimatePresence>
-    </MotionConfig>
   );
 }
 
