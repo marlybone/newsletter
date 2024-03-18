@@ -7,13 +7,12 @@ import {
   useMotionValue,
   useTransform,
   LayoutGroup,
-  useInView,
-  useScroll,
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 // import { usePathname } from "next/navigation";
 import { authors } from "./authors";
+import { SkeletonSix } from './bentoskeleton'
 
 export function Button({
   borderRadius = "7rem",
@@ -38,16 +37,21 @@ export function Button({
   //   }
   // }, [pathname]);
 
+
   const variants = {
-    ofscreen: {
+    initial: {
       opacity: 0,
-      y: -150,
-      scale: 0.2,
+      y: 150,
+      scale: 0,
+      transition:{
+        type: "spring",
+        duration: 1,
+      },
     },
-    onscreen: {
+    animate: {
       opacity: 1,
-      y: -20,
-      scale: 1,
+      y: -15,
+      scale: [1.5, 1],
       transition: {
         type: "spring",
         duration: 1.2,
@@ -69,20 +73,21 @@ export function Button({
   };
 
 
+
   return (
     <LayoutGroup>
       <motion.div
         variants={authorOneVariant}
         initial="initial"
-        whileInView="load"
+        animate="load"
       >
         <div className="flex md:flex-row flex-col">
           {authors.map((item) => (
-            <div key={item.id} className="flex flex-col mb-16 mx-12">
-              <motion.div className="flex flex-col">
+            <div key={item.id} className="flex flex-col mb-16 mx-8 self-start">
+              <motion.div className="flex flex-col self-center">
                 <Component
                   className={cn(
-                    "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden content-start justify-start",
+                    "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden",
                     containerClassName,
                   )}
                   style={{
@@ -107,7 +112,7 @@ export function Button({
                   </motion.div>
                   <div
                     className={cn(
-                      "relative backdrop-blur-xl flex items-center justify-center w-full h-full text-sm antialiased",
+                      "relative backdrop-blur-xl flex  justify-center w-full h-full text-sm antialiased",
                       className,
                     )}
                     style={{
@@ -117,7 +122,7 @@ export function Button({
                     <motion.img
                       variants={authorOneVariant}
                       initial="initial"
-                      whileInView="load"
+                      animate="load"
                       src={item.url}
                       // onClick={() => {
                       //   setSelectedTab(item);
@@ -128,18 +133,20 @@ export function Button({
                 </Component>
               </motion.div>
               <motion.div
-                className="flex flex-col items-center mt-4"
-                initial="ofscreen"
-                whileInView="onscreen"
-                variants={variants}
+                className="flex flex-col mt-8"
               >
-                <div className="group relative mx-auto items-center self-center justify-center">
-                  <div
-                    className={`bg-gradient-to-r ${item.gradient} absolute -inset-[0.10rem] rounded-lg blur-[4px] transition-all opacity-25 duration-500 group-hover:opacity-100 group-hover:duration-200`}
-                  />
-                  <motion.div className="relative px-4 py-4 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none space-y-2 text-center">
-                    <h2 className="font-bold">{item.name}</h2>
-                    <h3 className="font-semibold text-sm">{item.title}</h3>
+                
+                <div className="relative mx-auto">
+                      <motion.div
+                  initial="initial"
+                  animate="animate"
+                  variants={variants}
+                  className="relative py-4 max-w-xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl text-center self-start"
+
+                  >
+                    <SkeletonSix/>
+                    <motion.h2 className="font-bold mx-12 my-2">{item.name}</motion.h2>
+                    <motion.h3 className="font-semibold text-sm">{item.title}</motion.h3>
                   </motion.div>
                 </div>
               </motion.div>
@@ -216,7 +223,3 @@ export const MovingBorder = ({
   );
 };
 
-export const nameStand = ({}) => {
-
-
-}

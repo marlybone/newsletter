@@ -7,6 +7,7 @@ import { motion,
          AnimatePresence,
          useTransform,    
 } from "framer-motion"
+import { SkeletonSix } from "./bentoskeleton"
 
 export function GridBackgroundDemo() {
 
@@ -33,9 +34,11 @@ const content = text.split(" ");
 
  const textVariants = {
   hidden: {
-    opacity: 0 
+    opacity: 0,
+    y: -300,
   },
   visible: (i = 1) => ({
+    y: 0,
     opacity: 1,
     transition: {
       staggerChildren: 0.01, delayChildren: 0.01 * (i - 0.8)
@@ -65,17 +68,16 @@ const content = text.split(" ");
  }
 
 
-  
 
   return (
     <div
     className="min-h-screen bg-white bg-grid-black/[0.1] bg-grid- relative flex flex-col items-center justify-start align-start"
     >
+      
        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="md:flex-row flex-col flex h-screen items-center w-full">
       <AnimatePresence>
-      <div className="relative py-4 w-2/3 space-y-6 md:self-start self-center md:mt-44 my-8 mx-20">
-
+      <div className="relative py-4 w-1/2 space-y-6 md:self-start self-center md:mt-44 my-8 mx-20">
         <motion.h1 
         variants={variants}
         initial="initial"
@@ -83,15 +85,13 @@ const content = text.split(" ");
         className="text-5xl sm:text-6xl font-bold "
         >Our Journey</motion.h1>
 
-        <motion.div 
-        className=" relative py-4 border max-w-xl rounded-xl bg-white bg-dot-black/[0.1] shadow-custom border-transparent container "
-        > 
-         <motion.div
-         
-        className="absolute inset-x-0 w-1/2 mx-auto -top-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" 
-        />
         <motion.div
-        className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+                          variants={textVariants} 
+                          initial="hidden"
+                          animate="visible" 
+        className="relative py-4 max-w-xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl"
+        > 
+        <SkeletonSix/>
         <motion.div
                   variants={textVariants} 
                   initial="hidden"

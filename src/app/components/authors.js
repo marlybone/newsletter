@@ -12,12 +12,12 @@ export const authors = [
     url: "/mainimg.webp",
     name: "Marlon Stevenson",
     color:
-      "bg-gradient-to-r from-fuchsia-700 to-rose-400 bg-radial bg-opacity-60 h-20 w-20 flex items-center justify-center rounded-full blur transition-all",
+      "bg-gradient-to-r from-violet-700 to-teal-400 bg-radial bg-opacity-60 h-20 w-20 flex items-center justify-center rounded-full blur transition-all",
     slug: "/About/marlon-stevenson",
     bio: "I'm a self-taught developer, tech enthusiast, and avid learner with a deep interest in science, technology, and games. His curiosity and passion for learning have led him to create this site as a platform to gain insights from individuals who have successfully transitioned to new careers, especially in the tech industry. Marlon is dedicated to continuous growth and self-improvement, and he believes that sharing experiences and learning from others is a valuable way to achieve personal and professional development.",
     img: "/bgimg.webp",
     title: "Founder & Author",
-    gradient: "from-fuchsia-700 via-violet-300 to-rose-600",
+    gradient: "from-sky-700 via-teal-300 to-cyan-600",
   },
   // {
   //   id: "1",
