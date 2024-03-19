@@ -387,3 +387,10 @@ export const SkeletonTwo = () => {
          </>
         )
        }
+
+       export const SkeletonSeven = () => {
+
+        return (
+          <></>
+        )
+       }

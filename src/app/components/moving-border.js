@@ -12,7 +12,7 @@ import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 // import { usePathname } from "next/navigation";
 import { authors } from "./authors";
-import { SkeletonSix } from './bentoskeleton'
+import styles from './moving-border.module.css';
 
 export function Button({
   borderRadius = "7rem",
@@ -26,6 +26,7 @@ export function Button({
   isSelected,
   ...otherProps
 }) {
+
   // const [selectedTab, setSelectedTab] = useState();
   // const pathname = usePathname();
 
@@ -37,16 +38,15 @@ export function Button({
   //   }
   // }, [pathname]);
 
-
   const variants = {
     initial: {
       y: 250,
     },
     animate: {
-      y: -15,
-      transition:{
+      y: 0,
+      transition: {
         type: "spring",
-        duration: 1.5,
+        duration: 1,
       },
     },
   };
@@ -64,24 +64,33 @@ export function Button({
     },
   };
 
-  const styles = {
-    backgroundColor: "rgba(205, 201, 201, 0.17)",
-    border: "1px solid rgba(205, 201, 201, 0.75)",
-    backdropFilter: "blur(7.4px)",
+  const child = {
+    initial: {
+      opacity: 0,
+      y: 200,
+    },
+    animate: {
+      opacity: 1,
+      y: 30,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        duration: 1.5,
+        delay: 2,
+      },
+    },
   };
+
 
   return (
     <LayoutGroup>
-      <motion.div
-        variants={authorOneVariant}
-        initial="initial"
-        animate="load"
-      >
+      <motion.div variants={authorOneVariant} initial="initial" animate="load">
         <div className="flex md:flex-row flex-col">
           {authors.map((item) => (
             <div key={item.id} className="flex flex-col mb-16 mx-8 self-start">
               <motion.div className="flex flex-col self-center">
                 <Component
+                  layout
                   className={cn(
                     "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden",
                     containerClassName,
@@ -92,6 +101,7 @@ export function Button({
                   {...otherProps}
                 >
                   <motion.div
+                    layout
                     className="absolute inset-0"
                     style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
                   >
@@ -128,31 +138,40 @@ export function Button({
                   </div>
                 </Component>
               </motion.div>
-              <div
-                className="flex flex-col mt-8"
-              >
-                
-                <div className="relative mx-auto">
-                      <motion.div
+              <div className="flex flex-col mt-8">
+                <div className="relative mx-auto bg-transparent">
+                <div className="absolute inset-0 bg-gray-100 bg-opacity-0 backdrop-blur-sm rounded-xl"></div>
+                  <motion.div  
                   initial="initial"
-                  layout
                   animate="animate"
                   variants={variants}
-                  className="relative z-50 py-4 max-w-xl border-transparent text-center shadow-custom drop-shadow-lg border-opacity-50 rounded-xl"
-                  style={styles}
-                  >
-                    <motion.h2 className="font-bold mx-12 my-1">{item.name}</motion.h2>
-                    <motion.h3 className="font-semibold text-sm">{item.title}</motion.h3>
+                  className={styles.blurBackdrop}
+                     >
+                    <motion.h2 className="font-bold mx-12 my-1">
+                      {item.name}
+                    </motion.h2>
+                    <motion.h3 className="font-semibold text-sm">
+                      {item.title}
+                    </motion.h3>
                   </motion.div>
                   <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={child}
                     className="h-28 w-28 z-1 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-custom drop-shadow-md absolute -inset-x-20 -inset-y-10"
-                    ></motion.div>
-                                      <motion.div
-                    className="h-12 w-12 z-1 rounded-full bg-gradient-to-r from-blue-800 to-indigo-900 absolute shadow-custom drop-shadow-md inset-x-20 inset-y-10"
-                    ></motion.div>
-                                                          <motion.div
+                  ></motion.div>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={child}
+                    className="h-12 w-12 z-1 rounded-full bg-gradient-to-r from-blue-800 to-indigo-900 absolute shadow-custom drop-shadow-md inset-x-24 inset-y-7"
+                  ></motion.div>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={child}
                     className="h-10 w-10 z-50 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400  absolute inset-x-48 shadow-custom drop-shadow-md -inset-y-10"
-                    ></motion.div>
+                  ></motion.div>
                 </div>
               </div>
             </div>
@@ -227,4 +246,3 @@ export const MovingBorder = ({
     </>
   );
 };
-
