@@ -40,21 +40,13 @@ export function Button({
 
   const variants = {
     initial: {
-      opacity: 0,
-      y: 150,
-      scale: 0,
-      transition:{
-        type: "spring",
-        duration: 1,
-      },
+      y: 250,
     },
     animate: {
-      opacity: 1,
       y: -15,
-      scale: [1.5, 1],
-      transition: {
+      transition:{
         type: "spring",
-        duration: 1.2,
+        duration: 1.5,
       },
     },
   };
@@ -72,7 +64,11 @@ export function Button({
     },
   };
 
-
+  const styles = {
+    backgroundColor: "rgba(205, 201, 201, 0.17)",
+    border: "1px solid rgba(205, 201, 201, 0.75)",
+    backdropFilter: "blur(7.4px)",
+  };
 
   return (
     <LayoutGroup>
@@ -132,24 +128,33 @@ export function Button({
                   </div>
                 </Component>
               </motion.div>
-              <motion.div
+              <div
                 className="flex flex-col mt-8"
               >
                 
                 <div className="relative mx-auto">
                       <motion.div
                   initial="initial"
+                  layout
                   animate="animate"
                   variants={variants}
-                  className="relative py-4 max-w-xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl text-center self-start"
-
+                  className="relative z-50 py-4 max-w-xl border-transparent text-center shadow-custom drop-shadow-lg border-opacity-50 rounded-xl"
+                  style={styles}
                   >
-                    <SkeletonSix/>
-                    <motion.h2 className="font-bold mx-12 my-2">{item.name}</motion.h2>
+                    <motion.h2 className="font-bold mx-12 my-1">{item.name}</motion.h2>
                     <motion.h3 className="font-semibold text-sm">{item.title}</motion.h3>
                   </motion.div>
+                  <motion.div
+                    className="h-28 w-28 z-1 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-custom drop-shadow-md absolute -inset-x-20 -inset-y-10"
+                    ></motion.div>
+                                      <motion.div
+                    className="h-12 w-12 z-1 rounded-full bg-gradient-to-r from-blue-800 to-indigo-900 absolute shadow-custom drop-shadow-md inset-x-20 inset-y-10"
+                    ></motion.div>
+                                                          <motion.div
+                    className="h-10 w-10 z-50 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400  absolute inset-x-48 shadow-custom drop-shadow-md -inset-y-10"
+                    ></motion.div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           ))}
         </div>

@@ -374,16 +374,16 @@ export const SkeletonTwo = () => {
         return (
           <>
           <motion.div
-          className="absolute inset-x-0 mx-auto -top-px bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 h-px"
+          className="absolute inset-x-0 mx-auto -top-px bg-gradient-to-bl from-sky-600 via-transparent to-sky-600 h-px"
          />
           <motion.div
           className="absolute -inset-y-0 mx-auto -top-px h-auto bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
          />
            <motion.div
-          className="absolute inset-y-0 mx-auto h-full -right-px bg-gradient-to-bl from-sky-600 via-transparent to-sky-600 w-px"
+          className="absolute inset-y-0 mx-auto h-full -right-px bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
          />
          <motion.div
-         className="absolute inset-x-0 mx-auto -bottom-px bg-gradient-to-bl from-sky-600 via-transparent to-sky-600 h-px" />
+         className="absolute inset-x-0 mx-auto -bottom-px bg-gradient-to-br from-sky-600 via-transparent to-sky-600 h-px" />
          </>
         )
        }

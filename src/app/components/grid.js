@@ -35,13 +35,13 @@ const content = text.split(" ");
  const textVariants = {
   hidden: {
     opacity: 0,
-    y: -300,
+    y: -400,
   },
   visible: (i = 1) => ({
     y: 0,
     opacity: 1,
     transition: {
-      staggerChildren: 0.01, delayChildren: 0.01 * (i - 0.8)
+      staggerChildren: 0.01, delayChildren: 0.01 * (i - 0.8),
     },
   })
  } 
@@ -88,7 +88,8 @@ const content = text.split(" ");
         <motion.div
                           variants={textVariants} 
                           initial="hidden"
-                          animate="visible" 
+                          animate="visible"
+                          transition={{ duration: 1.2, type: "spring", damping: 10}} 
         className="relative py-4 max-w-xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl"
         > 
         <SkeletonSix/>
