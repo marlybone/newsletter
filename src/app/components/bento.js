@@ -1,23 +1,12 @@
 import { cn } from "@utils/cn";
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform  } from "framer-motion"
+import React, { useRef} from "react";
+import { motion, useInView } from "framer-motion"
 
 export const BentoGrid = ({ className, children }) => {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const variants = {
-    initial: {},
-    animate: {},
-  }
+  
 
   return (
     <motion.div
-    ref={ref}
-    style={{ }}
       className={cn(
         "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-screen min-h-screen",
         className,
@@ -38,8 +27,20 @@ export const BentoGridItem = ({ header, image }) => {
 };
 
 export function BentoGridOne({ author }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
   return (
-    <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem] my-14">
+    <motion.div
+    ref={ref}
+    style={{
+      scale: isInView ? 1 : 0.8,
+      opacity: isInView ? 1 : 0,
+      y: isInView ? 25 : 200,
+      transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+    }}
+    >
+    <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[20rem] my-16">
       {author.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -51,5 +52,6 @@ export function BentoGridOne({ author }) {
         />
       ))}
     </BentoGrid>
+    </motion.div>
   );
 }
