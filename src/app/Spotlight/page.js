@@ -49,7 +49,7 @@ export default function SpotlightPage() {
 
   return (
     <>
-      <div className="relativ">
+      <div className="relative">
         <img
           src="sapphire.jpg"
           className="absolute w-full h-80 object-cover overflow-hidden"
@@ -69,7 +69,7 @@ export default function SpotlightPage() {
           </div>
         </div>
       </div>
-      <section className="max-w-3xl mx-auto">
+      <section className="max-w-3xl mx-auto min-h-screen">
         <div className="md:flex flex-col justify-center mt-24">
           {/* end of section that needs mobile design*/}
           {filteredPosts &&

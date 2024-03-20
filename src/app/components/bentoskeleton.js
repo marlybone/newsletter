@@ -2,6 +2,25 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+export const SkeletonSix = () => {
+
+  return (
+    <>
+    <motion.div
+    className="absolute inset-x-0 mx-auto -top-px bg-gradient-to-bl from-sky-600 via-transparent to-sky-600 h-px"
+   />
+    <motion.div
+    className="absolute -inset-y-0 mx-auto -top-px  bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
+   />
+     <motion.div
+    className="absolute inset-y-0 mx-auto  -top-px -right-px bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
+   />
+   <motion.div
+   className="absolute inset-x-0 mx-auto -bottom-px bg-gradient-to-br from-sky-600 via-transparent to-sky-600 h-px" />
+   </>
+  )
+ }
+
 export const SkeletonOne = ({
 }) => {
   const variants = {
@@ -157,7 +176,7 @@ export const SkeletonTwo = () => {
       return (
         <motion.div
           layout
-          className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
+          className="border-gray-200 relative row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
         >
           <motion.img
             initial="hidden"
@@ -171,34 +190,15 @@ export const SkeletonTwo = () => {
     };
 
     export const SkeletonFour = () => {
-        const variants = {
-            visible: {
-              opacity: 1, 
-              transition: {
-                duration: 2,
-                ease: "easeInOut",
-                type: "spring",
-              },
-            },
-            hidden: {
-              opacity: 0,
-              transition: {
-                duration: 1,
-                ease: "easeInOut",
-                type: "spring",
-              },
-            },
-          };
+      
           
           return (
             <motion.div
+            variants={variants}
               layout
-              className="border-gray-200 row-span-1 md:col-span-1 rounded-xl group/bento hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
+              className="border-gray-200 row-span-1 md:col-span-1 rounded-xl hover:shadow-xl bg-white border justify-between flex flex-col space-y-4"
             >
               <motion.img
-                initial="hidden"
-                animate="visible"
-                variants={variants}
                 className="w-full h-full object-cover rounded-xl"
                 src="/mainimg.webp"
               />
@@ -340,17 +340,6 @@ export const SkeletonTwo = () => {
 
         }) => {
 
-          const variants = {
- 
-            drag: {
-              x: {
-                top: 100,
-                bottom: 100
-              }
-             
-            },
-          };
-
           return (
             <motion.div
             className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
@@ -369,24 +358,6 @@ export const SkeletonTwo = () => {
           );
         }
 
-       export const SkeletonSix = () => {
-
-        return (
-          <>
-          <motion.div
-          className="absolute inset-x-0 mx-auto -top-px bg-gradient-to-bl from-sky-600 via-transparent to-sky-600 h-px"
-         />
-          <motion.div
-          className="absolute -inset-y-0 mx-auto -top-px h-auto bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
-         />
-           <motion.div
-          className="absolute inset-y-0 mx-auto h-full -right-px bg-gradient-to-tl from-sky-600 via-transparent to-sky-600 w-px"
-         />
-         <motion.div
-         className="absolute inset-x-0 mx-auto -bottom-px bg-gradient-to-br from-sky-600 via-transparent to-sky-600 h-px" />
-         </>
-        )
-       }
 
        export const SkeletonSeven = () => {
 

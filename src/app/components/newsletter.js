@@ -3,7 +3,7 @@ import NewsletterForm from "./signupNews";
 
 export default function Newsletter() {
   return (
-    <div className="bg-white text-[#333] font-[sans-serif]">
+    <div className="bg-white text-[#333] font-[sans-serif] min-h-screen items-center self-center flex">
       <div className="max-w-3xl mx-auto text-center ">
         <h3 className="text-4xl font-extrabold">Newsletter</h3>
         <p className="text-sm mt-6">

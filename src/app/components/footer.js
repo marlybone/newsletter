@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className="bg-slate-200 border-t-[1px] border-gray-300 bottom-0 w-full">
+    <section className="bg-slate-200 border-t-[1px] border-gray-300 bottom-0 left-0 w-full flex">
       <div className="max-w-screen-lg px-8 py-8 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <div className="flex justify-center mt-2 space-x-6">
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">

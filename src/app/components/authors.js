@@ -35,16 +35,16 @@ export const authors = [
 
 export const authorOne = [
   {
-    className: "md:col-span-2",
+    className: "md:col-span-3 ",
     header: <SkeletonOne />,
   },
   {
     header: <SkeletonTwo />,
-    className: "md:col-span-1",
+    className: "md:col-span-2 ",
   },
   {
     header: <SkeletonFive />,
-    className: "md:col-span-1",
+    className: "md:col-span-1 ",
   },
 ];
 
@@ -55,7 +55,7 @@ export const authorTwo = [
   },
   {
     header: <SkeletonFour />,
-    className: "md:col-span-1",
+    className: "md:col-span-2 ",
   },
   {
     header: <SkeletonFive />,

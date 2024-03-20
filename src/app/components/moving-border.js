@@ -86,11 +86,11 @@ export function Button({
     <LayoutGroup>
       <motion.div variants={authorOneVariant} initial="initial" animate="load">
         <div className="flex md:flex-row flex-col">
-          {authors.map((item) => (
-            <div key={item.id} className="flex flex-col mb-16 mx-8 self-start">
+          {authors.map((item, i) => (
+            <div key={i} className="flex flex-col mb-16 mx-8 self-start">
               <motion.div className="flex flex-col self-center">
                 <Component
-                  layout
+                  layout="true"
                   className={cn(
                     "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden",
                     containerClassName,
@@ -101,7 +101,6 @@ export function Button({
                   {...otherProps}
                 >
                   <motion.div
-                    layout
                     className="absolute inset-0"
                     style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
                   >

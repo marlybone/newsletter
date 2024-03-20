@@ -1,9 +1,7 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Button } from "./moving-border";
-import { BentoGridOne } from "./bento";
-import { authorOne } from "./authors";
-import { motion, AnimatePresence, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { SkeletonSix } from "./bentoskeleton";
 
 export function GridBackgroundDemo() {
@@ -63,11 +61,11 @@ export function GridBackgroundDemo() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-grid-black/[0.1] bg-grid- relative flex flex-col items-center justify-start align-start">
+    <div className="min-h-screen bg-white bg-grid-black/[0.1] bg-grid- relative flex flex-col ">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
-      <div className="md:flex-row flex-col flex h-screen items-center w-full">
-        <AnimatePresence>
-          <div className="relative py-4 w-1/2 space-y-6 md:self-start self-center md:mt-44 my-8 mx-20">
+      <div className="flex flex-col min-h-screen w-full">
+      <div className="md:flex-row flex-col flex min-h-screen items-center w-full">
+          <div className="relative py-4 w-1/2 space-y-6 md:self-start self-center md:mt-44 my-8 mx-20 min-h-screen">
             <motion.h1
               variants={variants}
               initial="initial"
@@ -76,7 +74,6 @@ export function GridBackgroundDemo() {
             >
               Our Journey
             </motion.h1>
-
             <motion.div
               variants={textVariants}
               initial="hidden"
@@ -93,7 +90,7 @@ export function GridBackgroundDemo() {
                 <motion.div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden">
                   {content.map((word, i) => (
                     <motion.span
-                      variants={child} // Apply child variants
+                      variants={child}
                       key={i}
                       className="font-light text-lg mr-1"
                     >
@@ -104,14 +101,11 @@ export function GridBackgroundDemo() {
               </motion.div>
             </motion.div>
           </div>
-        </AnimatePresence>
-        <section className="flex justify-center">
+        <div className="flex justify-center">
           <Button />
-        </section>
+        </div>
       </div>
-      <section>
-        <BentoGridOne author={authorOne} />
-      </section>
+      </div>
     </div>
   );
 }
