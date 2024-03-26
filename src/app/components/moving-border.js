@@ -87,7 +87,7 @@ export function Button({
       <motion.div variants={authorOneVariant} initial="initial" animate="load">
         <div className="flex md:flex-row flex-col">
           {authors.map((item, i) => (
-            <div key={i} className="flex flex-col mb-16 mx-8 self-start">
+            <div key={i} className="flex flex-col mb-16 mx-8">
               <motion.div className="flex flex-col self-center">
                 <Component
                   layout="true"
@@ -144,12 +144,12 @@ export function Button({
                   initial="initial"
                   animate="animate"
                   variants={variants}
-                  className={styles.blurBackdrop}
+                  className={`${styles.blurBackdrop}`}
                      >
                     <motion.h2 className="font-bold mx-12 my-1">
                       {item.name}
                     </motion.h2>
-                    <motion.h3 className="font-semibold text-sm">
+                    <motion.h3 className="font-semibold text-center text-sm">
                       {item.title}
                     </motion.h3>
                   </motion.div>
@@ -169,7 +169,7 @@ export function Button({
                     initial="initial"
                     animate="animate"
                     variants={child}
-                    className="h-10 w-10 z-50 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400  absolute inset-x-48 shadow-custom drop-shadow-md -inset-y-10"
+                    className="h-10 w-10 z-10 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400  absolute inset-x-48 shadow-custom drop-shadow-md -inset-y-10"
                   ></motion.div>
                 </div>
               </div>

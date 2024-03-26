@@ -11,7 +11,9 @@ export default function About() {
     <div className="my-4 h-screen max-w-7xl w-full mx-auto flex flex-col justify-center">
     <GridBackgroundDemo/>
     </div>
+    <div className="min-h-screen">
     <BentoGridOne author={authorOne} />
+    </div>
     </div>
     </>
   );

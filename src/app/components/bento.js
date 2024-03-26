@@ -1,6 +1,7 @@
 import { cn } from "@utils/cn";
 import React, { useRef} from "react";
 import { motion, useInView } from "framer-motion"
+import { SocialDonut } from "../components/sociallinks"; 
 
 export const BentoGrid = ({ className, children }) => {
   
@@ -8,7 +9,7 @@ export const BentoGrid = ({ className, children }) => {
   return (
     <motion.div
       className={cn(
-        "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-screen min-h-screen",
+        "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-screen",
         className,
       )}
     >
@@ -40,7 +41,7 @@ export function BentoGridOne({ author }) {
       transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
     }}
     >
-    <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[20rem] my-16">
+    <BentoGrid className="max-w-5xl md:mx-auto mx-6 auto-rows-[20rem] my-14 min-h-screen">
       {author.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -51,6 +52,7 @@ export function BentoGridOne({ author }) {
           className={item.className}
         />
       ))}
+    <SocialDonut/>
     </BentoGrid>
     </motion.div>
   );

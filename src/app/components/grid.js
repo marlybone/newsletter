@@ -61,11 +61,11 @@ export function GridBackgroundDemo() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-grid-black/[0.1] bg-grid- relative flex flex-col ">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
-      <div className="flex flex-col min-h-screen w-full">
-      <div className="md:flex-row flex-col flex min-h-screen items-center w-full">
-          <div className="relative py-4 w-1/2 space-y-6 md:self-start self-center md:mt-44 my-8 mx-20 min-h-screen">
+    <div className="min-h-screen bg-white bg-grid-black/[0.1] relative flex flex-col ">
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
+      <div className="flex flex-col md:min-h-screen w-full">
+      <div className="md:flex-row flex-col flex md:min-h-screen items-center w-full">
+          <div className="relative py-4 md:w-1/2 space-y-4 md:self-start self-center md:mt-44 mt-64 md:my-8 md:mx-20 min-h-screen">
             <motion.h1
               variants={variants}
               initial="initial"

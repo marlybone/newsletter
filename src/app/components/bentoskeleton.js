@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import styles from "./moving-border.module.css"
 
 export const SkeletonSix = () => {
 
@@ -29,9 +30,11 @@ export const SkeletonOne = ({
   const content = text.split(" ");
 
   return (
+    
     <div
-    className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
+    className={`${styles.blurBackdrop} shadow-custom md:col-span-2 row-span-1 rounded-xl justify-between flex flex-col space-y-2 w-auto mx-2`}
     >
+      
       <div
       className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden mt-3 align-center justify-center "
       >
@@ -53,7 +56,7 @@ export const SkeletonTwo = () => {
       return (
         <motion.div
         style={{rotate: 20}}
-          className="border-transparent relative row-span-1 drop-shadow-xl md:col-span-1 rounded-xl group/bento shadow-custom bg-white border justify-between flex flex-col space-y-4"
+          className="border-transparent w-96 md:w-full relative row-span-1 drop-shadow-xl md:col-span-1 content-center rounded-xl group/bento shadow-custom bg-white border justify-between flex flex-col space-y-4"
         >
           <img
             className="w-full h-full object-cover rounded-xl"
@@ -210,32 +213,11 @@ export const SkeletonTwo = () => {
         //   )
         // };
 
-        export const SkeletonFive = ({
-
-        }) => {
-
-          return (
-            <motion.div
-            className="border-gray-200 md:col-span-2 row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4"
-            >
-              <motion.div
-              className="py-4 mx-20 border border-gray-400 rounded-full mt-4"
-              >
-                <motion.h1
-                className="justify-center flex"
-                >
-                Hi
-                </motion.h1>
-              
-              </motion.div>
-              </motion.div>
-          );
-        }
 
 
-       export const SkeletonSeven = () => {
+      //  export const SkeletonSeven = () => {
 
-        return (
-          <></>
-        )
-       }
+      //   return (
+      //     <></>
+      //   )
+      //  }

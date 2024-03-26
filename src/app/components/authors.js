@@ -1,9 +1,6 @@
 import {
   SkeletonOne,
   SkeletonTwo,
-  SkeletonThree,
-  SkeletonFour,
-  SkeletonFive,
 } from "./bentoskeleton";
 
 export const authors = [
@@ -42,23 +39,15 @@ export const authorOne = [
     header: <SkeletonTwo />,
     className: "md:col-span-2 ",
   },
-  {
-    header: <SkeletonFive />,
-    className: "md:col-span-1 ",
-  },
 ];
 
-export const authorTwo = [
-  {
-    className: "md:col-span-2",
-    header: <SkeletonThree />,
-  },
-  {
-    header: <SkeletonFour />,
-    className: "md:col-span-2 ",
-  },
-  {
-    header: <SkeletonFive />,
-    className: "md:col-span-1",
-  },
-];
+// export const authorTwo = [
+//   {
+//     className: "md:col-span-2",
+//     header: <SkeletonThree />,
+//   },
+//   {
+//     header: <SkeletonFour />,
+//     className: "md:col-span-2 ",
+//   },
+// ];
