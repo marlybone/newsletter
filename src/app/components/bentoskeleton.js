@@ -32,7 +32,7 @@ export const SkeletonOne = ({
   return (
     
     <div
-    className={`${styles.blurBackdrop} shadow-custom md:col-span-2 row-span-1 rounded-xl justify-between flex flex-col space-y-2 w-auto mx-2`}
+    className={`${styles.blurBackdrop} shadow-custom md:col-span-2 row-span-1 rounded-xl justify-between flex flex-col space-y-2 w-auto`}
     >
       
       <div

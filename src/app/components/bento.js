@@ -1,7 +1,8 @@
 import { cn } from "@utils/cn";
 import React, { useRef} from "react";
 import { motion, useInView } from "framer-motion"
-import { SocialDonut } from "../components/sociallinks"; 
+import { SocialElement } from "../components/sociallinks"; 
+import { authors } from "../components/authors";
 
 export const BentoGrid = ({ className, children }) => {
   
@@ -27,7 +28,7 @@ export const BentoGridItem = ({ header, image }) => {
   );
 };
 
-export function BentoGridOne({ author }) {
+export function BentoGridOne({ author, authors }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -45,14 +46,12 @@ export function BentoGridOne({ author }) {
       {author.map((item, i) => (
         <BentoGridItem
           key={i}
-          title={item.title}
-          description={item.description}
           header={item.header}
           image={item.img}
           className={item.className}
         />
       ))}
-    <SocialDonut/>
+    <SocialElement/>
     </BentoGrid>
     </motion.div>
   );

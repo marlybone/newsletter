@@ -61,11 +61,11 @@ export function GridBackgroundDemo() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-grid-black/[0.1] relative flex flex-col ">
+    <div className="min-h-screen bg-white bg-grid-black/[0.1] relative flex">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
-      <div className="flex flex-col md:min-h-screen w-full">
+      <div className="flex md:min-h-screen w-full">
       <div className="md:flex-row flex-col flex md:min-h-screen items-center w-full">
-          <div className="relative py-4 md:w-1/2 space-y-4 md:self-start self-center md:mt-44 mt-64 md:my-8 md:mx-20 min-h-screen">
+          <div className="relative py-4 space-y-4 md:self-start self-center md:mt-44 md:my-8 mt-36  min-h-screen">
             <motion.h1
               variants={variants}
               initial="initial"
@@ -74,12 +74,13 @@ export function GridBackgroundDemo() {
             >
               Our Journey
             </motion.h1>
+            <div className="flex md:flex-row flex-col space-x-8 space-y-4">
             <motion.div
               variants={textVariants}
               initial="hidden"
               animate="visible"
               transition={{ duration: 1.2, type: "spring", damping: 10 }}
-              className="relative py-4 max-w-xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl"
+              className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit"
             >
               <SkeletonSix />
               <motion.div
@@ -100,10 +101,9 @@ export function GridBackgroundDemo() {
                 </motion.div>
               </motion.div>
             </motion.div>
+            <Button />
+            </div>
           </div>
-        <div className="flex justify-center">
-          <Button />
-        </div>
       </div>
       </div>
     </div>

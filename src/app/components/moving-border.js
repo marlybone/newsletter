@@ -117,7 +117,7 @@ export function Button({
                   </motion.div>
                   <div
                     className={cn(
-                      "relative backdrop-blur-xl flex  justify-center w-full h-full text-sm antialiased",
+                      "relative backdrop-blur-xl flex justify-center w-full h-full text-sm antialiased",
                       className,
                     )}
                     style={{
