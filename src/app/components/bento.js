@@ -2,7 +2,6 @@ import { cn } from "@utils/cn";
 import React, { useRef} from "react";
 import { motion, useInView } from "framer-motion"
 import { SocialElement } from "../components/sociallinks"; 
-import { authors } from "../components/authors";
 
 export const BentoGrid = ({ className, children }) => {
   

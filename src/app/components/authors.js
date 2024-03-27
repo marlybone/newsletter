@@ -17,7 +17,7 @@ export const authors = [
     gradient: "from-sky-700 via-teal-300 to-cyan-600",
     linkedin: "https://www.linkedin.com/in/marlon-stevenson-510738109/",
     twitter: "https://twitter.com/mRockSwe",
-    gitub: "https://github.com/marlybone",
+    github: "https://github.com/marlybone",
     website: "https://codedcareer.org/"
   },
   // {
