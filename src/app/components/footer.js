@@ -2,28 +2,63 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className="bg-slate-200 border-t-[1px] border-gray-300 bottom-0 left-0 w-full flex">
-      <div className="max-w-screen-lg px-8 py-8 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <div className="flex justify-center mt-2 space-x-6">
+    <section className="bg-zinc-700 border-t-[1px] border-gray-400 bottom-0 left-0 w-full flex">
+      <div className="w-full px-8 py-8 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <div className="flex justify-between mt-2 space-x-6">
+        <div className="text-white justify-start flex self-start align-start">This is the icon</div>
+        </div>
+        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
+          <div className="px-5 py-2">
+            <a
+              href="#"
+              className="text-base leading-6 text-gray-200 hover:text-gray-900"
+            >
+              About
+            </a>
+          </div>
+          <div className="px-5 py-2">
+            <a
+              href="#"
+              className="text-base leading-6 text-gray-200 hover:text-gray-900"
+            >
+              Blog
+            </a>
+          </div>
+          <div className="px-5 py-2">
+            <a
+              href="#"
+              className="text-base leading-6 text-gray-200 hover:text-gray-900"
+            >
+              Team
+            </a>
+          </div>
+          <div className="px-5 py-2">
+            <a
+              href="#"
+              className="text-base leading-6 text-gray-200 hover:text-gray-900"
+            >
+              Contact
+            </a>
+          </div>
+        </nav>
+        <div className="flex justify-center">
+        <div className="border-t-[1px] border-gray-100 w-2/3">
+        <div className="flex flex-row justify-between mx-4">
+          <div className="space-x-4 flex flex-row self-center mt-4">
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">Facebook</span>
-              <svg
-                className="w-6 h-6"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+            <a href="#" className="text-gray-700">
+              <span className="sr-only">Linkedin</span>
+              <svg className="w-7 h-7" fill="currentColor" aria-hidden="true" viewBox="0 0 48 48">
+                  <path
                   clipRule="evenodd"
-                ></path>
+                  fillRule="evenodd"
+                   d="M24,4c-2.68218,0 -5.2485,0.5299 -7.58984,1.49023c-0.5046,0.19739 -0.86353,0.65155 -0.93901,1.1881c-0.07547,0.53655 0.14425,1.0721 0.57481,1.40104c0.43056,0.32894 1.00504,0.40013 1.50287,0.18626c1.98865,-0.81567 4.16335,-1.26562 6.45117,-1.26562c9.40629,0 17,7.59371 17,17c0,4.84912 -2.02013,9.20515 -5.26758,12.30273c-0.4054,0.36568 -0.58013,0.92274 -0.4562,1.45445c0.12393,0.53171 0.52694,0.95412 1.05225,1.10287c0.52531,0.14876 1.08996,0.00038 1.47427,-0.3874c3.81655,-3.64041 6.19727,-8.78777 6.19727,-14.47266c0,-11.02771 -8.97229,-20 -20,-20zM10.14648,10.25195c-0.44184,-0.00345 -0.86273,0.18806 -1.15039,0.52344c-3.10796,3.52293 -4.99609,8.16254 -4.99609,13.22461c0,11.02771 8.97229,20 20,20c2.34235,0 4.59494,-0.40463 6.6875,-1.14648c0.50525,-0.17894 0.87665,-0.61385 0.97427,-1.14089c0.09762,-0.52704 -0.09337,-1.06612 -0.50101,-1.41415c-0.40764,-0.34803 -0.97,-0.45213 -1.47521,-0.27308c-1.77745,0.63014 -3.6879,0.97461 -5.68555,0.97461c-9.40629,0 -17,-7.59371 -17,-17c0,-4.31793 1.60205,-8.24316 4.24609,-11.24023c0.39722,-0.43805 0.50004,-1.06857 0.26259,-1.61012c-0.23746,-0.54155 -0.77089,-0.89309 -1.3622,-0.89769zM15.5,13c-1.38071,0 -2.5,1.11929 -2.5,2.5c0,1.38071 1.11929,2.5 2.5,2.5c1.38071,0 2.5,-1.11929 2.5,-2.5c0,-1.38071 -1.11929,-2.5 -2.5,-2.5zM14,20c-0.553,0 -1,0.447 -1,1v13c0,0.553 0.447,1 1,1h3c0.553,0 1,-0.447 1,-1v-13c0,-0.553 -0.447,-1 -1,-1zM21,20c-0.553,0 -1,0.447 -1,1v13c0,0.553 0.447,1 1,1h3c0.553,0 1,-0.447 1,-1v-7.5c0,-1.379 1.121,-2.5 2.5,-2.5c1.379,0 2.5,1.121 2.5,2.5v7.5c0,0.553 0.447,1 1,1h3c0.553,0 1,-0.447 1,-1v-8c0,-3.309 -2.691,-6 -6,-6c-1.538,0 -2.937,0.58602 -4,1.54102v-0.54102c0,-0.553 -0.447,-1 -1,-1z">
+                    </path>
               </svg>
             </a>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-gray-700">
               <span className="sr-only">Instagram</span>
               <svg
                 className="w-6 h-6"
@@ -40,7 +75,7 @@ export default function Footer() {
             </a>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-gray-700">
               <span className="sr-only">Twitter</span>
               <svg
                 className="w-6 h-6"
@@ -59,7 +94,7 @@ export default function Footer() {
             </a>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-gray-700">
               <span className="sr-only">GitHub</span>
               <svg
                 className="w-6 h-6"
@@ -75,61 +110,13 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">Dribbble</span>
-              <svg
-                className="w-6 h-6"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
+          </div>
+          <p className="mt-4 leading-6 text-gray-200">
+          © 2024 Mini, Inc. All rights reserved.
+        </p>
           </div>
         </div>
-        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              About
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Blog
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Team
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Contact
-            </a>
-          </div>
-        </nav>
-        <p className="mt-8 text-base leading-6 text-center text-gray-400">
-          © 2024 Company, Inc. All rights reserved.
-        </p>
+      </div>
       </div>
     </section>
   );
