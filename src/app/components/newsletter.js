@@ -2,15 +2,20 @@ import React from "react";
 
 export default function Newsletter() {
   return (
-    <div className="bg-white text-[#333] font-[sans-serif] min-h-screen items-center self-center flex">
-      <div className="max-w-3xl mx-auto text-center ">
-        <h3 className="text-6xl font-extrabold">Newsletter</h3>
-        <p className="text-sm mt-6">
+    <div className="bg-white text-[#333] font-[sans-serif] min-h-screen items-center self-center flex rounded-lg">
+      <div className="max-w-5xl md:mx-auto text-center border-px shadow-custom rounded-xl py-12 p-4 mx-2 relative overflow-hidden">
+      <img className="absolute inset-0 bg-cover z-0 w-full h-32" src="./slice.png"/>
+      <div className="z-10 absolute top-0 -inset-0 mt-8">
+        <h1 className="text-5xl font-extrabold text-white">Explore</h1>
+        </div>
+        <div className="flex align-middle items-end md:mt-16 mt-24">
+        <p className="text-sm md:mx-12 mt-20">
           Subscribe to our newsletter and stay up to date with the latest news,
           updates, and exclusive offers. Get valuable insights. Join our
           community today!
         </p>
-        <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left mt-10 border focus-within:border-gray-700">
+        </div>
+        <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left mt-16 border focus-within:border-gray-700">
           <input
             type="email"
             placeholder="Enter your email"

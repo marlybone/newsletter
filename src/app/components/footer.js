@@ -64,7 +64,10 @@ export default function Footer() {
         <div className="flex flex-row justify-between mx-4">
           <div className="space-x-4 flex flex-row self-center mt-4">
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom drop-shadow-lg">
-            <Link href="#" className="text-gray-700">
+            <Link 
+            target="_blank"
+            href="https://www.linkedin.com/in/marlon-stevenson-510738109/" 
+            className="text-gray-700">
               <span className="sr-only">Linkedin</span>
               <motion.svg 
               variants={variants}
@@ -79,7 +82,10 @@ export default function Footer() {
             </Link>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom drop-shadow-lg">
-            <Link href="#" className="text-gray-700">
+            <Link
+            target="_blank" 
+            href="https://www.instagram.com/phoeniqu/" 
+            className="text-gray-700">
               <span className="sr-only">Instagram</span>
               <motion.svg
                 variants={variants}
@@ -98,7 +104,10 @@ export default function Footer() {
             </Link>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom drop-shadow-lg">
-            <Link href="#" className="text-gray-700">
+            <Link
+            target="_blank" 
+            href="https://twitter.com/mRockSwe" 
+            className="text-gray-700">
               <span className="sr-only">Twitter</span>
               <motion.svg
                 variants={variants}
@@ -119,7 +128,10 @@ export default function Footer() {
             </Link>
           </div>
           <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom drop-shadow-lg">
-            <Link href="#" className="text-gray-700">
+            <Link
+            target="_blank" 
+            href="https://github.com/marlybone" 
+            className="text-gray-700">
               <span className="sr-only">GitHub</span>
               <motion.svg
                 variants={variants}

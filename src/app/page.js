@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <>
       <div className="min-h-screen h-full flex justify-center items-center py-20">
-        <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0 flex">
+        <div className="md:px-4 grid md:grid-cols-3 grid-cols-2 gap-5 space-y-4 md:space-y-0">
           {profile &&
             profile.map((data) => (
               <div
@@ -66,7 +66,7 @@ export default async function Home() {
             ))}
         </div>
       </div>
-      <div className="min-h-screen">
+      <div>
         <Newsletter />
       </div>
     </>
