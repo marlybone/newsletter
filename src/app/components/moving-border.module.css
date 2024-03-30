@@ -33,7 +33,7 @@
 }
 
 .luminosity {
-  font-size:130px;
+  font-size:100px;
   color: #FFD5FF;
   position: absolute;
   font-family: monoton;
@@ -41,7 +41,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   text-shadow: 
   1px 0px 4px #A0A0FF, 
   2px 0px 4px #A0A0FF, 
