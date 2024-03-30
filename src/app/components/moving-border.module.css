@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Monoton";
+  src: url("../../../public/fonts/Monoton.ttf") format("truetype");
+}
+
+.monoton {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .blurBackdrop {
     position: relative;
     z-index: 2;
@@ -20,3 +31,43 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   z-index: -1;
 }
+
+.luminosity {
+  font-size:130px;
+  color: #FFD5FF;
+  position: absolute;
+  font-family: monoton;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-shadow: 
+  1px 0px 4px #A0A0FF, 
+  2px 0px 4px #A0A0FF, 
+  3px 0px 4px #A0A0FF, 
+  2px 0px 3px #4263CC, 
+  2px 3px 15px #4263CC, 
+  2px 0px 15px #4263CC, 
+  5px 0px 125px #4263CC, 
+  20px 0vw 200px #4263CC, 
+  40px 0vw 200px #4263CC;
+}
+
+.flickerslow{
+  animation: flicker 3s ease-in infinite;
+}
+
+.flickerfast{
+  animation: flicker 1s ease-in infinite;
+}
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.2;
+	}
+}
+
