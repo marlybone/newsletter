@@ -1,25 +1,15 @@
 import React from "react";
+import { BackgroundGradientAnimation } from "../components/herogradientbg";
 
 export default function Hero() {
   return (
-    <section className="h-custom bg-gradient-to-r from-sky-600 to-emerald-700 top-0 left-0 w-full absolute">
-      {/* <img src='nasa.jpg' className="object-cover w-full h-full absolute inset-0" alt="Backdrop" /> */}
-      <div className="flex relative z-10 mx-16">
-        {/* Left Side (Text) */}
-        <div className="flex-1 p-8">
-          <div className="text-white self-center mx-12 justify-center py-6">
-            <h1 className="text-3xl">
-              Support Us, Join Us, Help Us, Some Example Text
-            </h1>
-            <p className="my-6">We are here to support this group of people</p>
-          </div>
-        </div>
-
-        {/* Right Side (Empty for now) */}
-        <div className="flex-1">
-          <div>{/* You can add content here if needed */}</div>
-        </div>
+    <BackgroundGradientAnimation>
+    <div className="absolute z-50 inset-0 flex justify-start content-start mx-auto max-w-7xl text-white px-4 pointer-events-none text-3xl text-center">
+      <div className="flex mt-32 drop-shadow-2xl flex-col space-y-2">
+        <h1 className="md:text-8xl text-5xl flex justify-start">Discover</h1>
+        <p className="md:text-2xl text-xl flex justify-start ml-1">Stories from Real People</p>
       </div>
-    </section>
+    </div>
+  </BackgroundGradientAnimation>
   );
 }

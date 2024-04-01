@@ -1,10 +1,14 @@
 import Newsletter from "./components/newsletter";
 import { profile } from "@sanity/sanity.query";
 import Link from "next/link";
+import Hero from "./components/hero"
 
 export default async function Home() {
   return (
     <>
+    <div className="min-h-screen">
+    <Hero/>
+    </div>
       <div className="min-h-screen h-full flex justify-center items-center py-20">
         <div className="md:px-4 grid md:grid-cols-3 grid-cols-2 gap-5 space-y-4 md:space-y-0">
           {profile &&

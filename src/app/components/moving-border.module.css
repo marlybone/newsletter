@@ -54,6 +54,13 @@
   40px 0vw 200px #4263CC;
 }
 
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px
+}
+
 .flickerslow{
   animation: flicker 3s ease-in infinite;
 }
