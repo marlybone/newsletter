@@ -1,6 +1,4 @@
 import Newsletter from "./components/newsletter";
-import { profile } from "@sanity/sanity.query";
-import Link from "next/link";
 import Hero from "./components/hero"
 import React from "react";
 import RecentPosts from "./components/recentposts";
