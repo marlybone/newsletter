@@ -8,12 +8,12 @@ export default function Hero() {
       <div className="flex mt-32 drop-shadow-2xl flex-col space-y-3">
         <h1 className="md:text-8xl text-5xl flex justify-start font-bold text-left">Discover</h1>
         <p className="md:text-2xl text-xl flex justify-start text-left">Stories from Real People</p>
-        <p className="text-lg w-1/3 text-left">
+        <p className="md:text-lg text-sm md:w-1/3 w-2/4 text-left">
         We cast a spotlight on the bold individuals who've navigated career changes, showcasing their journeys of resilience, determination, and self-discovery.
         </p>
-        <button className="border text-sm font-medium relative border-neutral-200 text-white dark:text-white px-4 py-2 rounded-full w-24">
+        <button className="border text-sm font-medium relative border-neutral-200 text-white dark:text-white px-4 py-2 rounded-full w-24 shadow-custom">
           <span>Subscribe</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+          <span className="absolute inset-x-0 w-1/2 mx-auto  -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
         </button>
       </div>
     </div>
