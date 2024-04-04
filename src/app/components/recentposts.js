@@ -7,9 +7,9 @@ export default function RecentPosts() {
     return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100 flex-col max-w">
     <div className="flex flex-col">
-        <div className="max-w-5xl mx-4 mb-20 justify-start items-start content-start self-start"><h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">Recent Interviews</h1></div>
+        <div className="max-w-5xl mx-4 my-20 justify-start items-start content-start self-start"><h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">Latest</h1></div>
 
-    <div className="md:px-4 grid md:grid-cols-3 grid-cols-2 gap-5 space-y-4 md:space-y-0">
+    <div className="md:px-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 space-y-4 md:space-y-0">
       {profile &&
         profile.map((data) => (
           <div

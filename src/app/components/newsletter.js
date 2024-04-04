@@ -5,8 +5,10 @@ export default function Newsletter() {
 
   
   return (
-    <div className="bg-white min-h-screen items-center self-center flex rounded-lg">
-      <div className="max-w-5xl md:mx-auto text-center border-px shadow-custom rounded-xl relative ">
+    <div className="bg-white min-h-screen items-center self-center justify-center flex rounded-lg mx-1">
+      <div className="justify-center flex flex-col items-center content-center">
+        <div className="max-w-5xl  mb-20 justify-start items-start content-start self-start"><h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">Newsletter</h1></div>
+      <div className="max-w-5xl md:mx-auto text-center border-px shadow-custom rounded-xl relative">
       <img className="inset-0 bg-cover w-full h-40" src="./slice.png"/>
       <div className="top-0 -inset-0">
         <h1 className={`${styles.luminosity} ${styles.Monoton} mt-8`}>E<span className={styles.flickerfast}>x</span>pl<span className={styles.flickerslow}>o</span>re</h1>
@@ -22,7 +24,7 @@ export default function Newsletter() {
         className="w-1/2"></iframe>
         </div>
       </div>
-      
+      </div>
     </div>
   );
 }
