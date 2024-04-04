@@ -1,6 +1,6 @@
 import { cn } from "@utils/cn";
-import React, { useRef} from "react";
-import { motion, useInView } from "framer-motion"
+import React, from "react";
+import { motion } from "framer-motion"
 import { SocialElement } from "../components/sociallinks"; 
 
 export const BentoGrid = ({ className, children }) => {
@@ -27,19 +27,10 @@ export const BentoGridItem = ({ header, image }) => {
   );
 };
 
-export function BentoGridOne({ author, authors }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+export function BentoGridOne({ author }) {
 
   return (
     <motion.div
-    ref={ref}
-    style={{
-      scale: isInView ? 1 : 0.8,
-      opacity: isInView ? 1 : 0,
-      y: isInView ? 25 : 200,
-      transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-    }}
     >
     <BentoGrid className="max-w-5xl md:mx-auto mx-6 auto-rows-[20rem] my-14 min-h-screen">
       {author.map((item, i) => (

@@ -16,7 +16,6 @@ export default async function Home() {
       <RecentPosts/>
       </FadeIn>
       </div>
-
       <FadeIn>
       <div id="newsletter">
         <Newsletter />
