@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function() {
+export default function ContactForm() {
 
     return (
         <></>

@@ -3,6 +3,7 @@ import Hero from "./components/hero"
 import React from "react";
 import RecentPosts from "./components/recentposts";
 import { FadeIn } from "./components/fadein"
+import ContactForm from "./components/contact";
 
 export default async function Home() {
   return (
@@ -22,7 +23,7 @@ export default async function Home() {
       </div>
       </FadeIn>
       <div className="min-h-screen">
-
+        <ContactForm/>
       </div>
     </>
   );
