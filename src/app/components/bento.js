@@ -1,5 +1,5 @@
 import { cn } from "@utils/cn";
-import React, from "react";
+import React from "react";
 import { motion } from "framer-motion"
 import { SocialElement } from "../components/sociallinks"; 
 
