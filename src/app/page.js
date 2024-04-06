@@ -22,7 +22,7 @@ export default async function Home() {
         <Newsletter />
       </div>
       </FadeIn>
-      <div className="min-h-screen bg-zinc-400 flex">
+      <div className="min-h-screen bg-gray-100 flex">
         <ContactForm/>
       </div>
     </>
