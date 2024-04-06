@@ -78,3 +78,14 @@
 	}
 }
 
+.boxInput {
+  width: 75%;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+  overflow: hidden;
+  height: 32px;
+  border-bottom: 1px solid #000;
+  justify-content: center;
+  position:relative
+}
