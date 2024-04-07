@@ -32,21 +32,23 @@ export default function ContactForm() {
                 </div>
             </div>
         </div>
-        <div className='flex justify-start md:w-1/2 mx-2 py-2 border border-transparent drop-shadow-lg bg-white shadow-custom'>
+        <div className={`${styles.contactBox} drop-shadow-xl shadow-custom w-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100 flex justify-center align-center`}>
         <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
             <div className='relative'>
-            <motion.input 
+            <input 
             className={styles.boxInput} type="text" />
             <span id={styles.bar}/>
             <label 
             id={styles.label}>Name</label>
             </div>
             <div className='relative'>
-            <motion.input className={styles.boxInput} type="email" />
+            <input className={styles.boxInput} type="email" />
+            <span id={styles.bar}/>
             <label id={styles.label}>Email</label>
             </div>
             <div className='relative'>
-            <motion.textarea className={styles.boxInput} rows="6" />
+            <textarea className={styles.boxInput} rows="6" />
+            <span id={styles.bar}/>
             <label id={styles.label}>Message</label>
             </div>
             <div>

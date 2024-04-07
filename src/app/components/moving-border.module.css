@@ -90,6 +90,9 @@
   display: flex;
   align-items: center;
   position: relative;
+  background: rgb(190, 190, 197);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .boxInput:focus {
@@ -97,12 +100,13 @@
   border-bottom: none;
 }
 
+
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {
   position: absolute;
   display: block;
-  animation: gradient 3s linear infinite;
+  animation: gradient 3s linear infinite, barGradient 250ms linear;
   background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
-  height: 2px;
+  height: 2.5px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
@@ -117,7 +121,6 @@
   font-size: 19px;
   position: absolute;
   font-weight:normal;
-  pointer-events:none;
   top:5px;
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
@@ -137,6 +140,22 @@
 
 
 @keyframes gradient { 
-  0%{background-position:0 0}
+  0%{background-position:0 0;
+  }
   100%{background-position:100% 0}
+}
+
+@keyframes barGradient {
+  0% {
+    transform: scaleX(0); /* Initially invisible */
+  }
+  100% {
+    transform: scaleX(1); /* Fully visible */
+  }
+}
+
+.contactBox {
+  box-shadow: 
+  0 4px 8px 0 rgba(0, 0, 0, 0.4), 
+  0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
