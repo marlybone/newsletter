@@ -10,20 +10,6 @@ export default function ContactForm() {
         handleSubmit,
     } = useForm();
 
-    const variants = {
-        rest: {
-            scaleX: 1
-        },
-        tap: {
-            scaleX: 1.2,
-            scaleY: 0.8,
-            SkewX: 100,
-            transition: {
-                duration: 0.1
-            },
-        }
-    }
-
     const onSubmit = (data) => console.log(data)
 
     return (
@@ -50,19 +36,17 @@ export default function ContactForm() {
         <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
             <div className='relative'>
             <motion.input 
-            initial="rest"
-            whileTap="tap"
-            variants={variants}
             className={styles.boxInput} type="text" />
+            <span id={styles.bar}/>
             <label 
             id={styles.label}>Name</label>
             </div>
             <div className='relative'>
-            <input className={styles.boxInput} type="email" />
+            <motion.input className={styles.boxInput} type="email" />
             <label id={styles.label}>Email</label>
             </div>
             <div className='relative'>
-            <textarea className={styles.boxInput} rows="6" />
+            <motion.textarea className={styles.boxInput} rows="6" />
             <label id={styles.label}>Message</label>
             </div>
             <div>

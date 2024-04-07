@@ -89,11 +89,27 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  position: relative
+  position: relative;
 }
 
 .boxInput:focus {
-  outline: none
+  outline: none;
+  border-bottom: none;
+}
+
+.boxInput:focus ~ #bar, boxInput:valid ~ #bar {
+  position: absolute;
+  display: block;
+  animation: gradient 3s linear infinite;
+  background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background-size: 500% auto;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 #label {
@@ -106,6 +122,11 @@
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px
 }
 
 .boxInput:focus ~ #label, boxInput:valid ~ #label    {
@@ -114,16 +135,8 @@
   color: #0369a1;
 }
 
-.boxInput:focus {
-  background: linear-gradient(to right, #f00, #00f);
-  animation: moveGradient 10s linear infinite
-}
 
-@keyframes moveGradient {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 0;
-  }
+@keyframes gradient { 
+  0%{background-position:0 0}
+  100%{background-position:100% 0}
 }
