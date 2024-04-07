@@ -18,6 +18,7 @@ const config = {
       height: {
         custom: "29rem",
         big: "37rem",
+        contact: "40rem"
       },
       width: {
         larger: "68rem",

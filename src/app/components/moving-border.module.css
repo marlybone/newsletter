@@ -79,13 +79,51 @@
 }
 
 .boxInput {
-  width: 75%;
-  padding: 8px;
+  width: 320px;
+  padding: 8px 8px 8px 4px;
   box-sizing: border-box;
   font-size: 15px;
   overflow: hidden;
   height: 32px;
   border-bottom: 1px solid #000;
   justify-content: center;
-  position:relative
+  display: flex;
+  align-items: center;
+  position: relative
+}
+
+.boxInput:focus {
+  outline: none
+}
+
+#label {
+  color: rgb(82 82 91);
+  font-size: 19px;
+  position: absolute;
+  font-weight:normal;
+  pointer-events:none;
+  top:5px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.boxInput:focus ~ #label, boxInput:valid ~ #label    {
+  top:-20px;
+  font-size:13px;
+  color: #0369a1;
+}
+
+.boxInput:focus {
+  background: linear-gradient(to right, #f00, #00f);
+  animation: moveGradient 10s linear infinite
+}
+
+@keyframes moveGradient {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
 }
