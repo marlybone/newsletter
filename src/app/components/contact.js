@@ -32,7 +32,7 @@ export default function ContactForm() {
                 </div>
             </div>
         </div>
-        <div className={`${styles.contactBox} drop-shadow-xl shadow-custom w-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100 flex justify-center align-center`}>
+        <div className={`${styles.contactBox} drop-shadow-xl shadow-custom w-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 flex justify-center align-center`}>
         <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
             <div className='relative'>
             <input 

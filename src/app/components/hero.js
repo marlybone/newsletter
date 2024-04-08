@@ -1,9 +1,9 @@
 import React from "react";
 import { BackgroundGradientAnimation } from "../components/herogradientbg";
-import Link from "next/link";
 
 export default function Hero() {
   return (
+    <>
     <BackgroundGradientAnimation>
     <div className="absolute z-50 inset-0 flex justify-start content-start mx-auto max-w-7xl text-white px-4 text-3xl text-center">
       <div className="flex mt-32 drop-shadow-2xl flex-col space-y-3">
@@ -19,5 +19,6 @@ export default function Hero() {
       </div>
     </div>
   </BackgroundGradientAnimation>
+  </>
   );
 }

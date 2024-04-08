@@ -12,16 +12,16 @@ export default async function Home() {
     <Hero/>
     </div>
   
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
     <FadeIn>
       <RecentPosts/>
       </FadeIn>
       </div>
+      <div id="newsletter" className=" bg-gradient-to-tr from-sky-300 to-rose-300">
       <FadeIn>
-      <div id="newsletter">
         <Newsletter />
-      </div>
       </FadeIn>
+      </div>
       <div className="min-h-screen bg-zinc-100 flex">
         <ContactForm/>
       </div>

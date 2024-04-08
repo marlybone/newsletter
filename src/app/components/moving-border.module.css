@@ -80,24 +80,25 @@
 
 .boxInput {
   width: 320px;
-  padding: 8px 8px 8px 4px;
+  padding: 8px 8px 8px 6px;
   box-sizing: border-box;
   font-size: 15px;
   overflow: hidden;
-  height: 32px;
-  border-bottom: 1px solid #000;
+  height: 40px;
+  border-bottom: 1px solid #fff;
   justify-content: center;
   display: flex;
   align-items: center;
   position: relative;
-  background: rgb(190, 190, 197);
-  background-color: transparent;
+  background: rgb(39 39 42);
   cursor: pointer;
 }
+
 
 .boxInput:focus {
   outline: none;
   border-bottom: none;
+  color: #fff
 }
 
 
@@ -106,7 +107,7 @@
   display: block;
   animation: gradient 3s linear infinite, barGradient 250ms linear;
   background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
-  height: 2.5px;
+  height: 3.3px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
@@ -117,7 +118,7 @@
 }
 
 #label {
-  color: rgb(82 82 91);
+  color: rgb(229 231 235);
   font-size: 19px;
   position: absolute;
   font-weight:normal;
@@ -158,4 +159,9 @@
   box-shadow: 
   0 4px 8px 0 rgba(0, 0, 0, 0.4), 
   0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wavy {
+  min-height: 110vh; 
+  background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6); /* Background image and gradient */
 }
