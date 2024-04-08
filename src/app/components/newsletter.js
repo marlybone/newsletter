@@ -5,8 +5,8 @@ export default function Newsletter() {
 
   
   return (
-    <div className="min-h-screen items-center self-center justify-center flex rounded-lg mx-1">
-      <div className="justify-center flex flex-col items-center content-center">
+    <div className="justify-center flex rounded-lg mx-1">
+      <div className="justify-center flex flex-col items-center">
         <div className="max-w-5xl  mb-20 justify-start items-start content-start self-start"><h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">Newsletter</h1></div>
       <div className="max-w-5xl md:mx-auto text-center outline-none border-[1px] border-transparent bg-white drop-shadow-xl shadow-custom rounded-sm relative container">
       <img className="inset-0 bg-cover w-full h-40" src="./slice.png"/>

@@ -4,6 +4,7 @@ import React from "react";
 import RecentPosts from "./components/recentposts";
 import { FadeIn } from "./components/fadein"
 import ContactForm from "./components/contact";
+import styles from "./components/moving-border.module.css"
 
 export default async function Home() {
   return (
@@ -17,14 +18,16 @@ export default async function Home() {
       <RecentPosts/>
       </FadeIn>
       </div>
-      <div id="newsletter" className=" bg-gradient-to-tr from-sky-300 to-rose-300">
+      <div id="newsletter" className={`${styles.wrapper} bg-gradient-to-tr from-sky-300 to-rose-300`}>
       <FadeIn>
         <Newsletter />
       </FadeIn>
       </div>
-      <div className="min-h-screen bg-zinc-100 flex">
+      <section>
+        <div className="bg-gray-50 min-h-screen">
         <ContactForm/>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
