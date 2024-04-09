@@ -5,8 +5,8 @@ import styles from "./moving-border.module.css"
 import { motion } from "framer-motion"
 
 export default function ContactForm() {
-    const [isName, setIsName] = useState('Name')
-    const [isEmail, setIsEmail] = useState('Email')
+    const [isName, setIsName] = useState('')
+    const [isEmail, setIsEmail] = useState('')
 
     const {
         register,
@@ -15,13 +15,7 @@ export default function ContactForm() {
         formState: {errors}
     } = useForm();
 
-    handleNameChange = (e) => {
-        setIsName(e.target.value)
-    }
-
-    handleEmailChange = (e) => {
-        setIsEmail(e.target.value)
-    }
+    
 
     const onSubmit = (data) => console.log(data)
 
@@ -47,23 +41,31 @@ export default function ContactForm() {
         </div>
     </div>
     <div className={`${styles.contactBox} drop-shadow-xl shadow-custom w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 flex justify-center align-center`}>
-    <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex flex-col justify-center items-center w-full space-y-16 self-center' onSubmit={handleSubmit(onSubmit)}>
      <div className='relative'>
-        <input
-           {...register("firstName", {required : "This is Required", maxLength: 35})} 
-           className={styles.boxInput} type="text" />
-           <span id={styles.bar}/>
-           <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
-           <label 
-           id={styles.label}>{isName}</label>
+     <input
+            {...register("firstName", { required: "This is Required", maxLength: 35 })}
+            className={styles.boxInput}
+            type="text"
+            onChange={(e) => setIsName(e.target.value)} 
+        />
+        <span id={styles.bar} />
+        <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
+        {isName ? (<label id={styles.label}></label>) : (
+            <label id={styles.label}>Name</label>
+        )}
            </div>
            <div className='relative'>
         <input 
-         {...register('email', { required: "This is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
-        className={styles.boxInput} type="email" />
+                {...register('email', { required: "This is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
+                className={styles.boxInput} 
+                type="email" 
+                onChange={(e) => setIsEmail(e.target.value)} 
+                />
         <span id={styles.bar}/>
         <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
-        <label id={styles.label}>{isEmail}</label>
+        {isEmail ? (<label id={styles.label}></label>) : 
+        (<label id={styles.label}>Email</label>) }
      </div>
         <div className='relative'>
         <textarea className={styles.boxInput} rows="6" />
