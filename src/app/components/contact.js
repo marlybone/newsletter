@@ -45,6 +45,9 @@ export default function ContactForm() {
            {...register("firstName", {required : true, maxLength: 35})} 
            className={styles.boxInput} type="text" />
            <span id={styles.bar}/>
+           {errors.firstName?.type === "required" && (
+            <p role="alert">Name is required</p>
+          )}
            <label 
            id={styles.label}>{firstName}</label>
            </div>
@@ -53,6 +56,9 @@ export default function ContactForm() {
          {...register('email', { required: "this is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
         className={styles.boxInput} type="email" />
         <span id={styles.bar}/>
+        {errors.email?.type === "required" && (
+            <p role="alert">Email is required</p>
+          )}
         <label id={styles.label}>{email}</label>
      </div>
         <div className='relative'>
