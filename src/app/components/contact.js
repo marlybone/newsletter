@@ -8,7 +8,12 @@ export default function ContactForm() {
     const {
         register,
         handleSubmit,
+        watch,
+        formState: {errors}
     } = useForm();
+
+    const firstName = watch("firstName", "Name")
+    const email = watch("email", "Email")
 
     const onSubmit = (data) => console.log(data)
 
@@ -37,18 +42,18 @@ export default function ContactForm() {
     <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
      <div className='relative'>
         <input
-           {...register("name", {required : true})} 
+           {...register("firstName", {required : true, maxLength: 35})} 
            className={styles.boxInput} type="text" />
            <span id={styles.bar}/>
            <label 
-           id={styles.label}>Name</label>
+           id={styles.label}>{firstName}</label>
            </div>
            <div className='relative'>
         <input 
-        {...register("email", {required : true})}
+         {...register('email', { required: "this is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
         className={styles.boxInput} type="email" />
         <span id={styles.bar}/>
-        <label id={styles.label}>Email</label>
+        <label id={styles.label}>{email}</label>
      </div>
         <div className='relative'>
         <textarea className={styles.boxInput} rows="6" />
