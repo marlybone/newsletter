@@ -21,7 +21,7 @@ export default async function Home() {
       <div id="newsletter" className={`${styles.wrapper} bg-gradient-to-tr from-sky-300 to-rose-300`}>
         <div className={styles.element}/>
       <FadeIn>
-        <Newsletter />
+        {/* <Newsletter /> */}
       </FadeIn>
       </div>
       <section>

@@ -5,6 +5,9 @@ import styles from "./moving-border.module.css"
 import { motion } from "framer-motion"
 
 export default function ContactForm() {
+    const [isName, setIsName] = useState('Name')
+    const [isEmail, setIsEmail] = useState('Email')
+
     const {
         register,
         handleSubmit,
@@ -12,8 +15,13 @@ export default function ContactForm() {
         formState: {errors}
     } = useForm();
 
-    const firstName = watch("firstName", "Name")
-    const email = watch("email", "Email")
+    handleNameChange = (e) => {
+        setIsName(e.target.value)
+    }
+
+    handleEmailChange = (e) => {
+        setIsEmail(e.target.value)
+    }
 
     const onSubmit = (data) => console.log(data)
 
@@ -42,24 +50,20 @@ export default function ContactForm() {
     <form className='flex flex-col justify-center items-center w-full space-y-24 self-center' onSubmit={handleSubmit(onSubmit)}>
      <div className='relative'>
         <input
-           {...register("firstName", {required : true, maxLength: 35})} 
+           {...register("firstName", {required : "This is Required", maxLength: 35})} 
            className={styles.boxInput} type="text" />
            <span id={styles.bar}/>
-           {errors.firstName?.type === "required" && (
-            <p role="alert">Name is required</p>
-          )}
+           <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
            <label 
-           id={styles.label}>{firstName}</label>
+           id={styles.label}>{isName}</label>
            </div>
            <div className='relative'>
         <input 
-         {...register('email', { required: "this is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
+         {...register('email', { required: "This is required", pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm })}
         className={styles.boxInput} type="email" />
         <span id={styles.bar}/>
-        {errors.email?.type === "required" && (
-            <p role="alert">Email is required</p>
-          )}
-        <label id={styles.label}>{email}</label>
+        <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
+        <label id={styles.label}>{isEmail}</label>
      </div>
         <div className='relative'>
         <textarea className={styles.boxInput} rows="6" />
@@ -67,7 +71,7 @@ export default function ContactForm() {
         <label id={styles.label}>Message</label>
         </div>
            <div>
-        <input className='mt-16' type="submit"/>
+        <input className='mt-8 w-96 h-24 bg-sky-300 border shadow-custom rounded-lg' type="submit"/>
      </div>
  </form>
     </div>
