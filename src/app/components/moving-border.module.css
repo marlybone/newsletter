@@ -169,7 +169,7 @@
   isolation:isolate;
 }
 
-
+.wrapper::before,
 .wrapper::after {
   content: '';
   position: absolute;
@@ -182,16 +182,31 @@
   background-image: url('../../../public/wave.png');
 }
 
-/* .wrapper::after {
+.wrapper::before {
+    content: '';
+  position: absolute;
+  width: 100%;
+  left:0;
+  height: 125px;
+  bottom: 0;
+  left: 0;
+  z-index:10;
+  background-image: url('../../../public/wave3.png');
+  opacity: 0.67;
+}
+
+.element::before {
   content: '';
   position: absolute;
   width: 100%;
   left:0;
-  height: 190px;
-  bottom:0;
-  right: 0;
+  height: 110px;
+  bottom: 0;
+  left: 0;
   z-index:10;
-  background-image: url('../../../public/wave.png');
+  background-image: url('../../../public/wave2.png');
+  opacity: 0.34;
+
 }
- */
+
 
