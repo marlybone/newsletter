@@ -10,12 +10,12 @@ export default async function Home() {
   return (
     <>
     <div className="min-h-screen">
-    <Hero/>
+    {/* <Hero/> */}
     </div>
   
     <div className="min-h-screen bg-gray-50">
     <FadeIn>
-      <RecentPosts/>
+      {/* <RecentPosts/> */}
       </FadeIn>
       </div>
       <div id="newsletter" className={`${styles.wrapper} bg-gradient-to-tr from-sky-300 to-rose-300`}>
