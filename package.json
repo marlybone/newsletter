@@ -12,6 +12,7 @@
     "sanity": "cd studio && sanity start"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/vision": "^3.27.1",
     "@tabler/icons-react": "^2.47.0",

@@ -84,7 +84,6 @@
   box-sizing: border-box;
   font-size: 15px;
   overflow: hidden;
-  height: 40px;
   border-bottom: 1px solid #fff;
   justify-content: center;
   display: flex;
@@ -95,11 +94,15 @@
 }
 
 
+
+
 .boxInput:focus {
   outline: none;
   border-bottom: none;
   color: #fff
 }
+
+
 
 
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {

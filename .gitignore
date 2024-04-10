@@ -14,6 +14,7 @@ config.js
 # next.js
 /.next/
 /out/
+contactForm.js
 
 # production
 /build

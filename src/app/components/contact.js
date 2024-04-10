@@ -48,12 +48,13 @@ export default function ContactForm() {
             className={styles.boxInput}
             type="text"
             onChange={(e) => setIsName(e.target.value)} 
+            placeholder="name"
         />
         <span id={styles.bar} />
         <p className='bottom-0 left-0 mt-2'>{errors.firstName?.message}</p>
-        {isName ? (<label id={styles.label}></label>) : (
-            <label id={styles.label}>Name</label>
-        )}
+        {/* {isName ? (<label id={styles.label}></label>) : (
+            <label id={styles.label}>Name</label> */}
+        {/* )} */}
            </div>
            <div className='relative'>
         <input 
@@ -68,7 +69,7 @@ export default function ContactForm() {
         (<label id={styles.label}>Email</label>) }
      </div>
         <div className='relative'>
-        <textarea className={styles.boxInput} rows="6" />
+        <textarea className={styles.boxInput} rows="4" />
         <span id={styles.bar}/>
         <label id={styles.label}>Message</label>
         </div>
