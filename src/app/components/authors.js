@@ -1,7 +1,4 @@
-import {
-  SkeletonOne,
-  SkeletonTwo,
-} from "./bentoskeleton";
+import { SkeletonOne, SkeletonTwo } from "./bentoskeleton";
 
 export const authors = [
   {
@@ -18,7 +15,7 @@ export const authors = [
     linkedin: "https://www.linkedin.com/in/marlon-stevenson-510738109/",
     twitter: "https://twitter.com/mRockSwe",
     github: "https://github.com/marlybone",
-    website: "https://codedcareer.org/"
+    website: "https://codedcareer.org/",
   },
   // {
   //   id: "1",

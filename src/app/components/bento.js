@@ -1,11 +1,9 @@
 import { cn } from "@utils/cn";
 import React from "react";
-import { motion } from "framer-motion"
-import { SocialElement } from "../components/sociallinks"; 
+import { motion } from "framer-motion";
+import { SocialElement } from "../components/sociallinks";
 
 export const BentoGrid = ({ className, children }) => {
-  
-
   return (
     <motion.div
       className={cn(
@@ -28,21 +26,19 @@ export const BentoGridItem = ({ header, image }) => {
 };
 
 export function BentoGridOne({ author }) {
-
   return (
-    <motion.div
-    >
-    <BentoGrid className="max-w-5xl md:mx-auto mx-6 auto-rows-[20rem] my-14 min-h-screen">
-      {author.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          header={item.header}
-          image={item.img}
-          className={item.className}
-        />
-      ))}
-    <SocialElement/>
-    </BentoGrid>
+    <motion.div>
+      <BentoGrid className="max-w-5xl md:mx-auto mx-6 auto-rows-[20rem] my-14 min-h-screen">
+        {author.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            header={item.header}
+            image={item.img}
+            className={item.className}
+          />
+        ))}
+        <SocialElement />
+      </BentoGrid>
     </motion.div>
   );
 }

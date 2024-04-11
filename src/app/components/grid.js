@@ -64,7 +64,7 @@ export function GridBackgroundDemo() {
     <div className="min-h-screen bg-white bg-grid-black/[0.1] relative flex">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="flex md:min-h-screen w-full">
-      <div className="md:flex-row flex-col flex md:min-h-screen items-center w-full">
+        <div className="md:flex-row flex-col flex md:min-h-screen items-center w-full">
           <div className="relative py-4 space-y-4 md:self-start self-center md:mt-44 md:my-8 mt-36  min-h-screen">
             <motion.h1
               variants={variants}
@@ -75,36 +75,36 @@ export function GridBackgroundDemo() {
               Our Journey
             </motion.h1>
             <div className="flex md:flex-row flex-col space-x-8 space-y-4">
-            <motion.div
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1.2, type: "spring", damping: 10 }}
-              className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit"
-            >
-              <SkeletonSix />
               <motion.div
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
+                transition={{ duration: 1.2, type: "spring", damping: 10 }}
+                className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit"
               >
-                <motion.div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden">
-                  {content.map((word, i) => (
-                    <motion.span
-                      variants={child}
-                      key={i}
-                      className="font-light text-lg mr-1"
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
+                <SkeletonSix />
+                <motion.div
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden">
+                    {content.map((word, i) => (
+                      <motion.span
+                        variants={child}
+                        key={i}
+                        className="font-light text-lg mr-1"
+                      >
+                        {word}
+                      </motion.span>
+                    ))}
+                  </motion.div>
                 </motion.div>
               </motion.div>
-            </motion.div>
-            <Button />
+              <Button />
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   );

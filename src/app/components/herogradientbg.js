@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "../../../utils/cn";
-import { useEffect,  useState } from "react";
+import { useEffect, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "	rgb(63 63 70)",
@@ -17,27 +17,24 @@ export const BackgroundGradientAnimation = ({
   className,
   containerClassName,
 }) => {
-
   useEffect(() => {
     document.body.style.setProperty(
       "--gradient-background-start",
-      gradientBackgroundStart
+      gradientBackgroundStart,
     );
     document.body.style.setProperty(
       "--gradient-background-end",
-      gradientBackgroundEnd
+      gradientBackgroundEnd,
     );
     document.body.style.setProperty("--first-color", firstColor);
     document.body.style.setProperty("--second-color", secondColor);
     document.body.style.setProperty("--third-color", thirdColor);
     document.body.style.setProperty("--fourth-color", fourthColor);
     document.body.style.setProperty("--fifth-color", fifthColor);
-    document.body.style.setProperty("--sixth-color", sixthColor)
+    document.body.style.setProperty("--sixth-color", sixthColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
   }, []);
-
-
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
@@ -48,10 +45,10 @@ export const BackgroundGradientAnimation = ({
     <div
       className={cn(
         "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
-        containerClassName
+        containerClassName,
       )}
     >
-            <svg className="hidden">
+      <svg className="hidden">
         <defs>
           <filter id="blurMe">
             <feGaussianBlur
@@ -73,7 +70,7 @@ export const BackgroundGradientAnimation = ({
       <div
         className={cn(
           "gradients-container h-full w-full blur-xl",
-          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
+          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]",
         )}
       >
         <div
@@ -82,7 +79,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:center_center]`,
             `animate-first`,
-            `opacity-100`
+            `opacity-100`,
           )}
         ></div>
         <div
@@ -91,7 +88,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(40%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:calc(50%-700px)]`,
             `animate-second`,
-            `opacity-90`
+            `opacity-90`,
           )}
         ></div>
         <div
@@ -100,7 +97,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:calc(50%+500px)]`,
             `animate-third`,
-            `opacity-100`
+            `opacity-100`,
           )}
         ></div>
         <div
@@ -109,7 +106,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(60%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:calc(50%-600px)]`,
             `animate-fourth`,
-            `opacity-70`
+            `opacity-70`,
           )}
         ></div>
         <div
@@ -118,16 +115,16 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:calc(50%-800px)_calc(50%+800px)]`,
             `animate-fifth`,
-            `opacity-100`
+            `opacity-100`,
           )}
         ></div>
-          <div
+        <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--sixth-color),_0.8)_0,_rgba(var(--sixth-color),_0)_50%)_no-repeat]`,
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
             `[transform-origin:calc(50%-600px)]`,
             `animate-sixth`,
-            `opacity-90`
+            `opacity-90`,
           )}
         ></div>
       </div>

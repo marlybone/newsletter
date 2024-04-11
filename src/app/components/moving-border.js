@@ -12,7 +12,7 @@ import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 // import { usePathname } from "next/navigation";
 import { authors } from "./authors";
-import styles from './moving-border.module.css';
+import styles from "./moving-border.module.css";
 
 export function Button({
   borderRadius = "7rem",
@@ -26,7 +26,6 @@ export function Button({
   isSelected,
   ...otherProps
 }) {
-
   // const [selectedTab, setSelectedTab] = useState();
   // const pathname = usePathname();
 
@@ -80,7 +79,6 @@ export function Button({
       },
     },
   };
-
 
   return (
     <LayoutGroup>
@@ -139,13 +137,13 @@ export function Button({
               </motion.div>
               <div className="flex flex-col mt-8">
                 <div className="relative mx-auto bg-transparent">
-                <div className="absolute inset-0 bg-gray-100 bg-opacity-0 backdrop-blur-sm rounded-xl"></div>
-                  <motion.div  
-                  initial="initial"
-                  animate="animate"
-                  variants={variants}
-                  className={`${styles.blurBackdrop}`}
-                     >
+                  <div className="absolute inset-0 bg-gray-100 bg-opacity-0 backdrop-blur-sm rounded-xl"></div>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={variants}
+                    className={`${styles.blurBackdrop}`}
+                  >
                     <motion.h2 className="font-bold mx-12 my-1">
                       {item.name}
                     </motion.h2>
