@@ -80,29 +80,23 @@
 
 .boxInput {
   width: 320px;
-  padding: 8px 8px 8px 6px;
-  box-sizing: border-box;
+  padding: 9px 9px 9px 5px;
   font-size: 15px;
   overflow: hidden;
+  border: none;
   border-bottom: 1px solid #fff;
   justify-content: center;
-  display: flex;
+  display: block;
   align-items: center;
   position: relative;
-  background: rgb(39 39 42);
   cursor: pointer;
 }
-
-
 
 
 .boxInput:focus {
   outline: none;
   border-bottom: none;
-  color: #fff
 }
-
-
 
 
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {
@@ -170,49 +164,18 @@
 }
 
 
-.wrapper {
+.wavesWrapper {
   height: 100dvh;
   position:relative;
   background: linear-gradient(45deg, rgb(6 182 212), rgb(217 70 239));
   isolation:isolate;
 }
 
-.wrapper::before,
-.wrapper::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  left:0;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  z-index:10;
-  background-image: url('../../../public/wave.png');
-}
 
-.wrapper::before {
-    content: '';
+.wrapper {
   position: absolute;
-  width: 100%;
-  left:0;
-  height: 125px;
-  bottom: 0;
   left: 0;
-  z-index:10;
-  background-image: url('../../../public/wave3.png');
-  opacity: 0.67;
-}
-
-.element::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  left:0;
-  height: 110px;
   bottom: 0;
-  left: 0;
-  z-index:10;
-  background-image: url('../../../public/wave2.png');
-  opacity: 0.34;
-
+  z-index:9;
+  width: 100%;
 }
