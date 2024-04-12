@@ -79,17 +79,14 @@
 }
 
 .boxInput {
-  width: 320px;
-  padding: 9px 9px 9px 5px;
-  font-size: 15px;
-  overflow: hidden;
-  border: none;
+  font-size:18px;
+  outline: none;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  background: rgb(82 82 91);
   border-bottom: 1px solid #fff;
-  justify-content: center;
-  display: block;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
 }
 
 
@@ -98,9 +95,19 @@
   border-bottom: none;
 }
 
+#textareaInput:focus, 
+#textareaInput:not(:invalid) {
+  resize: vertical;
+  height: 100px;
+  overflow: auto;
+  transition:0.3s ease all; 
+  -moz-transition:0.3s ease all; 
+  -webkit-transition:0.3s ease all;
+}
 
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {
   position: absolute;
+  width: 300px;
   display: block;
   animation: gradient 3s linear infinite, barGradient 250ms linear;
   background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
@@ -113,26 +120,38 @@
   right: 0px;
 }
 
-#label {
-  color: rgb(229 231 235);
-  font-size: 19px;
-  position: absolute;
-  font-weight:normal;
-  top:5px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 999;
-  height: 2px
+
+.highlight {
+  pointer-events:none;
 }
 
-.boxInput:focus ~ #label, boxInput:valid ~ #label    {
-  top:-20px;
-  font-size:13px;
-  color: #0369a1;
+
+.label {
+  color: rgb(229 231 235);
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.3s ease all; 
+  -moz-transition:0.3s ease all; 
+  -webkit-transition:0.3s ease all;
+}
+
+
+ 
+.boxInput:focus ~ .label, 
+.boxInput:not(:invalid) ~ .label { 
+  top: -20px; 
+  font-size: 13px; 
+  color: red;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
 }
 
 
@@ -155,6 +174,8 @@
   box-shadow: 
   0 4px 8px 0 rgba(0, 0, 0, 0.4), 
   0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  background: rgb(82 82 91);
+  height: 8rem;
 }
 
 .contentWrapper {

@@ -26,7 +26,7 @@ export default async function Home() {
       </div>
       <section>
         <div className="bg-slate-100 min-h-screen">
-          {/* <ContactForm /> */}
+          <ContactForm />
         </div>
       </section>
     </>
