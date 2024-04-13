@@ -129,7 +129,6 @@
 /* CSS */
 .submitButton {
   display: flex;
-  position: absolute;
   bottom: 0;
   left: 0;
   padding: 6px 14px;
@@ -228,5 +227,6 @@
 }
 
 .errorMsg {
-  font-size: 12px
+  font-size: 12px;
+  margin-top: 5px;
 }
