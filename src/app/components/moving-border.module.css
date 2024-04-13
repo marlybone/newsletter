@@ -95,15 +95,19 @@
   border-bottom: none;
 }
 
-#textareaInput:focus, 
-#textareaInput:not(:invalid) {
-  resize: vertical;
-  height: 100px;
-  overflow: auto;
-  transition:0.3s ease all; 
-  -moz-transition:0.3s ease all; 
-  -webkit-transition:0.3s ease all;
+#textareaInput {
+  transition: 0.3s ease all;
+  height: 2.7em;
+  overflow: hidden;
+
 }
+
+#textareaInput:valid,
+#textareaInput:focus {
+  height: 6em;
+}
+
+
 
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {
   position: absolute;
@@ -121,8 +125,24 @@
 }
 
 
-.highlight {
-  pointer-events:none;
+
+/* CSS */
+.submitButton {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #3D3D3D;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton:focus {
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
 }
 
 
@@ -175,7 +195,13 @@
   0 4px 8px 0 rgba(0, 0, 0, 0.4), 
   0 6px 20px 0 rgba(0, 0, 0, 0.2);
   background: rgb(82 82 91);
-  height: 8rem;
+  height: 550px;
+}
+
+@media (max-width: 768px) {
+  .contactBox {
+    height: 800px; 
+  }
 }
 
 .contentWrapper {
@@ -199,4 +225,8 @@
   bottom: 0;
   z-index:9;
   width: 100%;
+}
+
+.errorMsg {
+  font-size: 12px
 }

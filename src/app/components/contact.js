@@ -9,15 +9,15 @@ export default function ContactForm() {
     <>
       <div className={`${styles.contentWrapper}`}>
         <div
-          className={`${styles.contactBox} drop-shadow-xl shadow-custom max-w-6xl rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 flex md:justify-between self-center mx-auto py-auto flex-col md:flex-row min-h-4xl`}
+          className={`${styles.contactBox} drop-shadow-xl shadow-custom max-w-6xl rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 flex md:justify-between self-center mx-auto py-auto flex-col md:flex-row`}
         >
-          <div className="flex flex-col py-auto p-2 mx-auto py-2 h-auto md:mt-2 flex-grow">
+          <div className="flex flex-col py-auto p-2 mx-auto py-2 h-auto md:mt-2 md:flex-grow">
             <div>
               <div>
                 <h1 className="text-3xl ml-2 flex p-2 space-y-2 md:mt-2">Name</h1>
               </div>
             </div>
-              <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 flex-grow mt-2">
+              <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 md:flex-grow mt-2">
                 <h1 className="text-4xl mb-4">Have you got a story you want to tell?</h1>
                 <p className="text-sm mt-2">
                   Navigated the difficult path of career transition
