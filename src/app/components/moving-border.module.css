@@ -232,6 +232,10 @@
 }
 
 .successPopin {
-  padding: 2px;
-  margin-inline: 5px;
+  position: absolute;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 2%;
+  border-color: antiquewhite;
+  height: 100px;
+  width: 280px;
 }
