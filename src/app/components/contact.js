@@ -18,7 +18,7 @@ export default function ContactForm() {
               </div>
             </div>
               <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 md:flex-grow mt-2">
-                <h1 className="text-4xl mb-4">Have you got a story you want to tell?</h1>
+                <h1 className="text-5xl mb-6 font-bold">Have you got a story you want to tell?</h1>
                 <p className="text-sm mt-2">
                   Navigated the difficult path of career transition
                   into tech either through self taught or tradtional education?

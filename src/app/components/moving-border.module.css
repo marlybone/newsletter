@@ -230,3 +230,8 @@
   font-size: 12px;
   margin-top: 5px;
 }
+
+.successPopin {
+  padding: 2px;
+  margin-inline: 5px;
+}
