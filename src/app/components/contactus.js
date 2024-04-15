@@ -1,15 +1,16 @@
 
 "use client"
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import styles from "./moving-border.module.css"
-import { motion, AnimatePresence, useAnimate } from "framer-motion";
+import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
 
 
 export default function ContactUs() {
-  const [isSuccess, setIsSuccess] = useState(true);
-  const [scope, animate] = useAnimate()
+  const [isSuccess, setIsSuccess] = useState(false);
+  const controlsDiv = useAnimationControls()
+
   const {
       register,
       handleSubmit,
@@ -17,33 +18,86 @@ export default function ContactUs() {
   } = useForm();
     const form = useRef();
 
+   
+    useEffect(() => {
+      const sequence = async () => {
+        controlsDiv.set("hidden")
+        controlsDiv.set("initial");
+        await controlsDiv.start("animate");
+      }
+        const sequenceOne = async () => {
+          await controlsDiv.start('exit')
+        }
+      const sequenceTwo = async () => {
+        controlsDiv.start("visible")
+      }
+      const sequenceThree = async () => {
+        await sequence();
+        await sequenceTwo();
+      }
+
+      if (isSuccess) {
+        sequenceThree()
+        setTimeout(() => {
+          sequenceOne()
+          setIsSuccess(false)
+        }, 3000)
+      }
+    })
+
   const sendEmail = (e) => {
     setIsSuccess(true)
+
+    emailjs
+      .sendForm('service_9pl8maa', 'template_junwsgp', form.current, {
+        publicKey: 'QOufJT4a6l-SjdOFP',
+      })
+      .then(
+        () => {
+          console.log("Success");
+          setIsSuccess(true)
 
           setTimeout(() => {
             setIsSuccess(false);
           }, 3000)
-
-
-    // emailjs
-    //   .sendForm('service_9pl8maa', 'template_junwsgp', form.current, {
-    //     publicKey: 'QOufJT4a6l-SjdOFP',
-    //   })
-    //   .then(
-    //     () => {
-    //       console.log("Success");
-    //       setIsSuccess(true)
-
-    //       setTimeout(() => {
-    //         setIsSuccess(false);
-    //       }, 3000)
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error.text);
-    //     },
-    //   );
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   }
 
+  const variants = {
+    hidden: {
+      pathLength: 0,
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        duration: 0.9,
+        ease: "easeInOut"
+      }
+    } 
+  }
+
+  const divVariants = {
+    initial: {
+      opacity: 0,
+      x: 350
+    },
+    animate: {
+      opacity: 1,
+      x: 290,
+      transition: { duration: 0.8, type: 'spring', ease: 'easeInOut' },
+    },
+    exit: {
+      x: 550,
+      opacity: 0,
+      transition: { duration: 0.8, type: 'spring', ease: 'easeInOut' },
+    }
+  }
 
 
     return (
@@ -51,10 +105,9 @@ export default function ContactUs() {
                 <AnimatePresence>
     {isSuccess && <motion.div
       key="1"
-      initial={{ opacity: 0, x: 350 }} 
-      animate={{ opacity: 1, x: 290 }} 
-      exit={{ opacity: 0, x: 350 }} 
-      transition={{ duration: 0.8, type: "spring", ease: "easeInOut" }}
+      variants={divVariants}
+      animate={controlsDiv}
+      exit="exit"
       className={`${styles.successPopin} border-[1px] z-10`}
     >
       <div className='flex flex-row'>
@@ -65,14 +118,22 @@ export default function ContactUs() {
         <div className='w-2/6 h-[100px] border-l-[1px] bg-white'>
 
           <motion.svg 
-          initial={{ pathLength: 0}}
-          animate={{ pathLength: 1}}
-          transition={{ delay: 1, duration: 0.9, ease: "easeInOut"}}
+          variants={variants}
+          animate={controlsDiv}
           className="flex content-center mt-2 self-center mx-auto py-auto"
           width="76" height="76" viewBox="0 0 24 24" strokeWidth="1" stroke="#00b341" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <motion.path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <motion.path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          <motion.path d="M9 12l2 2l4 -4" />
+          <motion.path
+          variants={variants}
+          animate={controlsDiv}
+          stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <motion.path
+          variants={variants}
+          animate={controlsDiv}
+          d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+          <motion.path 
+          variants={variants}
+          animate={controlsDiv}
+          d="M9 12l2 2l4 -4" />
 </motion.svg>
 </div>
         </div>
@@ -119,7 +180,7 @@ export default function ContactUs() {
         </div>
         <div className='md:h-1/8'></div> 
            <div className='relative justify-center self-center '>
-        <input className={styles.submitButton} type="submit"/>
+        <input className={styles.submitButton} type="submit" onClick={sendEmail}/>
         <div className="flex-grow h-full" />
      </div>
         </form>
