@@ -235,8 +235,13 @@
   position: absolute;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 2%;
-  border-color: antiquewhite;
+  border-color: transparent;
+  background: #E0E0E0;
   height: 100px;
   width: 280px;
+}
+
+.bgContact {
+  background-image: url("../../../public/blob.png")
 }
 

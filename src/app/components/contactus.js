@@ -93,9 +93,9 @@ export default function ContactUs() {
       transition: { duration: 0.8, type: 'spring', ease: 'easeInOut' },
     },
     exit: {
-      x: 550,
+      x: 330,
       opacity: 0,
-      transition: { duration: 0.8, type: 'spring', ease: 'easeInOut' },
+      transition: { duration: 0.3, type: 'spring', ease: 'easeIn' },
     }
   }
 
@@ -112,16 +112,16 @@ export default function ContactUs() {
     >
       <div className='flex flex-row'>
         <div className='flex-col justify-center content-center items-center align-middle w-4/6'>
-        <span className='flex justify-center text-black text-2xl'>Thank You!</span>
-        <p className='text-sm text-black flex justify-center items-center self-center mt-2'>Email Sent</p>
+        <span className='flex justify-center text-emerald-900 text-2xl'>Thank You!</span>
+        <p className='text-sm text-emerald-900 flex justify-center items-center self-center mt-2'>Email Sent</p>
         </div>
-        <div className='w-2/6 h-[100px] border-l-[1px] bg-white'>
+        <div className='w-2/6 h-[99px] bg-zinc-600 '>
 
           <motion.svg 
           variants={variants}
           animate={controlsDiv}
           className="flex content-center mt-2 self-center mx-auto py-auto"
-          width="76" height="76" viewBox="0 0 24 24" strokeWidth="1" stroke="#00b341" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          width="76" height="76" viewBox="0 0 24 24" strokeWidth="1" stroke="white" fill="green" strokeLinecap="round" strokeLinejoin="round">
           <motion.path
           variants={variants}
           animate={controlsDiv}
