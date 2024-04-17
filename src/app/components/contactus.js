@@ -45,26 +45,30 @@ export default function ContactUs() {
       }
     })
 
-  const sendEmail = (e) => {
+  // const sendEmail = (e) => {
+  //   setIsSuccess(true)
+
+  //   emailjs
+  //     .sendForm('service_9pl8maaff', 'template_junwsgp', form.current, {
+  //       publicKey: 'QOufJT4a6l-SjdOFP',
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log("Success");
+  //         setIsSuccess(true)
+
+  //         setTimeout(() => {
+  //           setIsSuccess(false);
+  //         }, 3000)
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       },
+  //     );
+  // }
+
+  const showSign = () => {
     setIsSuccess(true)
-
-    emailjs
-      .sendForm('service_9pl8maa', 'template_junwsgp', form.current, {
-        publicKey: 'QOufJT4a6l-SjdOFP',
-      })
-      .then(
-        () => {
-          console.log("Success");
-          setIsSuccess(true)
-
-          setTimeout(() => {
-            setIsSuccess(false);
-          }, 3000)
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
   }
 
   const variants = {
@@ -139,7 +143,7 @@ export default function ContactUs() {
         </div>
         </motion.div>}
 </AnimatePresence>
-        <form className='flex flex-col space-y-10 h-full w-full mt-8 justify-start items-center' ref={form} onSubmit={handleSubmit(sendEmail)}>
+        <form className='flex flex-col space-y-10 h-full w-full mt-8 justify-start items-center' ref={form} >
              <div className='relative'>
      <input
             {...register("firstName", { required: "This Is Required", minLength: {
@@ -180,7 +184,7 @@ export default function ContactUs() {
         </div>
         <div className='md:h-1/8'></div> 
            <div className='relative justify-center self-center '>
-        <input className={styles.submitButton} type="submit" onClick={sendEmail}/>
+        <input className={styles.submitButton} type="submit" onClick={showSign}/>
         <div className="flex-grow h-full" />
      </div>
         </form>

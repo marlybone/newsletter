@@ -9,7 +9,7 @@ export default function ContactForm() {
     <>
       <div className={`${styles.contentWrapper}`}>
         <div
-          className={`${styles.contactBox} drop-shadow-xl shadow-custom max-w-6xl rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 flex md:justify-between self-center mx-auto py-auto flex-col md:flex-row`}
+          className={`${styles.contactBox} drop-shadow-xl max-w-6xl rounded-md bg-clip-padding backdrop-filter backdrop-blur-[2px] bg-opacity-10 flex md:justify-between self-center mx-auto py-auto flex-col md:flex-row`}
         >
           <div className="flex flex-col py-auto p-2 mx-auto py-2 h-auto md:mt-2 md:flex-grow">
             <div>
