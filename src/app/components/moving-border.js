@@ -54,7 +54,7 @@ export function Button({
     initial: {
       opacity: 0,
     },
-    load: {
+    load:{
       opacity: 1,
       transition: {
         type: "spring",
@@ -80,15 +80,36 @@ export function Button({
     },
   };
 
+  const floatVariant = {
+    initial: {
+      y: 0,
+      boxShadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+    },
+    animate: {
+      y: [0, -40, 0],
+      boxShadow: ["0 5px 15px 0px rgba(0,0,0,0.6)", "0 25px 15px 0px rgba(0,0,0,0.2)", "0 5px 15px 0px rgba(0,0,0,0.6)"],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        repeatType: "mirror",
+        ease: "easeInOut",
+        damping: "15"
+      }
+    }
+  }
+
   return (
     <LayoutGroup>
       <motion.div variants={authorOneVariant} initial="initial" animate="load">
         <div className="flex md:flex-row flex-col">
           {authors.map((item, i) => (
             <div key={i} className="flex flex-col mb-16 mx-8">
-              <motion.div className="flex flex-col self-center">
+              <motion.div
+              initial="initial"
+              animate="animate"
+              variants={floatVariant}
+              className="flex flex-col self-center rounded-full">
                 <Component
-                  layout="true"
                   className={cn(
                     "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden",
                     containerClassName,

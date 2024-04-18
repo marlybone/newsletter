@@ -4,15 +4,16 @@ import { GridBackgroundDemo } from "./../../components/grid";
 import { BentoGridOne } from "../../components/bento";
 import { authorOne } from "../../components/authors";
 import { FadeIn } from "../../components/fadein";
+import styles from "../about.module.css"
 
 export default function About() {
   return (
     <>
       <div>
-        <div className="my-4 h-screen w-full flex flex-col items-center">
+        <div className={`${styles.journeyWrapper} my-4 flex flex-col items-center`}>
           <GridBackgroundDemo />
         </div>
-        <div className="min-h-screen">
+        <div>
           <FadeIn>
             <BentoGridOne author={authorOne} />
           </FadeIn>

@@ -80,7 +80,7 @@ export function GridBackgroundDemo() {
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 1.2, type: "spring", damping: 10 }}
-                className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit"
+                className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit mb-6"
               >
                 <SkeletonSix />
                 <motion.div

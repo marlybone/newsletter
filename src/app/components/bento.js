@@ -2,12 +2,13 @@ import { cn } from "@utils/cn";
 import React from "react";
 import { motion } from "framer-motion";
 import { SocialElement } from "../components/sociallinks";
+import styles from "./moving-border.module.css"
 
 export const BentoGrid = ({ className, children }) => {
   return (
     <motion.div
       className={cn(
-        "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-screen",
+        "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto",
         className,
       )}
     >
@@ -27,8 +28,9 @@ export const BentoGridItem = ({ header, image }) => {
 
 export function BentoGridOne({ author }) {
   return (
-    <motion.div>
-      <BentoGrid className="max-w-5xl md:mx-auto mx-6 auto-rows-[20rem] my-14 min-h-screen">
+    <motion.div className={styles.bentoWrapper}>
+      <h1 className="text-5xl max-w-4xl flex justify-center">About Me</h1>
+      <BentoGrid className="md:mx-auto mx-6 auto-rows-[15rem] my-10">
         {author.map((item, i) => (
           <BentoGridItem
             key={i}
