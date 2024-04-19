@@ -33,7 +33,6 @@
 }
 
 .luminosity {
-  font-size:100px;
   color: #FFD5FF;
   position: absolute;
   font-family: monoton;
@@ -52,6 +51,8 @@
   5px 0px 125px #4263CC, 
   20px 0vw 200px #4263CC, 
   40px 0vw 200px #4263CC;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .wave {
@@ -104,7 +105,7 @@
 
 #textareaInput:valid,
 #textareaInput:focus {
-  height: 6em;
+  height: 4em;
 }
 
 
@@ -129,6 +130,8 @@
   bottom: 0;
   left: 0;
   padding: 6px 14px;
+  width: 12em;
+  justify-content: center;
   border-radius: 6px;
   color: #3D3D3D;
   background: #fff;
@@ -202,7 +205,6 @@
 .contentWrapper {
   margin-inline: auto;
   padding-inline: 1rem;
-  height: 100dvh;
 }
 
 
@@ -210,7 +212,6 @@
   height: 100dvh;
   position:relative;
   background: linear-gradient(45deg, rgb(6 182 212), rgb(217 70 239));
-  isolation:isolate;
 }
 
 
@@ -232,17 +233,24 @@
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 2%;
   border-color: transparent;
-  background: #E0E0E0;
+  background-image: url("../../../public/stacked.png");
   height: 100px;
   width: 280px;
+  border-radius: 5%;
 }
 
 .bgContact {
-  background-image: url("../../../public/blob.png")
+  background-image: url("../../../public/blob.png");
+  height: 100dvh;
 }
 
 .bentoWrapper {
   margin-inline: auto;
   padding-inline: 1rem;
   height: 100dvh;
+}
+
+.blogWrapper {
+  margin-inline: auto;
+  padding-inline: 1rem;
 }

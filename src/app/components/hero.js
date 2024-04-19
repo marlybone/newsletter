@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <>
       <BackgroundGradientAnimation>
-        <div className="absolute z-10 inset-0 flex justify-start content-start mx-auto max-w-7xl text-white px-4 text-3xl text-center">
+        <div className="absolute z-10 inset-0 flex justify-start content-start mx-auto max-w-5xl text-white px-4 text-3xl text-center">
           <div className="flex mt-32 drop-shadow-2xl flex-col space-y-3">
             <h1 className="md:text-8xl text-5xl flex justify-start font-bold text-left">
               Discover

@@ -10,7 +10,7 @@ export default function Navbar() {
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", () => {
-    // Apply styles as soon as scrolling down starts
+
     setVisible(scrollYProgress.get() > 0.05);
   });
 
@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <div className={navbarClasses}>
-      <div className="max-w-screen-xl container mx-auto flex justify-between items-end p-2">
+      <div className="mx-auto flex justify-between items-end p-2">
         <div className="flex">
           <img
             src="/super.png"

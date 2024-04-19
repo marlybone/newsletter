@@ -45,27 +45,28 @@ export default function ContactUs() {
       }
     })
 
-  // const sendEmail = (e) => {
-  //   setIsSuccess(true)
+  const sendEmail = (e) => {
+    e.preventDedault();
+    setIsSuccess(true)
 
-  //   emailjs
-  //     .sendForm('service_9pl8maaff', 'template_junwsgp', form.current, {
-  //       publicKey: 'QOufJT4a6l-SjdOFP',
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log("Success");
-  //         setIsSuccess(true)
+    emailjs
+      .sendForm('service_9pl8maaff', 'template_junwsgp', form.current, {
+        publicKey: 'QOufJT4a6l-SjdOFP',
+      })
+      .then(
+        () => {
+          console.log("Success");
+          setIsSuccess(true)
 
-  //         setTimeout(() => {
-  //           setIsSuccess(false);
-  //         }, 3000)
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       },
-  //     );
-  // }
+          setTimeout(() => {
+            setIsSuccess(false);
+          }, 3000)
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  }
 
   const showSign = () => {
     setIsSuccess(true)
@@ -112,14 +113,14 @@ export default function ContactUs() {
       variants={divVariants}
       animate={controlsDiv}
       exit="exit"
-      className={`${styles.successPopin} border-[1px] z-10`}
+      className={`${styles.successPopin} border-[1px] z-10 rounded-lg`}
     >
-      <div className='flex flex-row'>
+      <div className="flex flex-row">
         <div className='flex-col justify-center content-center items-center align-middle w-4/6'>
-        <span className='flex justify-center text-emerald-900 text-2xl'>Thank You!</span>
-        <p className='text-sm text-emerald-900 flex justify-center items-center self-center mt-2'>Email Sent</p>
+        <span className='flex justify-center text-white text-2xl'>Thank You!</span>
+        <p className='text-sm text-white flex justify-center items-center self-center mt-2'>Email Sent</p>
         </div>
-        <div className='w-2/6 h-[99px] bg-zinc-600 '>
+        <div className='w-2/6 h-[99px] bg-zinc-400'>
 
           <motion.svg 
           variants={variants}
@@ -172,20 +173,18 @@ export default function ContactUs() {
         <label id="label" className={styles.label}>Email</label>
         <p className={styles.errorMsg}>{errors.email?.message}</p>
      </div>
-        <div className='relative mb-10'>
+        <div className='relative mb-8'>
         <textarea 
         name="message" 
-        className={`${styles.boxInput} transition-all`} 
+        className={`${styles.boxInput}`} 
         id={styles.textareaInput}
         required
         />
         <span id={styles.bar}/>
         <label htmlFor="boxInput" id="label" className={styles.label}>Message</label>
         </div>
-        <div className='md:h-1/8'></div> 
-           <div className='relative justify-center self-center '>
-        <input className={styles.submitButton} type="submit" onClick={showSign}/>
-        <div className="flex-grow h-full" />
+           <div className='flex  bottom-0 p-3 absolute'>
+        <input className={`${styles.submitButton}`} type="submit" onClick={showSign}/>
      </div>
         </form>
         </div>
