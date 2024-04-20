@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
       <div className="min-h-screen"><Hero/></div>
-        <div className={`${styles.blogWrapper} min-h-screen bg-gray-50 mb-10`}>
+      <div className={`${styles.blogWrapper} bg-gray-50 mb-10 md:mb-0 md:min-h-screen`}>
         <FadeIn><RecentPosts/></FadeIn>
       </div>
       <div

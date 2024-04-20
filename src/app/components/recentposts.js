@@ -4,7 +4,7 @@ import React from "react";
 
 export default function RecentPosts() {
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="flex justify-center">
       <div className="flex flex-col">
         <div className="max-w-5xl my-4 justify-start items-start content-start self-start">
           <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">
@@ -12,16 +12,16 @@ export default function RecentPosts() {
           </h1>
         </div>
 
-        <div className="md:px-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 space-y-4 md:space-y-0 drop-shadow-2xl">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 h-auto py-auto mx-auto space-y-4 md:space-y-0 drop-shadow-2xl">
           {profile &&
             profile.map((data) => (
               <div
                 key={data._id}
-                className="border-b border-transparent rounded-md max-w-sm pb-1 overflow-hidden shadow-custom transform transition bg-white"
+                className="border-b border-transparent rounded-md max-w-sm pb-1 shadow-custom transform transition bg-white"
               >
                 <div className="relative">
                   <img
-                    className="h-64 w-larger block object-cover"
+                    className=" h-64 w-larger block object-cover"
                     src={data.mainImage}
                     alt={data.title}
                   />
