@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
         </nav>
         <div className="flex justify-center">
-          <div className="border-t-[1px] border-gray-100 w-2/3">
+          <div className="border-t-[1px] border-gray-100 md:w-2/3">
             <div className="flex flex-row justify-between mx-4">
               <div className="space-x-4 flex flex-row self-center mt-4">
                 <div className="bg-white rounded-full h-8 w-8 flex justify-center items-center shadow-custom drop-shadow-lg">
@@ -157,7 +157,7 @@ export default function Footer() {
                   </Link>
                 </div>
               </div>
-              <p className="mt-4 leading-6 text-gray-200">
+              <p className="ml-6 mt-4 leading-6 text-gray-200">
                 © 2024 Mini, Inc. All rights reserved.
               </p>
             </div>

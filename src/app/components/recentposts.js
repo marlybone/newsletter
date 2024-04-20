@@ -6,7 +6,7 @@ export default function RecentPosts() {
   return (
     <div className="min-h-screen flex justify-center">
       <div className="flex flex-col">
-        <div className="max-w-5xl mx-4 my-4 justify-start items-start content-start self-start">
+        <div className="max-w-5xl my-4 justify-start items-start content-start self-start">
           <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">
             Latest
           </h1>
@@ -21,7 +21,7 @@ export default function RecentPosts() {
               >
                 <div className="relative">
                   <img
-                    className="h-72 w-larger block object-cover"
+                    className="h-64 w-larger block object-cover"
                     src={data.mainImage}
                     alt={data.title}
                   />
@@ -60,7 +60,7 @@ export default function RecentPosts() {
                           className="w-8 rounded-full border border-transparent shadow-custom"
                         />
                         <p>
-                          <span className=" text-sm font-semibold">
+                          <span className=" text-sm font-semibold ">
                             {data.author.name}
                           </span>
                         </p>

@@ -27,10 +27,6 @@ export default function ContactForm() {
               </div>
             
             <div className={`${styles.contactEmail} flex flex-row align-bottom p-2 mx-2 mb-4`}>
-              <div>
-                <h2>EMAIL</h2>
-                <h3>me@me.com</h3>
-              </div>
             </div>
           </div>
 
