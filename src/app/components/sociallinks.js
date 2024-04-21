@@ -17,11 +17,11 @@ export const SocialLinks = ({ linkedin, github, twitter }) => {
   const variants = {
     hover: {
       scale: [1, 1.08, 1],
-      rotate: [0, -10, 10, 0], // Adjust the angles as per your preference
+      rotate: [0, -10, 10, 0],
       transition: {
         duration: 0.3,
         yoyo: Infinity,
-        ease: "easeOut", // Optional: Add an easing function for smoother animation
+        ease: "easeOut", 
       },
     },
   };

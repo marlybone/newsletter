@@ -2,6 +2,7 @@ import React from "react";
 import client from "../../../../sanity/sanity.client";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "./blog.module.css"
+import { usePathname } from "next/navigation";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -13,6 +14,31 @@ import {
   TumblrShareButton,
   TwitterShareButton,
   WhatsappShareButton,
+} from "react-share";
+import {
+  EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  GabIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon,
+  XIcon,
 } from "react-share";
 
 const Post = async ({ params }) => {
@@ -41,13 +67,17 @@ const Post = async ({ params }) => {
               src={post.mainImage}
               alt={post.title}
             />
+            <div className="flex-row flex">
+            <div className="ml-2">
+              
+            </div>
             <div className={`${styles.articleWrapper}`}>
             <div>
-              <h1 className="font-bold md:text-5xl text-4xl mt-12 flex text-center">
+              <h1 className="font-bold md:text-5xl text-4xl mt-12 flex text-center mb-8 md:mx-20 mx-6">
                 {post.title}
               </h1>
             </div>
-            <div className="flex mt-12 md:mx-24 mx-0">
+            <div className="flex md:mx-24 mx-6">
               <div className="flex">
                 <img
                   alt="avatar"
@@ -55,7 +85,7 @@ const Post = async ({ params }) => {
                   src={post.authorImg}
                 />
               </div>
-              <div className="border-r-[1px] border-gray-300 mx-3" />
+              <div className="border-r-[1px] border-gray-300 mx-6" />
               <div className="flex-col ml-3">
                 <h2 className="flex">{post.author}</h2>
                 <h3 className="text-sm font-semibold">
@@ -63,8 +93,8 @@ const Post = async ({ params }) => {
                 </h3>
               </div>
             </div>
-            <div className=" border-b-[1px] border-gray-300 mt-2 md:mx-24 mx-0 p-2" />
-            <div className="mt-10 flex justify-center md:mx-24 mx-0">
+            <div className=" border-b-[1px] border-gray-300 mt-2 md:mx-24 mx-8 p-2" />
+            <div className="mt-10 flex justify-center md:mx-24 mx-6">
               <BlockContent
                 className="article"
                 blocks={post.body}
@@ -74,9 +104,27 @@ const Post = async ({ params }) => {
             </div>
           </div>
         </div>
+        </div>
         ))}
     </section>
   );
 };
+
+export const ShareButtons = ({
+  Button,
+  Icon
+}) => {
+  const shareUrl = usePathname();
+  return (
+    <div className={`${styles.shareButtons}`}>
+      <Button
+      url={shareUrl}>
+      
+      </Button>
+
+    </div>
+
+  )
+}
 
 export default Post;
