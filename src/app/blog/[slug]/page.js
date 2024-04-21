@@ -2,44 +2,8 @@ import React from "react";
 import client from "../../../../sanity/sanity.client";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "./blog.module.css"
-import { usePathname } from "next/navigation";
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  LineShareButton,
-  LinkedinShareButton,
-  PinterestShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
-import {
-  EmailIcon,
-  FacebookIcon,
-  FacebookMessengerIcon,
-  GabIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
-  LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
-  WhatsappIcon,
-  WorkplaceIcon,
-  XIcon,
-} from "react-share";
+import ShareLinks from "../../components/sharelinks"
+
 
 const Post = async ({ params }) => {
   const query = await client.fetch(`
@@ -68,8 +32,8 @@ const Post = async ({ params }) => {
               alt={post.title}
             />
             <div className="flex-row flex">
-            <div className="ml-2">
-              
+            <div className="ml-2 mt-2">
+            <ShareLinks/>
             </div>
             <div className={`${styles.articleWrapper}`}>
             <div>
@@ -119,7 +83,7 @@ export const ShareButtons = ({
     <div className={`${styles.shareButtons}`}>
       <Button
       url={shareUrl}>
-      
+      <Icon size={40} round={true} />
       </Button>
 
     </div>
