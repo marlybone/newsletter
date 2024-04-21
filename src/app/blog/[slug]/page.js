@@ -1,6 +1,19 @@
 import React from "react";
 import client from "../../../../sanity/sanity.client";
 import BlockContent from "@sanity/block-content-to-react";
+import styles from "./blog.module.css"
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
 
 const Post = async ({ params }) => {
   const query = await client.fetch(`
@@ -19,37 +32,39 @@ const Post = async ({ params }) => {
     return <div>Loading...</div>;
   }
   return (
-    <section className="flex py-20 justify-center mx-20">
+    <section className={`${styles.Lato} flex justify-center py-6`}>
       {query &&
         query.map((post) => (
-          <div className="max-w-screen-md mt-16 flex-col content-center mx-6">
+          <div className="max-w-5xl mt-16 flex-col content-center mx-1">
             <img
-              className="h-72 w-larger object-cover rounded-md"
+              className="h-72 w-full object-cover rounded-md"
               src={post.mainImage}
               alt={post.title}
             />
+            <div className={`${styles.articleWrapper}`}>
             <div>
-              <h1 className="font-bold text-5xl mt-12 flex text-center">
+              <h1 className="font-bold md:text-5xl text-4xl mt-12 flex text-center">
                 {post.title}
               </h1>
             </div>
-            <div className="flex mt-12">
+            <div className="flex mt-12 md:mx-24 mx-0">
               <div className="flex">
                 <img
                   alt="avatar"
-                  className="w-12 rounded-full border border-transparent shadow-custom"
+                  className="w-12 rounded-full border border-transparent"
                   src={post.authorImg}
                 />
               </div>
-              <div className="border border-gray-250 mx-3"></div>
+              <div className="border-r-[1px] border-gray-300 mx-3" />
               <div className="flex-col ml-3">
-                <h2 className="flex">By {post.author}</h2>
+                <h2 className="flex">{post.author}</h2>
                 <h3 className="text-sm font-semibold">
                   {new Date(post.publishedAt).toDateString().slice(4)}
                 </h3>
               </div>
             </div>
-            <div className="mt-10 flex justify-center container">
+            <div className=" border-b-[1px] border-gray-300 mt-2 md:mx-24 mx-0 p-2" />
+            <div className="mt-10 flex justify-center md:mx-24 mx-0">
               <BlockContent
                 className="article"
                 blocks={post.body}
@@ -58,6 +73,7 @@ const Post = async ({ params }) => {
               />
             </div>
           </div>
+        </div>
         ))}
     </section>
   );

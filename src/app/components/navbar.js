@@ -44,7 +44,7 @@ export default function Navbar() {
             <span>Mini Mini</span>
           </div>
           <div>
-            {/* <FloatingNav navItems={navItems} /> */}
+            <FloatingNav navItems={navItems} />
           </div>
         </div>
         <SearchBar />

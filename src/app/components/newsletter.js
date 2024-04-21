@@ -13,11 +13,7 @@ export default function Newsletter() {
         <div className="max-w-5xl md:mx-auto text-center outline-none border-[1px] border-transparent bg-white drop-shadow-xl shadow-custom rounded-sm relative container">
           <img className="inset-0 bg-cover w-full h-40" src="./slice.png" />
           <div className="top-0 -inset-0">
-<<<<<<< HEAD
-            <h1 className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] text-[70px] transition-all`}>
-=======
-            <h1 className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] text-[60px] transition-all`}>
->>>>>>> 21991fcf2687088ed6b1c77ed002c4e98262b3fa
+            <h1 className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] sm:text-[80px] text-[50px] transition-all`}>
               E<span className={styles.flickerfast}>x</span>pl
               <span className={styles.flickerslow}>o</span>re
             </h1>

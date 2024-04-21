@@ -13,7 +13,6 @@ export default function ContactUs() {
 
   const {
       register,
-      handleSubmit,
       formState: {errors},
   } = useForm();
     const form = useRef();
@@ -106,7 +105,7 @@ export default function ContactUs() {
 
 
     return (
-      <div className='p-2 items-center h-full mt-6 w-full'>
+      <div className='p-2 items-center h-full md:mt-6 w-full'>
                 <AnimatePresence>
     {isSuccess && <motion.div
       key="1"
