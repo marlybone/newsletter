@@ -1,41 +1,42 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import { usePathname } from "next/navigation";
+import { motion, useScroll } from "framer-motion"
 import {
   EmailShareButton,
   FacebookShareButton,
-  LineShareButton,
   LinkedinShareButton,
   PinterestShareButton,
   RedditShareButton,
   TelegramShareButton,
-  TumblrShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from "react-share";
 import {
   EmailIcon,
   FacebookIcon,
-  FacebookMessengerIcon,
-  GabIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
   LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
   PinterestIcon,
-  PocketIcon,
   RedditIcon,
   TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
   WhatsappIcon,
   XIcon,
 } from "react-share";
 
 export default function ShareLinks() {
+  const scrollContainerRef = useRef(null);
+  const { scrollY } = useScroll({ target: scrollContainerRef,
+ });
+
+ const scrollVariants = {
+  pinned: {
+    y: 0,
+  },
+  animate: {
+    y: scrollY,
+  }
+ }
+
     const buttons = [
         { Button: FacebookShareButton, Icon: FacebookIcon },
         { Button: LinkedinShareButton, Icon: LinkedinIcon },
@@ -47,13 +48,19 @@ export default function ShareLinks() {
         { Button: WhatsappShareButton, Icon: WhatsappIcon},
       ];
     return (
-        <>
+        <motion.div
+        ref={scrollContainerRef}
+        initial="pinned"
+        animate="animate"
+        variants={scrollVariants}
+        className='h-[400px] bg-gray-500 relative'
+        >
         {buttons.map((button, i ) => (
-            <div>
-            <ShareButtons key={i} Icon={button.Icon} Button={button.Button}  />
+            <div key={i}>
+            <ShareButtons Icon={button.Icon} Button={button.Button}  />
             </div>
         ))}   
-        </>
+        </motion.div>
     )
 }
 

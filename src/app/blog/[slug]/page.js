@@ -3,6 +3,7 @@ import client from "../../../../sanity/sanity.client";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "./blog.module.css"
 import ShareLinks from "../../components/sharelinks"
+import { motion, useScroll } from "framer-motion"
 
 
 const Post = async ({ params }) => {
@@ -18,6 +19,7 @@ const Post = async ({ params }) => {
   }
 `);
 
+
   if (!Post) {
     return <div>Loading...</div>;
   }
@@ -32,7 +34,7 @@ const Post = async ({ params }) => {
               alt={post.title}
             />
             <div className="flex-row flex">
-            <div className="mt-2">
+            <div className="mt-8">
             <ShareLinks />
             </div>
             <div className={`${styles.articleWrapper}`}>
