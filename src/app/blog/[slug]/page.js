@@ -32,8 +32,8 @@ const Post = async ({ params }) => {
               alt={post.title}
             />
             <div className="flex-row flex">
-            <div className="ml-2 mt-2">
-            <ShareLinks/>
+            <div className="mt-2">
+            <ShareLinks />
             </div>
             <div className={`${styles.articleWrapper}`}>
             <div>

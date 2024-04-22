@@ -47,11 +47,13 @@ export default function ShareLinks() {
         { Button: WhatsappShareButton, Icon: WhatsappIcon},
       ];
     return (
-        <div className='mt-2'>
+        <>
         {buttons.map((button, i ) => (
+            <div>
             <ShareButtons key={i} Icon={button.Icon} Button={button.Button}  />
+            </div>
         ))}   
-        </div>
+        </>
     )
 }
 
