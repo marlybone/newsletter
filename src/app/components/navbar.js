@@ -29,11 +29,11 @@ export default function Navbar() {
     },
   ];
 
-  const navbarClasses = `flex-row fixed top-0 left-0 w-full z-20 h-16 ${visible ? "border border-transparent shadow-md backdrop-filter backdrop-blur-sm" : "border-gray-200"}`;
+  const navbarClasses = `fixed top-0 left-0 w-full z-20 h-16 ${visible ? "border border-transparent shadow-md backdrop-filter backdrop-blur-sm" : "border-gray-200"}`;
 
   return (
     <div className={navbarClasses}>
-      <div className="mx-auto flex justify-between items-end p-2">
+      <div className="mx-auto flex justify-between items-end p-2 max-w-6xl">
         <div className="flex">
           <img
             src="/super.png"

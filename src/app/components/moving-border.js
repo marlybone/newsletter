@@ -83,11 +83,11 @@ export function Button({
   const floatVariant = {
     initial: {
       y: 0,
-      boxShadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+      boxShadow: "0 5px 15px 0px rgba(0,0,0,0.65)",
     },
     animate: {
       y: [0, -40, 0],
-      boxShadow: ["0 5px 15px 0px rgba(0,0,0,0.6)", "0 25px 15px 0px rgba(0,0,0,0.2)", "0 5px 15px 0px rgba(0,0,0,0.6)"],
+      boxShadow: ["0 5px 15px 0px rgba(0,0,0,0.65)", "0 25px 15px 0px rgba(0,0,0,0.2)", "0 5px 15px 0px rgba(0,0,0,0.65)"],
       transition: {
         duration: 5,
         repeat: Infinity,

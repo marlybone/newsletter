@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.className} w-full`}>
       <body>
         <header></header>
-        <main className="w-full h-full">
+        <main>
           <Navbar />
           {children}
         </main>
