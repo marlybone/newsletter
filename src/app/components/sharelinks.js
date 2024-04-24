@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from 'react'
 import { usePathname } from "next/navigation";
-import { motion, useScroll } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -25,39 +25,44 @@ import {
 
 export default function ShareLinks() {
   const scrollContainerRef = useRef(null);
-  const { scrollY } = useScroll({ target: scrollContainerRef,
- });
+  const { scrollY } = useScroll({ target: scrollContainerRef });
+
+  const startPoint = 100; 
+  const endPoint = 1550;
+
+  const translateY = useTransform(scrollY, [startPoint, endPoint], [0, endPoint - startPoint]);
 
  const scrollVariants = {
-  pinned: {
-    y: 0,
-  },
   animate: {
     y: scrollY,
-  }
+  },
  }
 
     const buttons = [
-        { Button: FacebookShareButton, Icon: FacebookIcon },
-        { Button: LinkedinShareButton, Icon: LinkedinIcon },
-        { Button: PinterestShareButton, Icon: PinterestIcon },
-        { Button: TwitterShareButton, Icon: XIcon },
-        { Button: TelegramShareButton, Icon: TelegramIcon},
-        { Button: EmailShareButton, Icon: EmailIcon},
-        { Button: RedditShareButton, Icon: RedditIcon},
-        { Button: WhatsappShareButton, Icon: WhatsappIcon},
+        { Button: FacebookShareButton, Icon: FacebookIcon, Text: "Facebook" },
+        { Button: LinkedinShareButton, Icon: LinkedinIcon, Text: "Linkedin" },
+        { Button: PinterestShareButton, Icon: PinterestIcon, Text: "Pinterest" },
+        { Button: TwitterShareButton, Icon: XIcon, Text: "X" },
+        { Button: TelegramShareButton, Icon: TelegramIcon, Text: "Telegram"},
+        { Button: EmailShareButton, Icon: EmailIcon, Text: "Email"},
+        { Button: RedditShareButton, Icon: RedditIcon, Text: "Reddit"},
+        { Button: WhatsappShareButton, Icon: WhatsappIcon, Text: "Whatsapp"},
       ];
     return (
         <motion.div
         ref={scrollContainerRef}
-        initial="pinned"
-        animate="animate"
+        style={{
+          translateY,
+          transition: { ease: 'easeIn', damping: 20, stiffness: 300 }
+        }}
+        
         variants={scrollVariants}
-        className='h-[400px] bg-gray-500 relative'
+        className='h-[450px] relative'
         >
         {buttons.map((button, i ) => (
-            <div key={i}>
-            <ShareButtons Icon={button.Icon} Button={button.Button}  />
+            <div
+            key={i}>
+            <ShareButtons Icon={button.Icon} Button={button.Button} Text={button.Text}  />
             </div>
         ))}   
         </motion.div>
@@ -68,12 +73,17 @@ export const ShareButtons = ({
     Button,
     Icon,
   }) => {
+
+
     const shareUrl = usePathname();
     return (
+      <motion.div
+      >
         <Button
         url={shareUrl}>
-        <Icon size={40} round={true} />
+        <Icon size={32} round={true}></Icon>
         </Button>
+        </motion.div>
     )
   }
 
