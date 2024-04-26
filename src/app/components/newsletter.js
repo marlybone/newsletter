@@ -19,7 +19,7 @@ export default function Newsletter() {
             </h1>
           </div>
           <div className="flex mt-24 my-16 ">
-            <p className="text-lg md:mx-12">
+            <p className="text-lg md:mx-12 font-[Sans] leading-relaxed">
               Stay in the loop! And keep up to date with new articles, insights
               and resources when they drop. No spam, no nonsense just quality
               content to your inbox

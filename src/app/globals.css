@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Merriweather'; /* Replace with your actual font name */
+    src: url("../../public/fonts/Merriweather.ttf") format('truetype');
+  }
+
+  @font-face {
+    font-family: "Monoton";
+    src: url("../../public/fonts/Monoton.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url("../../public/fonts/Lato.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Sans";
+    src: url("../../public/fonts/OpenSans.ttf") format("truetype");
+  }

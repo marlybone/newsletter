@@ -9,7 +9,7 @@ import styles from "../about.module.css"
 export default function About() {
   return (
     <>
-      <div>
+      <div className="font-[Sans]">
         <div className={`${styles.journeyWrapper} my-4 flex flex-col items-center`}>
           <GridBackgroundDemo />
         </div>

@@ -18,8 +18,8 @@ export default function ContactForm() {
               </div>
             </div>
               <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 md:flex-grow mt-2">
-                <h1 className="md:text-5xl text-4xl mb-6 font-bold">Have you got a story you want to tell?</h1>
-                <p className="text-sm mt-2">
+                <h1 className="md:text-[52px] text-4xl mb-6 font-bold font-[Merriweather] leading-tight">Have you got a story you want to tell?</h1>
+                <p className="text-md mt-2 font-[Sans]">
                   Navigated the difficult path of career transition
                   into tech either through self taught or tradtional education?
                   We would love to hear from you to share your story to help and motivate others to make the leap orstay the course

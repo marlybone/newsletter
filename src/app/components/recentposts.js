@@ -45,10 +45,10 @@ export default function RecentPosts() {
                       </Link>
                     </div>
                   </div>
-                  <h1 className="my-4 text-gray-800 text-2xl font-bold flex">
+                  <h1 className="my-4 text-gray-800 text-2xl font-bold flex font-[Merriweather]">
                     {data.title}
                   </h1>
-                  <h2 className="mb-14 my-4 text-sm font-light">
+                  <h2 className="mb-14 my-4 text-sm font-light font-[Sans]">
                     {data.smallDescription}
                   </h2>
                   <div className="absolute bottom-0 w-full">
