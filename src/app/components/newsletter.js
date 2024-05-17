@@ -3,9 +3,9 @@ import styles from "./moving-border.module.css";
 
 export default function Newsletter() {
   return (
-    <div className="justify-center flex rounded-lg mx-1">
+    <div className="justify-center flex rounded-lg mx-1 py-8 mb-12 bg-white p-4 m-2">
       <div className="justify-center flex flex-col items-center">
-        <div className="max-w-5xl  mb-20 justify-start items-start content-start self-start">
+        <div className="max-w-5xl mb-2 justify-start items-start content-start self-start">
           <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom bg-white">
             Newsletter
           </h1>

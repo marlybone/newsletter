@@ -103,12 +103,6 @@
 
 }
 
-#textareaInput:valid,
-#textareaInput:focus {
-  height: 4em;
-}
-
-
 
 .boxInput:focus ~ #bar, boxInput:valid ~ #bar {
   position: absolute;
@@ -126,17 +120,16 @@
 }
 
 .submitButton {
-  display: flex;
-  bottom: 0;
-  left: 0;
   padding: 6px 14px;
   width: 12em;
-  justify-content: center;
+  height: 2em;
   border-radius: 6px;
-  color: #3D3D3D;
-  background: #fff;
+  color: #fff;
+  background: #52525B;
   border: none;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .submitButton:focus {
@@ -193,25 +186,12 @@
   box-shadow: 
   0 4px 8px 0 rgba(0, 0, 0, 0.4), 
   0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  height: 550px;
-}
-
-@media (max-width: 768px) {
-  .contactBox {
-    height: 800px; 
-  }
-}
-
-.contentWrapper {
-  margin-inline: auto;
-  padding-inline: 1rem;
 }
 
 
 .wavesWrapper {
-  height: 100dvh;
+  height: auto;
   position:relative;
-  background: linear-gradient(45deg, rgb(6 182 212), rgb(217 70 239));
 }
 
 
@@ -239,19 +219,9 @@
   border-radius: 5%;
 }
 
-.bgContact {
-  background-image: url("../../../public/blob.png");
-  height: 100dvh;
-}
-
 .bentoWrapper {
   margin-inline: auto;
   padding-inline: 1rem;
   height: 100dvh;
 }
 
-.blogWrapper {
-  margin-inline: auto;
-  padding-inline: 1rem;
-  height: auto
-}

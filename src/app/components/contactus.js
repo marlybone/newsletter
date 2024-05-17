@@ -105,7 +105,7 @@ export default function ContactUs() {
 
 
     return (
-      <div className='p-2 items-center h-full md:mt-6 w-full'>
+      <div className='p-2 h-full md:mt-6 w-full flex'>
                 <AnimatePresence>
     {isSuccess && <motion.div
       key="1"
@@ -115,7 +115,7 @@ export default function ContactUs() {
       className={`${styles.successPopin} border-[1px] z-10 rounded-lg`}
     >
       <div className="flex flex-row">
-        <div className='flex-col justify-center content-center items-center align-middle w-4/6'>
+        <div className='flex-col content-center w-4/6'>
         <span className='flex justify-center text-white text-2xl'>Thank You!</span>
         <p className='text-sm text-white flex justify-center items-center self-center mt-2'>Email Sent</p>
         </div>
@@ -143,7 +143,7 @@ export default function ContactUs() {
         </div>
         </motion.div>}
 </AnimatePresence>
-        <form className='flex flex-col space-y-10 h-full w-full mt-8 justify-start items-center' ref={form} >
+        <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} >
              <div className='relative'>
      <input
             {...register("firstName", { required: "This Is Required", minLength: {
@@ -172,7 +172,7 @@ export default function ContactUs() {
         <label id="label" className={styles.label}>Email</label>
         <p className={styles.errorMsg}>{errors.email?.message}</p>
      </div>
-        <div className='relative mb-8'>
+        <div className='relative'>
         <textarea 
         name="message" 
         className={`${styles.boxInput}`} 
@@ -182,8 +182,8 @@ export default function ContactUs() {
         <span id={styles.bar}/>
         <label htmlFor="boxInput" id="label" className={styles.label}>Message</label>
         </div>
-           <div className='flex  bottom-0 p-3 absolute'>
-        <input className={`${styles.submitButton}`} type="submit" onClick={showSign}/>
+     <div className='h-full flex items-end self-center p-4'>
+        <input className={`${styles.submitButton} justify-center items-center`} type="submit" onClick={showSign}/>
      </div>
         </form>
         </div>

@@ -4,9 +4,9 @@ import React from "react";
 
 export default function RecentPosts() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center p-4 m-4">
       <div className="flex flex-col">
-        <div className="max-w-5xl my-4 justify-start items-start content-start self-start">
+        <div className="my-4 justify-start items-start content-start self-start">
           <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom">
             Latest
           </h1>

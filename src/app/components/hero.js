@@ -7,13 +7,13 @@ export default function Hero() {
       <BackgroundGradientAnimation>
         <div className="absolute z-10 inset-0 flex justify-start content-start mx-auto max-w-5xl text-white px-4 text-3xl text-center">
           <div className="flex mt-32 drop-shadow-2xl flex-col space-y-3">
-            <h1 className="md:text-8xl text-5xl flex justify-start font-bold text-left">
+            <h1 className="md:text-8xl text-5xl flex justify-start font-bold text-left font-[Merriweather]">
               Discover
             </h1>
-            <p className="md:text-2xl text-xl flex justify-start text-left">
+            <p className="md:text-2xl text-xl flex justify-start text-left font-[Merriweather]">
               Stories from Real People
             </p>
-            <p className="md:text-lg text-sm md:w-1/3 w-2/4 text-left">
+            <p className="md:text-lg text-sm md:w-1/3 w-2/4 text-left font-[Sans]">
               We cast a spotlight on the bold individuals who've navigated
               career changes, showcasing their journeys of resilience,
               determination, and self-discovery.

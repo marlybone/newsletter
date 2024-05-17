@@ -14,10 +14,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.className} w-full`}>
+    <html lang="en" className={`${inter.className}`}>
       <body>
         <header></header>
-        <main>
+        <main className="h-auto">
           <Navbar />
           {children}
         </main>
