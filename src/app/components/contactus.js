@@ -67,9 +67,6 @@ export default function ContactUs() {
       );
   }
 
-  const showSign = () => {
-    setIsSuccess(true)
-  }
 
   const variants = {
     hidden: {
@@ -182,10 +179,41 @@ export default function ContactUs() {
         <span id={styles.bar}/>
         <label htmlFor="boxInput" id="label" className={styles.label}>Message</label>
         </div>
-     <div className='h-full flex items-end self-center p-4'>
-        <input className={`${styles.submitButton} justify-center items-center`} type="submit" onClick={showSign}/>
-     </div>
+        <Button/>
         </form>
         </div>
         )
 }
+
+const Button = ({
+  onClick
+}) => {
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const showSign = () => {
+    setIsSuccess(true)
+  }
+
+
+  return (
+  <div className='h-full flex items-end self-center p-4 relative'>
+  <motion.button 
+  animate={{backgroundColor: isSuccess ? "#388e3c" : "#52525B"}}
+  transition={{duration: "1"}}
+  className={`${styles.submitButton} justify-center items-center relative`} onClick={(showSign)}>
+      <motion.p 
+      animate={{x : isSuccess ? "-40px" : "0px"}}
+      transition={{ duration: "1" }}
+      className="flex justify-center align-middle p-1">{isSuccess ? "Thanks" : "Submit"}</motion.p>
+      <motion.div
+      className={`${styles.checkBox}`}
+      >
+    <motion.svg  
+    
+    xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-check"><motion.path stroke="none" d="M0 0h24v24H0z" fill="none"/><motion.path d="M5 12l5 5l10 -10" /></motion.svg>
+    </motion.div>
+  </motion.button>
+</div>
+  )
+}
+
