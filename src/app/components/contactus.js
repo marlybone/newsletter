@@ -207,6 +207,8 @@ const Button = ({
       className="flex justify-center align-middle p-1">{isSuccess ? "Thanks" : "Submit"}</motion.p>
       <motion.div
       className={`${styles.checkBox}`}
+      animate={{ opacity: isSuccess ? "1" : "0", right: isSuccess ? "0px" : "-45px" }}
+      transition={{ duration: "1", delay: "0.1"}}
       >
     <motion.svg  
     
