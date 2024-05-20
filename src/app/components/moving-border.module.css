@@ -195,16 +195,6 @@
   margin-top: 5px;
 }
 
-.successPopin {
-  position: absolute;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  border-radius: 2%;
-  border-color: transparent;
-  background-image: url("../../../public/stacked.png");
-  height: 100px;
-  width: 280px;
-  border-radius: 5%;
-}
 
 .bentoWrapper {
   margin-inline: auto;
@@ -212,27 +202,18 @@
   height: 100dvh;
 }
 
-
 .submitButton {
-  padding: 6px 6px;
-  width: 12em;
-  height: 2.8em;
-  border-radius: 40px;
-  color: #fff;
-  background: #52525B;
-  border: none;
-  outline: none;
   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-  overflow: hidden;
-  cursor: pointer;
 }
 
+
 .checkBox {
-  height: 2.8em;
-  width: 2.8em;
+  height: 50px;
+  width: 50px;
   border-radius: 40px;
   position: absolute;
   box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
   top: 0px;
+  right: 0px;
   opacity: 0;
 }
