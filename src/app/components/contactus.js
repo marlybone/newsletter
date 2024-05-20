@@ -204,15 +204,37 @@ const Button = ({
       <motion.p 
       animate={{x : isSuccess ? "-40px" : "0px"}}
       transition={{ duration: "1" }}
-      className="flex justify-center align-middle p-1">{isSuccess ? "Thanks" : "Submit"}</motion.p>
+      className="flex justify-center align-middle p-1 text-lg">{isSuccess ? "Thanks" : "Submit"}</motion.p>
       <motion.div
-      className={`${styles.checkBox}`}
+      className={`${styles.checkBox} justify-center flex items-center p-2`}
       animate={{ opacity: isSuccess ? "1" : "0", right: isSuccess ? "0px" : "-45px" }}
-      transition={{ duration: "1", delay: "0.1"}}
+      transition={{ duration: "1"}}
       >
-    <motion.svg  
-    
-    xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-check"><motion.path stroke="none" d="M0 0h24v24H0z" fill="none"/><motion.path d="M5 12l5 5l10 -10" /></motion.svg>
+    {/* <motion.svg 
+    initial={{ pathLength: "0"}}
+    animate={{ pathLength: isSuccess ? "1" : "" }}
+    transition={{ duration: 4, ease: "easeInOut" }}
+    xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+      <motion.path
+      initial={{ pathLength: "0"}}
+      animate={{ pathLength: isSuccess ? "1" : "" }}
+      transition={{ duration: 4, ease: "easeInOut" }}
+      stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <motion.path 
+      initial={{ pathLength: "0"}}
+      animate={{ pathLength: isSuccess ? "1" : "" }}
+      transition={{ duration: 4, ease: "easeInOut" }}
+      d="M5 12l5 5l10 -10" />
+      </motion.svg> */}
+
+<motion.svg
+initial={{ pathLength: "0"}}
+xmlns="http://www.w3.org/2000/svg" fill="white" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+<motion.path
+initial={{ pathLength: "0"}}
+d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344"></motion.path>
+</motion.svg>
+
     </motion.div>
   </motion.button>
 </div>
