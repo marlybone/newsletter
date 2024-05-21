@@ -7,7 +7,7 @@ export const SocialIcons = ({ children }) => {
 
   return (
     <motion.div 
-    className="py-4 border w-1/6 md:w-2/3 md:h-24 h-54 mx-auto justify-center flex bg-transparent rounded-xl absolute md:relative md:inset-x-[150px] md:inset-y-0 inset-x-[430px] inset-y-[340px] inset- z-0 backdrop-blur-sm ">
+    className="w-1/6 md:w-2/3 h-auto mx-auto justify-center flex-row rounded-xl md:relative">
       {children}
     </motion.div>
   );
@@ -28,7 +28,7 @@ export const SocialLinks = ({ linkedin, github, twitter }) => {
   
 
   return (
-    <div className="flex justify-center items-center md:space-x-4 md:space-y-0 space-y-6 space-x-0 flex-col md:flex-row">
+    <div className="flex justify-center items-center md:space-x-4 md:space-y-0 space-y-6 space-x-0 flex-row">
       <Link href={twitter} target="_blank">
         <motion.svg
         whileHover="hover"

@@ -31,7 +31,7 @@ export default function RecentPosts() {
                 </div>
                 <div className="p-2">
                   <div className="flex justify-between my-1 text-sm space-x-2">
-                    <span>
+                    <span className="font-[Merriweather]">
                       Published
                       <p className="font-semibold">
                         {new Date(data.publishedAt).toDateString().slice(4)}
@@ -45,7 +45,7 @@ export default function RecentPosts() {
                       </Link>
                     </div>
                   </div>
-                  <h1 className="my-4 text-gray-800 text-2xl font-bold flex font-[Merriweather]">
+                  <h1 className="my-4 text-gray-800 text-2xl font-bold flex font-[RussoOne]">
                     {data.title}
                   </h1>
                   <h2 className="mb-14 my-4 text-sm font-light font-[Sans]">
@@ -60,7 +60,7 @@ export default function RecentPosts() {
                           className="w-8 rounded-full border border-transparent shadow-custom"
                         />
                         <p>
-                          <span className=" text-sm font-semibold ">
+                          <span className=" text-sm font-semibold font-[Merriweather]">
                             {data.author.name}
                           </span>
                         </p>

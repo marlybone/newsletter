@@ -8,7 +8,7 @@ export const BentoGrid = ({ className, children }) => {
   return (
     <motion.div
       className={cn(
-        "grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto",
+        "p-2 m-2 grid md:auto-rows-[16rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto md:h-[80vh] h-[100vh] content-center",
         className,
       )}
     >
@@ -28,19 +28,16 @@ export const BentoGridItem = ({ header, image }) => {
 
 export function BentoGridOne({ author }) {
   return (
-    <motion.div className={styles.bentoWrapper}>
-      <h1 className="text-5xl max-w-4xl flex justify-center">About Me</h1>
-      <BentoGrid className="md:mx-auto mx-6 auto-rows-[15rem] my-10">
+    <>
+      <BentoGrid className="justify-center relative items-center font-[Sans]">
         {author.map((item, i) => (
           <BentoGridItem
             key={i}
             header={item.header}
             image={item.img}
-            className={item.className}
           />
         ))}
-        <SocialElement />
       </BentoGrid>
-    </motion.div>
+      </>
   );
 }

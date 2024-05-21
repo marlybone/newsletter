@@ -61,16 +61,16 @@ export function GridBackgroundDemo() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-grid-black/[0.1] relative flex">
+    <div className="bg-white bg-grid-black/[0.1] relative flex">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
-      <div className="flex md:min-h-screen w-full">
-        <div className="md:flex-row flex-col flex md:min-h-screen items-center w-full">
-          <div className="relative py-4 space-y-4 md:self-start self-center md:mt-44 md:my-8 mt-36  min-h-screen">
+      <div className="flex w-full">
+        <div className="md:flex-row flex-col flex items-center w-full">
+          <div className="relative py-4 space-y-4 md:self-start self-center md:mt-44 md:my-8 mt-36">
             <motion.h1
               variants={variants}
               initial="initial"
               animate="load"
-              className="text-5xl sm:text-6xl font-bold "
+              className="text-6xl sm:text-6xl font-[Merriweather] font-bold"
             >
               Our Journey
             </motion.h1>
@@ -88,7 +88,7 @@ export function GridBackgroundDemo() {
                   initial="hidden"
                   animate="visible"
                 >
-                  <motion.div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden">
+                  <motion.div className="flex font-[Sans] flex-wrap w-auto relative mx-4 text-center overflow-hidden">
                     {content.map((word, i) => (
                       <motion.span
                         variants={child}

@@ -165,10 +165,10 @@ export function Button({
                     variants={variants}
                     className={`${styles.blurBackdrop}`}
                   >
-                    <motion.h2 className="font-bold mx-12 my-1">
+                    <motion.h2 className="font-bold mx-12 my-1 font-[Merriweather]">
                       {item.name}
                     </motion.h2>
-                    <motion.h3 className="font-semibold text-center text-sm">
+                    <motion.h3 className="font-semibold text-center text-sm font-[Sans]">
                       {item.title}
                     </motion.h3>
                   </motion.div>
