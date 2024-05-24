@@ -15,7 +15,7 @@ export const SkeletonSix = () => {
 
 export const SkeletonOne = ({}) => {
   const text =
-    "I'm interested in learning about the remarkable journeys of people, who've navigated career shifts. My own transition into development sparked this passion. I want to understand their motivations, challenges, and triumphs they've encountered. By telling their stories, I hope to inspire others exploring similar career transformations.";
+    "I'm a developer, frequent gym-goer, married for 10 years, and a father of one. I also own a Japanese Akita. British born, I now live in Sweden. I'm passionate about learning and driven to create a platform where others can share their career transition journeys. My goal is to build a community of self-taught enthusiasts who can help, inspire, and offer advice, tips, and motivation to others on a similar journey";
 
   const content = text.split(" ");
 
@@ -25,7 +25,7 @@ export const SkeletonOne = ({}) => {
     >
       <div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden mt-3 align-center justify-center ">
         {content.map((item, i) => (
-          <motion.p className="mr-1 mx-px my-px font-normal text-xl" key={i}>
+          <motion.p className="mr-1 mx-px my-px font-[sans] leading-8 text-lg" key={i}>
             {item}
           </motion.p>
         ))}

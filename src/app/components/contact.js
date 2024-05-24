@@ -14,7 +14,7 @@ export default function ContactForm() {
           <div className="flex flex-col py-auto p-2 mx-auto h-auto md:mt-2">
             <div>
               <div>
-                <h1 className="text-3xl ml-2 flex p-2 space-y-2 md:mt-2">Name</h1>
+                <h1 className="text-4xl mb-10 ml-2 flex p-2 space-y-2 md:mt-2 font-[Lilita] font-thin ">MINIMARVELS</h1>
               </div>
             </div>
               <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 mt-2">

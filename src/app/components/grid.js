@@ -6,7 +6,7 @@ import { SkeletonSix } from "./bentoskeleton";
 
 export function GridBackgroundDemo() {
   const text =
-    "Here We Have Some text. Here I'm going to talk about how great we are. We doing some cool things and here is where we talk about all the cool stuff we are doing. I wonder why when i put this on a new line it doesn't work? That's super weird but ok whatever. Here we talk about more cool stuff to enlarge the box slightly and to represent what our actual box size would look like once complete. I could of done Lorem ipsum instead right?";
+    "At 35, I decided to transition to a career in tech. I've always loved technology and have been a computer nerd my entire life, but it never ended up being my career. Determined to make the change, I began my journey with freeCodeCamp. I maintained my day job, and in the evenings, I pushed code to GitHub and absorbed as much as I could through online resources, LeetCode, and hands-on experimentation. I consider myself a developer, though I haven't officially landed my first job yet. Currently, I focus on realising my own ideas and projects. Despite my late entry onto the tech scene I've promised myself I will make it in this industry";
   const content = text.split(" ");
 
   const variants = {
@@ -70,9 +70,9 @@ export function GridBackgroundDemo() {
               variants={variants}
               initial="initial"
               animate="load"
-              className="text-6xl sm:text-6xl font-[Merriweather] font-bold"
+              className="text-6xl sm:text-6xl font-[RussoOne] font-bold"
             >
-              Our Journey
+              My Journey
             </motion.h1>
             <div className="flex md:flex-row flex-col space-x-8 space-y-4">
               <motion.div
@@ -80,7 +80,7 @@ export function GridBackgroundDemo() {
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 1.2, type: "spring", damping: 10 }}
-                className="relative py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit mb-6"
+                className="relative z-10 py-4 max-w-2xl bg-white bg-dot-black/[0.1] border-transparent shadow-custom drop-shadow-2xl md:w-5/6 h-fit mb-6"
               >
                 <SkeletonSix />
                 <motion.div
@@ -88,12 +88,12 @@ export function GridBackgroundDemo() {
                   initial="hidden"
                   animate="visible"
                 >
-                  <motion.div className="flex font-[Sans] flex-wrap w-auto relative mx-4 text-center overflow-hidden">
+                  <motion.div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden">
                     {content.map((word, i) => (
                       <motion.span
                         variants={child}
                         key={i}
-                        className="font-light text-lg mr-1"
+                        className="font-light leading-8 text-lg mr-1 font-[Sans]"
                       >
                         {word}
                       </motion.span>

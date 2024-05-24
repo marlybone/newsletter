@@ -29,7 +29,7 @@ export const BentoGridItem = ({ header, image }) => {
 export function BentoGridOne({ author }) {
   return (
     <>
-      <BentoGrid className="justify-center relative items-center font-[Sans]">
+      <BentoGrid className="justify-center relative items-center font-[sans]">
         {author.map((item, i) => (
           <BentoGridItem
             key={i}

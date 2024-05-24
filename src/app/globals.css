@@ -32,3 +32,9 @@
     src: url("../../public/fonts/RussoOne.ttf") format("truetype");
   }
   
+  @font-face {
+    font-family: "Lilita";
+    src: url("../../public/fonts/Lilita.ttf") format("truetype");
+  }
+  
+
