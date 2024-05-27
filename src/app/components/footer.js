@@ -19,9 +19,15 @@ export default function Footer() {
   return (
     <section className="bg-zinc-600 border-t-[1px] border-gray-400 bottom-0 left-0 w-full flex">
       <div className="w-full px-8 py-8 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <div className="flex justify-between mt-2 space-x-6">
+        <div className="flex mt-2 space-x-6 md:w-2/3 w-full justify-start mx-auto">
           <div className="text-white justify-start flex self-start align-start">
-            This is the icon
+            <div className="flex flex-row">
+            <img
+            className=" w-16 h-16 object-cover rounded-full mr-2"
+            alt="logo"
+            src="./super.png" />
+            <h1 className="text-xl font-[Lilita] self-center font-thin">MINIMARVELS</h1>
+            </div>
           </div>
         </div>
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
@@ -158,7 +164,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="ml-6 mt-4 leading-6 text-gray-200">
-                © 2024 Mini, Inc. All rights reserved.
+                © 2024 MINIMARVELS, Inc. All rights reserved.
               </p>
             </div>
           </div>

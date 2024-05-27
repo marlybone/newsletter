@@ -41,13 +41,12 @@ export default function Navbar() {
             alt="logo"
           ></img>
           <div className="hidden md:block self-center font-bold text-xl">
-            <span className={`text-black  font-[Lilita] text-2xl font-thin`}>MINIMARVELS</span>
+            <span className={`text-black font-[Lilita] text-2xl font-thin`}>MINIMARVELS</span>
           </div>
           <div>
             <FloatingNav navItems={navItems} />
           </div>
         </div>
-        <SearchBar />
       </div>
     </div>
   );

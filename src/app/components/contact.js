@@ -14,15 +14,13 @@ export default function ContactForm() {
           <div className="flex flex-col py-auto p-2 mx-auto h-auto md:mt-2">
             <div>
               <div>
-                <h1 className="text-4xl mb-10 ml-2 flex p-2 space-y-2 md:mt-2 font-[Lilita] font-thin ">MINIMARVELS</h1>
+                <h1 className="text-4xl mb-4 ml-2 flex p-2 md:mt-2 font-[Lilita] font-thin ">MINIMARVELS</h1>
               </div>
             </div>
-              <div className="flex flex-col justify-center p-2 mx-2 space-y-2 md:w-5/6 mt-2">
-                <h1 className="md:text-[46px] text-3xl mb-4 font-bold font-[Merriweather] leading-tight">Have you got a story you want to tell?</h1>
-                <p className="md:text-md text-[15px] mt-2 font-[Sans]">
-                  Navigated the difficult path of career transition
-                  into tech either through self taught or tradtional education?
-                  We would love to hear from you to share your story to help and motivate others to make the leap orstay the course
+              <div className="flex flex-col justify-center p-2 mx-2 md:w-5/6 mt-2">
+                <h1 className="md:text-[46px] text-3xl mb-4 font-bold font-[Merriweather] leading-tight">Ready to Share Your Journey?</h1>
+                <p className="md:text-md text-[16px] mt-1 font-[Sans]">
+                Have you successfully transitioned into a new career or are you striving to break into a different field? We'd love to hear your story! Share your journey to inspire and motivate others to take the leap or stay the course.
                 </p>
               </div>
             

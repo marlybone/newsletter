@@ -28,7 +28,7 @@ export default function ShareLinks() {
   const { scrollY } = useScroll({ target: scrollContainerRef });
 
   const startPoint = 100; 
-  const endPoint = 1550;
+  const endPoint = 1650;
 
   const translateY = useTransform(scrollY, [startPoint, endPoint], [0, endPoint - startPoint]);
 
@@ -53,11 +53,11 @@ export default function ShareLinks() {
         ref={scrollContainerRef}
         style={{
           translateY,
-          transition: { ease: 'easeIn', damping: 20, stiffness: 300 }
+          transition: { ease: 'easeIn' }
         }}
         
         variants={scrollVariants}
-        className='h-[450px] relative'
+        className='md:h-[470px] relative'
         >
         {buttons.map((button, i ) => (
             <div
@@ -78,6 +78,7 @@ export const ShareButtons = ({
     const shareUrl = usePathname();
     return (
       <motion.div
+      className='relative'
       >
         <Button
         url={shareUrl}>
