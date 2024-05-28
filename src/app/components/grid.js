@@ -61,7 +61,7 @@ export function GridBackgroundDemo() {
   };
 
   return (
-    <div className="bg-white bg-grid-black/[0.1] relative flex">
+    <div className="bg-white bg-grid-black/[0.1] relative flex font-Syne mx-2">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="flex w-full">
         <div className="md:flex-row flex-col flex items-center w-full">
@@ -70,7 +70,7 @@ export function GridBackgroundDemo() {
               variants={variants}
               initial="initial"
               animate="load"
-              className="text-6xl sm:text-6xl font-[RussoOne] font-bold"
+              className="lg:text-[80px] text-[60px] font-semibold"
             >
               My Journey
             </motion.h1>
@@ -93,7 +93,7 @@ export function GridBackgroundDemo() {
                       <motion.span
                         variants={child}
                         key={i}
-                        className="font-light leading-8 text-lg mr-1 font-[Sans]"
+                        className="font-[Syne] text-[21px] leading-[1.45] mr-1 font-weight-[25]"
                       >
                         {word}
                       </motion.span>

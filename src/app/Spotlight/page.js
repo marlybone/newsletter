@@ -49,7 +49,7 @@ export default function SpotlightPage() {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative font-[Syne]">
         <img
           src="sapphire.jpg"
           className="absolute w-full h-80 object-cover overflow-hidden"
@@ -89,14 +89,14 @@ export default function SpotlightPage() {
                   </div>
                   <div className="md:w-3/4 md:mx-6 w-fit h-44 md:h-auto">
                     <div className="flex flex-col space-y-2 w-full md:h-auto h-full md:justify-normal justify-evenly">
-                      <h1 className="text-2xl font-bold font-[RussoOne] mb-2 md:mx-0 mx-auto md:text-start text-center md:mt-4">
+                      <h1 className="text-[26px] font-bold mb-2 md:mx-0 mx-auto md:text-start text-center md:mt-4">
                         {article.title}
                       </h1>
-                      <p className="text-sm md:mx-auto mx-4 font-[Sans]">
+                      <p className="text-[16px] md:mx-auto mx-4">
                         {article.smallDescription}
                       </p>
                       <ul className="flex-row flex mt-10 space-x-1 justify-between">
-                        <div className="md:absolute bottom-0 md:mb-3 flex-row flex space-x-3 md:ml-0 ml-4 font-[Sans]">
+                        <div className="md:absolute bottom-0 md:mb-3 flex-row flex space-x-3 md:ml-0 ml-4">
                           {Array.isArray(article.categories) ? (
                             <TagGridOne category={article.categories} />
                           ) : (

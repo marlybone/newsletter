@@ -25,7 +25,7 @@ export default function RecentPosts() {
                     src={data.mainImage}
                     alt={data.title}
                   />
-                  <p className="absolute top-0 bg-amber-500 text-gray-800 font-semibold py-1 px-3 rounded-br-md">
+                  <p className="absolute top-0 bg-amber-500 text-gray-800 font-semibold py-1 px-3 rounded-br-md font-[Syne]">
                     NEW!
                   </p>
                 </div>
@@ -45,10 +45,10 @@ export default function RecentPosts() {
                       </Link>
                     </div>
                   </div>
-                  <h1 className="my-4 text-gray-800 text-2xl font-bold flex font-[RussoOne]">
+                  <h1 className="my-4 text-black text-[26px] font-bold flex font-[Syne] leading-[1.05]">
                     {data.title}
                   </h1>
-                  <h2 className="mb-14 my-4 text-sm font-light font-[Sans]">
+                  <h2 className="mb-14 my-4 text-md font-light font-[Syne]">
                     {data.smallDescription}
                   </h2>
                   <div className="absolute bottom-0 w-full">

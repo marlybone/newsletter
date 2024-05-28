@@ -42,7 +42,7 @@ export default function ContactUs() {
   
 
     return (
-      <div className='p-2 h-full md:mt-6 w-full flex'>
+      <div className='p-2 h-full lg:mt-6 w-full flex'>
         <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} onSubmit={sendEmail}>
              <div className='relative'>
      <input

@@ -37,4 +37,13 @@
     src: url("../../public/fonts/Lilita.ttf") format("truetype");
   }
   
-
+  @font-face {
+    font-family: "DMSans";
+    src: url("../../public/fonts/DMSans.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Syne";
+    src: url("../../public/fonts/Syne.ttf") format("truetype");
+  }
+  
