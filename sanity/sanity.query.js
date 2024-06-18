@@ -2,25 +2,24 @@ import { groq } from "next-sanity";
 import client from "./sanity.client";
 
 export const profile = await client.fetch(
-    groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc) [0...3] {
-      _id,
-      title,
-      smallDescription,
+  groq`
+  *[_type == "post" && publishedAt < now()] | order(publishedAt desc) [0...3] {
+    _id,
+    title,
+    smallDescription,
+    "slug": slug.current,
+    "mainImage": mainImage.asset->url,
+    author-> {
+      name,
+      bio,
       "slug": slug.current,
-      "mainImage": mainImage.asset->url,
-      "author": author-> {
-        name,
-        bio,
-        "slug": slug.current,
-        "image": image.asset->url
-      },
-      "authorImg": *[_type == 'author'][0].image.asset->url,
-      publishedAt,
-      body -> {
-        text
-      },
-      categories[]-> {title}
-    }`)
+      "image": image.asset->url
+    },
+    publishedAt,
+    categories[]-> {title}
+  }
+`
+);
 
     export const spotLight = client.fetch(
       groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc) {

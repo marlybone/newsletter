@@ -1,7 +1,8 @@
 "use client"
+
 import React, { useRef } from 'react'
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useViewportScroll } from "framer-motion"
 import {
   EmailShareButton,
   FacebookShareButton,

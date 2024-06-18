@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.className}`}>
       <body>
         <header></header>
-        <main className="h-auto">
+        <main className="h-auto min-h-[80vh]">
           <Navbar />
           {children}
         </main>
