@@ -69,3 +69,17 @@ export const profile = await client.fetch(
           categories[]-> {title}
         }`
         )
+
+        export const post = await client.fetch( groq`
+        *[_type == "post" && slug.current == "$slug"] {
+          _id,
+          title,
+          publishedAt,
+          body,
+          "mainImage": mainImage.asset->url,
+          "author": *[_type == 'author'][0].name,
+          "authorImg": *[_type == 'author'][0].image.asset->url
+        }
+        `)
+      
+      

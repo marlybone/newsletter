@@ -1,13 +1,36 @@
 import React from "react";
-import client from "../../../../sanity/sanity.client";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "./blog.module.css"
 import ShareLinks from "../../components/sharelinks"
-import { motion, useScroll } from "framer-motion"
+import client from "../../../../sanity/sanity.client";
+import {PortableText} from '@portabletext/react'
 
+  
+export const revalidate = 30;
+
+const portableComponent = {
+  block: {
+    em: ({children}) => <div>{children}</div>,
+    block: ({children}) => <div>{children}</div>,
+    h1: ({children}) => <div className=" text-5xl">{children}</div>,
+    h2: ({children}) => <div className="text-3xl">{children}</div>,
+    h3: ({children}) => <div className="text-2xl">{children}</div>,
+    h4: ({children}) => <div className="text-xl">{children}</div>,
+    lineBreak: ({}) => <br></br>,
+    blockquote: ({children}) => <blockquote className="border-gray-700">{children}</blockquote>
+  },
+  list: {
+    bullet: ({children}) => <ul className="ml-6 list-disc">{children}</ul>,
+    number: ({children}) => <ol className="ml-6">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li>{children}</li>,
+    number: ({ children }) => <li>{children}</li>,
+  },
+}
 
 const Post = async ({ params }) => {
-  const query = await client.fetch(`
+  const post = await client.fetch(`
   *[_type == "post" && slug.current == "${params.slug}"] {
     _id,
     title,
@@ -18,16 +41,16 @@ const Post = async ({ params }) => {
     "authorImg": *[_type == 'author'][0].image.asset->url
   }
 `);
-
-
-  if (!Post) {
-    return <div>Loading...</div>;
-  }
+if (!post || post.length === 0) {
+  return <div>Loading...</div>;
+}
   return (
+    
     <section className={`${styles.Lato} flex justify-center py-6`}>
-      {query &&
-        query.map((post) => (
-          <div className="max-w-5xl mt-16 flex-col content-center mx-1">
+      {console.log('Fetched post:', post)}
+      {post &&
+        post.map((post) => (
+          <div key={post._id} className="max-w-5xl mt-16 flex-col content-center mx-1">
             <img
               className="h-72 w-full object-cover rounded-md"
               src={post.mainImage}
@@ -60,13 +83,12 @@ const Post = async ({ params }) => {
               </div>
             </div>
             <div className=" border-b-[1px] border-gray-300 mt-2 mx-8 p-2" />
-            <div className="mt-10 flex justify-center  mx-6">
-              <BlockContent
-                className="article"
-                blocks={post.body}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                dataset="production"
-              />
+            <div className="mt-10 flex justify-center mx-6 flex-col prose">
+            <PortableText
+                    className="article"
+                    value={post.body}
+                    components={portableComponent}
+                  />
             </div>
           </div>
         </div>
@@ -75,6 +97,5 @@ const Post = async ({ params }) => {
     </section>
   );
 };
-
 
 export default Post;
