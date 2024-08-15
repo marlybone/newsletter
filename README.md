@@ -12,9 +12,7 @@
 <h1>1. Project Overview</h1>
 
    
-<h3>1.1. Project Title</h3>
-
-<h4>Name: MiniMarvels</h4>
+<h3>1.1. MiniMarvels - Blog</h3>
 
 <h4>Description:</h4>
 <p>Website created to foster a community around self-taught and career transition journeys. Through interviews, advice, and motivation, I hope to inspire and help others traverse the journey of career transitions.</p>
