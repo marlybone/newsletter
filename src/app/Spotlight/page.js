@@ -64,6 +64,8 @@ export default function SpotlightPage() {
                 className="outline-none w-full bg-transparent text-sm px-4 py-3"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                for="search"
+                aria-label="search"
               />
             </div>
           </div>
@@ -76,23 +78,23 @@ export default function SpotlightPage() {
             filteredPosts.map((article) => (
               <div
                 key={article._id}
-                className="border-transparent bg-gray-100 backdrop-filter backdrop-blur-lg bg-opacity-50 shadow-custom md:w-full transition-all md:h-48 h-56 rounded-md md:mb-3 relative mx-8 ml-12 border-b flex-col mb-12"
+                className="border-transparent bg-gray-100 bg-opacity-50 shadow-custom md:w-full transition-transform md:h-48 h-56 rounded-md md:mb-3 relative mx-8 ml-12 border-b flex-col mb-12"
               >
                 <div className="md:absolute md:inset-0 md:flex-row flex flex-col md:justify-start content-center z-10 drop-shadow-lg justify-evenly h-[100%]">
                   <div className="md:h-32 md:mt-0 h-16 w-24 md:rounded-2xl rounded-full box-border shadow-custom md:ml-[-48px] mt-[-36px] md:w-1/4 inset-y-0 self-center drop-shadow-xl">
                     {" "}
                     <img
                       className="w-full h-full object-cover overflow-hidden rounded-2xl"
-                      src="./nasa.jpg"
+                      src={article.mainImage}
                       alt=""
                     />
                   </div>
                   <div className="md:w-3/4 ml-2 h-[100%]">
                     <div className="flex flex-col h-[100%]">
-                      <h1 className="text-[18px] font-bold mb-2 mx-auto md:text-start text-center mt-4">
+                      <h1 className="md:text-[20px] text-[18px] font-bold mb-2 mx-auto md:text-start text-center mt-4 font-[Syne]">
                         {article.title}
                       </h1>
-                      <p className="text-[15px] md:mx-auto mx-4">
+                      <p className="md:text-[15px] text-[14px] mx-3 font-[DMSans]">
                         {article.smallDescription}
                       </p>
                       <ul className="flex-row flex space-x-2 bottom-0 h-[100%]">
@@ -105,13 +107,15 @@ export default function SpotlightPage() {
                             <div>None</div>
                           )}
                           </div>
-                        <Link href={`/blog/${article.slug}`}>
+          
                           <div className="items-end flex place-content-end inset-0 right-0 absolute">
+                          <Link href={`/blog/${article.slug}`}>
                           <button className="mx-4 px-4 py-1 h-8 items-end rounded-md border border-black bg-white text-neutral-700 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
                             Read
                           </button>
+                          </Link>
                           </div>
-                        </Link>
+
                         </div>
                         </div>
                       </ul>

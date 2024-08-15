@@ -1,5 +1,4 @@
 import React from "react";
-import BlockContent from "@sanity/block-content-to-react";
 import styles from "./blog.module.css"
 import ShareLinks from "../../components/sharelinks"
 import client from "../../../../sanity/sanity.client";
@@ -15,7 +14,7 @@ const portableComponent = {
     h1: ({children}) => <div className=" text-5xl">{children}</div>,
     h2: ({children}) => <div className="text-3xl">{children}</div>,
     h3: ({children}) => <div className="text-2xl">{children}</div>,
-    h4: ({children}) => <div className="text-xl">{children}</div>,
+    h4: ({children}) => <div className={`font-[DMSans] text-xl`}>{children}</div>,
     lineBreak: ({}) => <br></br>,
     blockquote: ({children}) => <blockquote className="border-gray-700">{children}</blockquote>
   },
@@ -27,6 +26,16 @@ const portableComponent = {
     bullet: ({ children }) => <li>{children}</li>,
     number: ({ children }) => <li>{children}</li>,
   },
+  marks: {
+    link: ({ children, value }) => {
+      const { href } = value;
+      return (
+        <a href={href} className="text-sky-700 font-bold" target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+  }
+}
 }
 
 const Post = async ({ params }) => {
@@ -46,7 +55,7 @@ if (!post || post.length === 0) {
 }
   return (
     
-    <section className={`${styles.Lato} flex justify-center py-6`}>
+    <section className={`${styles.Lato} flex justify-center py-6 mb-8`}>
       {console.log('Fetched post:', post)}
       {post &&
         post.map((post) => (
@@ -83,7 +92,7 @@ if (!post || post.length === 0) {
               </div>
             </div>
             <div className=" border-b-[1px] border-gray-300 mt-2 mx-8 p-2" />
-            <div className="mt-10 flex justify-center mx-6 flex-col prose">
+            <div className="mt-10 flex justify-center mx-6 flex-col font-thin">
             <PortableText
                     className="article"
                     value={post.body}

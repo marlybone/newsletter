@@ -7,17 +7,16 @@ export default function RecentPosts() {
     <div className="flex justify-center p-4 m-4">
       <div className="flex flex-col">
         <div className="my-4 justify-start items-start content-start self-start">
-          <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom font-[Merriweather]">
+          <h1 className="p-2 border border-transparent mx-auto rounded-md shadow-custom font-[Merriweather] mb-2">
             Latest
           </h1>
         </div>
-
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 h-auto py-auto mx-auto space-y-4 md:space-y-0 drop-shadow-2xl">
           {profile &&
             profile.map((data) => (
               <div
                 key={data._id}
-                className="border-b border-transparent rounded-md max-w-sm pb-1 shadow-custom transform transition bg-white"
+                className="border-b border-transparent rounded-md max-w-sm pb-1 shadow-custom transform transition bg-white hover:scale-105"
               >
                 <div className="relative">
                   <img

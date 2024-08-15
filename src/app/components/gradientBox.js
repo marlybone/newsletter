@@ -104,7 +104,7 @@ export const gradientColors = [
   "from-sky-900 to-emerald-500",
 ];
 
-export const TagGridItem = ({ category, className, name }) => {
+export const TagGridItem = ({ category, className }) => {
   const [colorMap, setColorMap] = useState({});
 
   useEffect(() => {
@@ -121,13 +121,12 @@ export const TagGridItem = ({ category, className, name }) => {
   // use framer motion at a later date to play with animation
 
   return (
-    <div className="group relative mx-auto max-w-5xl">
+    <div className="relative">
       <div
-        className={`bg-gradient-to-r absolute -inset-[0.10rem] rounded-lg blur-[4px] transition-all opacity-25 duration-500 group-hover:opacity-100 group-hover:duration-200 ${className}`}
+        className={`bg-gradient-to-r absolute inset-[0.02rem] rounded-lg blur-[4px] opacity-25 ${className}`}
       />
-      <div className="relative px-3 py-2 bg-white ring-3 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-        <h2>{category}</h2>
-        <h3>{name}</h3>
+      <div className="relative px-3 py-2 bg-white ring-3 ring-gray-900/5 rounded-lg justify-start space-x-6 transition-transform duration-500">
+        {category}
       </div>
     </div>
   );
@@ -147,7 +146,7 @@ export function TagGridOne({ category }) {
     <li key={i}>
       <TagGridItem
         category={item.title}
-        className={generateColorMap[item.title]}
+        className={`${generateColorMap[item.title]}`}
       />
     </li>
   ));

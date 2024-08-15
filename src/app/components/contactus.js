@@ -1,10 +1,10 @@
 
 "use client"
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import styles from "./moving-border.module.css"
-import { motion, AnimatePresence, easeIn } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactUs() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -43,7 +43,7 @@ export default function ContactUs() {
 
     return (
       <div className='p-2 h-full lg:mt-6 w-full flex'>
-        <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} onSubmit={sendEmail}>
+        <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} onSubmit={sendEmail} for="contact">
              <div className='relative'>
      <input
             {...register("firstName", { required: "This Is Required", minLength: {
@@ -53,9 +53,10 @@ export default function ContactUs() {
             className={styles.boxInput}
             required
             name="firstName"
+            aria-label="Name"
         ></input>
         <span id={styles.bar} />
-        <label className={styles.label}>Name</label>
+        <label className={styles.label} for="username">Name</label>
         <p className={styles.errorMsg}>{errors.firstName?.message}</p>
            </div>
            <div className='relative'>
@@ -67,9 +68,10 @@ export default function ContactUs() {
                 className={styles.boxInput} 
                 name="email"
                 required
+                aria-label="Email"
                 />
         <span id={styles.bar}/>
-        <label id="label" className={styles.label}>Email</label>
+        <label id="label" className={styles.label} for="email">Email</label>
         <p className={styles.errorMsg}>{errors.email?.message}</p>
      </div>
         <div className='relative'>
@@ -78,9 +80,10 @@ export default function ContactUs() {
         className={`${styles.boxInput}`} 
         id={styles.textareaInput}
         required
+        aria-label="Message"
         />
         <span id={styles.bar}/>
-        <label htmlFor="boxInput" id="label" className={styles.label}>Message</label>
+        <label htmlFor="boxInput" id="label" className={styles.label} for="message">Message</label>
         </div>
         <Button isSuccess={isSuccess}/>
         </form>
@@ -117,7 +120,7 @@ const Button = ({
   type="submit"
   animate={{backgroundColor: isSuccess ? "#388e3c" : "#52525B"}}
   transition={{duration: "1"}}
-  className={`justify-center items-center relative outline-none overflow-hidden border-none h-[50px] w-[220px] text-white text-[22px] text-center rounded-full shadow-md shadow-[-1px_6px_10px_2px rgba(0, 0, 0, 0.2)]`}>
+  className={`btn justify-center items-center relative outline-none overflow-hidden border-none h-[50px] w-[220px] text-white text-[22px] text-center rounded-full shadow-md shadow-[-1px_6px_10px_2px rgba(0, 0, 0, 0.2)]`}>
       <motion.p 
       animate={{x : isSuccess ? "-40px" : "0px"}}
       transition={{ duration: "1" }}
