@@ -43,7 +43,7 @@ export default function ContactUs() {
 
     return (
       <div className='p-2 h-full lg:mt-6 w-full flex'>
-        <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} onSubmit={sendEmail} for="contact">
+        <form className='flex flex-col h-full w-full mt-2 justify-start items-center space-y-8' ref={form} onSubmit={sendEmail} aria-label="contact">
              <div className='relative'>
      <input
             {...register("firstName", { required: "This Is Required", minLength: {
@@ -56,7 +56,7 @@ export default function ContactUs() {
             aria-label="Name"
         ></input>
         <span id={styles.bar} />
-        <label className={styles.label} for="username">Name</label>
+        <label className={styles.label} htmlFor="username">Name</label>
         <p className={styles.errorMsg}>{errors.firstName?.message}</p>
            </div>
            <div className='relative'>
@@ -71,7 +71,7 @@ export default function ContactUs() {
                 aria-label="Email"
                 />
         <span id={styles.bar}/>
-        <label id="label" className={styles.label} for="email">Email</label>
+        <label id="label" className={styles.label} htmlFor="email">Email</label>
         <p className={styles.errorMsg}>{errors.email?.message}</p>
      </div>
         <div className='relative'>
@@ -83,7 +83,7 @@ export default function ContactUs() {
         aria-label="Message"
         />
         <span id={styles.bar}/>
-        <label htmlFor="boxInput" id="label" className={styles.label} for="message">Message</label>
+        <label htmlFor="boxInput" id="label" className={styles.label}>Message</label>
         </div>
         <Button isSuccess={isSuccess}/>
         </form>

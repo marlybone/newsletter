@@ -59,12 +59,12 @@ export default function SpotlightPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="max-w-lg mx-auto bg-gray-100 flex px-2 py-1 rounded-full text-left border mt-44 focus-within:border-gray-700">
               <input
+                id="id"
                 type="search"
                 placeholder="Search by title or category"
                 className="outline-none w-full bg-transparent text-sm px-4 py-3"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                for="search"
                 aria-label="search"
               />
             </div>
