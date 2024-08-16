@@ -4,10 +4,8 @@ import { authors } from "../components/authors";
 import Link from "next/link";
 
 export const SocialIcons = ({ children }) => {
-
   return (
-    <motion.div 
-    className="w-1/6 md:w-2/3 h-auto mx-auto justify-center flex-row rounded-xl md:relative">
+    <motion.div className="w-1/6 md:w-2/3 h-auto mx-auto justify-center flex-row rounded-xl md:relative">
       {children}
     </motion.div>
   );
@@ -21,27 +19,36 @@ export const SocialLinks = ({ linkedin, github, twitter }) => {
       transition: {
         duration: 0.3,
         yoyo: Infinity,
-        ease: "easeOut", 
+        ease: "easeOut",
       },
     },
   };
-  
 
   return (
     <div className="flex justify-center items-center md:space-x-4 md:space-y-0 space-y-6 space-x-0 flex-row">
       <Link href={twitter} target="_blank">
         <motion.svg
-        whileHover="hover"
-        variants={variants}
-        x="0px" y="0px" width="44" height="44" viewBox="0 0 50 50">
+          whileHover="hover"
+          variants={variants}
+          x="0px"
+          y="0px"
+          width="44"
+          height="44"
+          viewBox="0 0 50 50"
+        >
           <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
         </motion.svg>
       </Link>
       <Link href={linkedin} target="_blank">
         <motion.svg
-        whileHover="hover"
-        variants={variants}
-        x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+          whileHover="hover"
+          variants={variants}
+          x="0px"
+          y="0px"
+          width="50"
+          height="50"
+          viewBox="0 0 48 48"
+        >
           <path
             fill="#0288D1"
             d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
@@ -54,9 +61,12 @@ export const SocialLinks = ({ linkedin, github, twitter }) => {
       </Link>
       <Link href={github} target="_blank">
         <motion.svg
-        whileHover="hover"
-        variants={variants}
-        height="38" viewBox="0 0 72 72" width="38">
+          whileHover="hover"
+          variants={variants}
+          height="38"
+          viewBox="0 0 72 72"
+          width="38"
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
@@ -74,7 +84,6 @@ export const SocialLinks = ({ linkedin, github, twitter }) => {
 };
 
 export const SocialElement = () => {
-
   return (
     <SocialIcons>
       {authors.map((item, i) => (

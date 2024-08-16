@@ -8,7 +8,7 @@ export const FadeIn = ({ children }) => {
 
   return (
     <motion.div
-    className
+      className
       ref={ref}
       style={{
         scale: isInView ? 1 : 0.7,

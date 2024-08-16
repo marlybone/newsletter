@@ -22,11 +22,12 @@ export default function Footer() {
         <div className="flex mt-2 space-x-6 md:w-2/3 w-full justify-start mx-auto">
           <div className="text-white justify-start flex self-start align-start">
             <div className="flex flex-row">
-            <img
-            className=" w-16 h-16 object-cover rounded-full mr-2"
-            alt="logo"
-            src="../super.png" />
-            <h1 className="text-xl font-[Syne] self-center">MINIMARVELS</h1>
+              <img
+                className=" w-16 h-16 object-cover rounded-full mr-2"
+                alt="logo"
+                src="../super.png"
+              />
+              <h1 className="text-xl font-[Syne] self-center">MINIMARVELS</h1>
             </div>
           </div>
         </div>

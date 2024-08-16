@@ -4,7 +4,7 @@ import { GridBackgroundDemo } from "./../../components/grid";
 import { BentoGridOne } from "../../components/bento";
 import { authorOne } from "../../components/authors";
 import { FadeIn } from "../../components/fadein";
-import styles from "../about.module.css"
+import styles from "../about.module.css";
 
 export default function About() {
   return (
@@ -14,7 +14,7 @@ export default function About() {
           <GridBackgroundDemo />
         </div>
         <div>
-            <BentoGridOne author={authorOne} />
+          <BentoGridOne author={authorOne} />
         </div>
       </div>
     </>

@@ -25,7 +25,10 @@ export const SkeletonOne = ({}) => {
     >
       <div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden mt-3 align-center justify-center ">
         {content.map((item, i) => (
-          <motion.p className="mr-1 mx-px my-px font-[Syne] leading-[1.50] text-[20px]" key={i}>
+          <motion.p
+            className="mr-1 mx-px my-px font-[Syne] leading-[1.50] text-[20px]"
+            key={i}
+          >
             {item}
           </motion.p>
         ))}

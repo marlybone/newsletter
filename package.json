@@ -10,7 +10,8 @@
     "tailwind": "npx tailwindcss build -o globals.css",
     "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "sanity": "cd studio && sanity start",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",

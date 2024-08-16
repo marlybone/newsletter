@@ -99,24 +99,23 @@ export default function SpotlightPage() {
                       </p>
                       <ul className="flex-row flex space-x-2 bottom-0 h-[100%]">
                         <div className="flex flex-row w-[100%]">
-                        <div className="relative flex md:ml-0 text-sm md:text-base flex-row items-end mb-1 w-[100%]">
-                          <div className="flex-row flex space-x-4 mx-4">
-                          {Array.isArray(article.categories) ? (
-                            <TagGridOne category={article.categories} />
-                          ) : (
-                            <div>None</div>
-                          )}
-                          </div>
-          
-                          <div className="items-end flex place-content-end inset-0 right-0 absolute">
-                          <Link href={`/blog/${article.slug}`}>
-                          <button className="mx-4 px-4 py-1 h-8 items-end rounded-md border border-black bg-white text-neutral-700 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
-                            Read
-                          </button>
-                          </Link>
-                          </div>
+                          <div className="relative flex md:ml-0 text-sm md:text-base flex-row items-end mb-1 w-[100%]">
+                            <div className="flex-row flex space-x-4 mx-4">
+                              {Array.isArray(article.categories) ? (
+                                <TagGridOne category={article.categories} />
+                              ) : (
+                                <div>None</div>
+                              )}
+                            </div>
 
-                        </div>
+                            <div className="items-end flex place-content-end inset-0 right-0 absolute">
+                              <Link href={`/blog/${article.slug}`}>
+                                <button className="mx-4 px-4 py-1 h-8 items-end rounded-md border border-black bg-white text-neutral-700 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
+                                  Read
+                                </button>
+                              </Link>
+                            </div>
+                          </div>
                         </div>
                       </ul>
                     </div>

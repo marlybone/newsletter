@@ -10,7 +10,6 @@ export default function Navbar() {
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", () => {
-
     setVisible(scrollYProgress.get() > 0.05);
   });
 
@@ -41,7 +40,9 @@ export default function Navbar() {
             alt="logo"
           ></img>
           <div className="hidden md:block self-center font-bold text-xl">
-            <span className={`text-black font-[Syne] text-2xl`}>MINIMARVELS</span>
+            <span className={`text-black font-[Syne] text-2xl`}>
+              MINIMARVELS
+            </span>
           </div>
           <div>
             <FloatingNav navItems={navItems} />

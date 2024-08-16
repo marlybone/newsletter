@@ -14,18 +14,26 @@ export default function ContactForm() {
           <div className="flex flex-col p-2 lg:mt-2">
             <div>
               <div>
-                <h1 className="text-4xl mb-4 ml-2 flex p-2 lg:mt-2 font-[Syne] font-thin ">MINIMARVELS</h1>
+                <h1 className="text-4xl mb-4 ml-2 flex p-2 lg:mt-2 font-[Syne] font-thin ">
+                  MINIMARVELS
+                </h1>
               </div>
             </div>
-              <div className="flex flex-col justify-center p-2 mx-2 lg:w-5/6 mt-2">
-                <h1 className="lg:text-[46px] text-[33px] mb-4 font-bold font-[Syne] mx-auto leading-tight">Ready to Share Your Journey?</h1>
-                <p className="lg:text-[18px] text-[20px] font-[Syne] mx-auto">
-                Have you successfully transitioned into a new career or are you striving to break into a different field? We'd love to hear your story! Share your journey to inspire and motivate others to take the leap or stay the course.
-                </p>
-              </div>
-            
-            <div className={`${styles.contactEmail} flex flex-row align-bottom p-2 mx-2 mb-4`}>
+            <div className="flex flex-col justify-center p-2 mx-2 lg:w-5/6 mt-2">
+              <h1 className="lg:text-[46px] text-[33px] mb-4 font-bold font-[Syne] mx-auto leading-tight">
+                Ready to Share Your Journey?
+              </h1>
+              <p className="lg:text-[18px] text-[20px] font-[Syne] mx-auto">
+                Have you successfully transitioned into a new career or are you
+                striving to break into a different field? We'd love to hear your
+                story! Share your journey to inspire and motivate others to take
+                the leap or stay the course.
+              </p>
             </div>
+
+            <div
+              className={`${styles.contactEmail} flex flex-row align-bottom p-2 mx-2 mb-4`}
+            ></div>
           </div>
 
           <div className="w-full p-2 mx-2 justify-center flex mb-2">

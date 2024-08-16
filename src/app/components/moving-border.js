@@ -54,7 +54,7 @@ export function Button({
     initial: {
       opacity: 0,
     },
-    load:{
+    load: {
       opacity: 1,
       transition: {
         type: "spring",
@@ -87,16 +87,20 @@ export function Button({
     },
     animate: {
       y: [0, -40, 0],
-      boxShadow: ["0 5px 15px 0px rgba(0,0,0,0.65)", "0 25px 15px 0px rgba(0,0,0,0.2)", "0 5px 15px 0px rgba(0,0,0,0.65)"],
+      boxShadow: [
+        "0 5px 15px 0px rgba(0,0,0,0.65)",
+        "0 25px 15px 0px rgba(0,0,0,0.2)",
+        "0 5px 15px 0px rgba(0,0,0,0.65)",
+      ],
       transition: {
         duration: 5,
         repeat: Infinity,
         repeatType: "mirror",
         ease: "easeInOut",
-        damping: "15"
-      }
-    }
-  }
+        damping: "15",
+      },
+    },
+  };
 
   return (
     <LayoutGroup>
@@ -105,10 +109,11 @@ export function Button({
           {authors.map((item, i) => (
             <div key={i} className="flex flex-col mb-16 mx-8">
               <motion.div
-              initial="initial"
-              animate="animate"
-              variants={floatVariant}
-              className="flex flex-col self-center rounded-full">
+                initial="initial"
+                animate="animate"
+                variants={floatVariant}
+                className="flex flex-col self-center rounded-full"
+              >
                 <Component
                   className={cn(
                     "shadow-custom relative h-52 w-52 rounded-full p-[4px] overflow-hidden",

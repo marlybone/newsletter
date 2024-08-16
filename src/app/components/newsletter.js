@@ -11,9 +11,15 @@ export default function Newsletter() {
           </h1>
         </div>
         <div className="max-w-5xl md:mx-auto text-center outline-none border-[1px] border-transparent bg-white drop-shadow-xl shadow-custom rounded-sm relative container">
-          <img className="inset-0 bg-cover w-auto h-40" src="./slice.png" alt="neon light"/>
+          <img
+            className="inset-0 bg-cover w-auto h-40"
+            src="./slice.png"
+            alt="neon light"
+          />
           <div className="top-0 -inset-0">
-            <h1 className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] sm:text-[80px] text-[50px] transition-all`}>
+            <h1
+              className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] sm:text-[80px] text-[50px] transition-all`}
+            >
               E<span className={styles.flickerfast}>x</span>pl
               <span className={styles.flickerslow}>o</span>re
             </h1>
