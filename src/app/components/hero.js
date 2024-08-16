@@ -1,5 +1,6 @@
 import React from "react";
 import { BackgroundGradientAnimation } from "../components/herogradientbg";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
             We shine a spotlight on bold individuals who have navigated career changes, showcasing their journeys of resilience, determination, and self-discovery
             </p>
             <button className="border self-start flex cursor-pointer text-sm font-medium relative border-neutral-200 text-white px-4 py-2 rounded-full w-24 shadow-custom justify-start">
-              <span>Subscribe</span>
+              <span><Link href="#id-newsletter">Subscribe</Link></span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
             </button>
           </div>

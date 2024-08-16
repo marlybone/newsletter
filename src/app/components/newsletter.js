@@ -30,6 +30,7 @@ export default function Newsletter() {
               src="https://embeds.beehiiv.com/489c9dce-212f-498d-b0f3-26978c886db1?slim=true"
               data-test-id="beehiiv-embed"
               className="md:w-1/2"
+              id="id-newsletter"
             ></iframe>
           </div>
         </div>
