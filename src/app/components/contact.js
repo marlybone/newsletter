@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./moving-border.module.css";
-import { motion } from "framer-motion";
 import ContactUs from "./contactus";
 
 export default function ContactForm() {
@@ -25,7 +24,7 @@ export default function ContactForm() {
               </h1>
               <p className="lg:text-[18px] text-[20px] font-[Syne] mx-auto">
                 Have you successfully transitioned into a new career or are you
-                striving to break into a different field? We'd love to hear your
+                striving to break into a different field? We&apos;d love to hear your
                 story! Share your journey to inspire and motivate others to take
                 the leap or stay the course.
               </p>

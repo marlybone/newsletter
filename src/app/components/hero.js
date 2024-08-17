@@ -19,12 +19,14 @@ export default function Hero() {
               changes, showcasing their journeys of resilience, determination,
               and self-discovery
             </p>
+            <Link href="#id-newsletter">
             <button className="border self-start flex cursor-pointer text-sm font-medium relative border-neutral-200 text-white px-4 py-2 rounded-full w-24 shadow-custom justify-start">
               <span>
-                <Link href="#id-newsletter">Subscribe</Link>
+                Subscribe
               </span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
             </button>
+            </Link>
           </div>
         </div>
       </BackgroundGradientAnimation>

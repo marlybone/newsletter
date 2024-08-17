@@ -3,6 +3,7 @@ import styles from "./blog.module.css";
 import ShareLinks from "../../components/sharelinks";
 import client from "../../../../sanity/sanity.client";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
 export const revalidate = 30;
 
@@ -70,10 +71,13 @@ const Post = async ({ params }) => {
             key={post._id}
             className="max-w-5xl mt-16 flex-col content-center mx-1"
           >
-            <img
+            <Image
               className="h-72 w-full object-cover rounded-md"
               src={post.mainImage}
               alt={post.title}
+              quality={100}
+              height={288}
+              width={500}
             />
             <div className="flex-row flex">
               <div className="mt-6 w-1/12">
@@ -87,10 +91,13 @@ const Post = async ({ params }) => {
                 </div>
                 <div className="flex mx-6">
                   <div className="flex">
-                    <img
+                    <Image
                       alt="avatar"
                       className="w-12 rounded-full border border-transparent"
                       src={post.authorImg}
+                      quality={100}
+                      height={288}
+                      width={500}
                     />
                   </div>
                   <div className="border-r-[1px] border-gray-300 mx-2" />

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./moving-border.module.css";
+import Image from "next/image";
 
 export default function Newsletter() {
   return (
@@ -11,10 +12,13 @@ export default function Newsletter() {
           </h1>
         </div>
         <div className="max-w-5xl md:mx-auto text-center outline-none border-[1px] border-transparent bg-white drop-shadow-xl shadow-custom rounded-sm relative container">
-          <img
+          <Image
             className="inset-0 bg-cover w-auto h-40"
-            src="./slice.png"
+            src="/slice.png"
             alt="neon light"
+            quality={100}
+            height={288}
+            width={500}
           />
           <div className="top-0 -inset-0">
             <h1

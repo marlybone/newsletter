@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import client from "@sanity/sanity.client";
 import { TagGridOne } from "../components/gradientBox";
+import Image from "next/image";
 
 const allPostsQuery = `*[_type == "post"] {
   _id,
@@ -50,10 +51,13 @@ export default function SpotlightPage() {
   return (
     <>
       <div className="relative font-[Syne]">
-        <img
+        <Image
           src="sapphire.jpg"
           className="absolute w-full h-80 object-cover overflow-hidden"
           alt="Background Image"
+          quality={100}
+          height={288}
+          width={500}
         />
         <div className="relative text-[#333] mb-10 p-4 ">
           <div className="max-w-5xl mx-auto text-center">
@@ -83,10 +87,13 @@ export default function SpotlightPage() {
                 <div className="md:absolute md:inset-0 md:flex-row flex flex-col md:justify-start content-center z-10 drop-shadow-lg justify-evenly h-[100%]">
                   <div className="md:h-32 md:mt-0 h-16 w-24 md:rounded-2xl rounded-full box-border shadow-custom md:ml-[-48px] mt-[-36px] md:w-1/4 inset-y-0 self-center drop-shadow-xl">
                     {" "}
-                    <img
+                    <Image
                       className="w-full h-full object-cover overflow-hidden rounded-2xl"
                       src={article.mainImage}
                       alt=""
+                      quality={100}
+                      height={288}
+                      width={500}
                     />
                   </div>
                   <div className="md:w-3/4 ml-2 h-[100%]">

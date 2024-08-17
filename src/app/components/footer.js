@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Footer() {
   const variants = {
@@ -22,10 +23,13 @@ export default function Footer() {
         <div className="flex mt-2 space-x-6 md:w-2/3 w-full justify-start mx-auto">
           <div className="text-white justify-start flex self-start align-start">
             <div className="flex flex-row">
-              <img
+              <Image
                 className=" w-16 h-16 object-cover rounded-full mr-2"
                 alt="logo"
-                src="../super.png"
+                src="/super.png"
+                quality={100}
+                height={288}
+                width={500}
               />
               <h1 className="text-xl font-[Syne] self-center">MINIMARVELS</h1>
             </div>

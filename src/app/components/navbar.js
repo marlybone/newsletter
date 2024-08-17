@@ -3,7 +3,7 @@ import React from "react";
 import { FloatingNav } from "./floating-nav";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-import SearchBar from "./searchbar";
+import Image from "next/image";
 
 export default function Navbar() {
   const { scrollYProgress } = useScroll();
@@ -34,11 +34,14 @@ export default function Navbar() {
     <div className={navbarClasses}>
       <div className="mx-auto flex justify-between items-end p-2 max-w-6xl">
         <div className="flex">
-          <img
+          <Image
             src="/super.png"
             className="w-16 h-14 object-cover rounded-full mr-2"
             alt="logo"
-          ></img>
+            quality={100}
+            height={288}
+            width={500}
+          />
           <div className="hidden md:block self-center font-bold text-xl">
             <span className={`text-black font-[Syne] text-2xl`}>
               MINIMARVELS

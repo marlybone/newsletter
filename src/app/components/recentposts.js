@@ -1,6 +1,7 @@
 import { profile } from "../../../sanity/sanity.query";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export default function RecentPosts() {
   return (
@@ -19,10 +20,13 @@ export default function RecentPosts() {
                 className="border-b border-transparent rounded-md max-w-sm pb-1 shadow-custom transform transition bg-white hover:scale-105"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     className=" h-64 w-larger block object-cover"
                     src={data.mainImage}
                     alt={data.title}
+                    quality={100}
+                    height={288}
+                    width={500}
                   />
                   <p className="absolute top-0 bg-amber-500 text-gray-800 font-semibold py-1 px-3 rounded-br-md font-[Syne]">
                     NEW!
@@ -53,10 +57,13 @@ export default function RecentPosts() {
                   <div className="absolute bottom-0 w-full">
                     <Link key={data._id} href={`/About/${data.author.slug}`}>
                       <div className="flex space-x-4 my-4">
-                        <img
+                        <Image
                           src={data.author.image}
                           alt="avatar"
                           className="w-8 rounded-full border border-transparent shadow-custom"
+                          quality={100}
+                          height={288}
+                          width={500}
                         />
                         <p>
                           <span className=" text-sm font-semibold font-[Merriweather]">

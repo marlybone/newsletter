@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./moving-border.module.css";
+import Image from "next/image";
 
 export const SkeletonSix = () => {
   return (
@@ -44,9 +45,13 @@ export const SkeletonTwo = () => {
       style={{ rotate: 20 }}
       className="border-transparent w-96 md:w-full relative row-span-1 drop-shadow-xl md:col-span-1 content-center rounded-xl group/bento shadow-custom bg-white border justify-between flex flex-col space-y-4"
     >
-      <img
+      <Image
         className="w-full h-full object-cover rounded-xl"
         src="/bgimg.webp"
+        quality={100}
+        height={288}
+        width={500}
+        alt="author"
       />
     </motion.div>
   );
