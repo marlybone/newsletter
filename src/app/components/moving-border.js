@@ -12,7 +12,6 @@ import { useRef } from "react";
 import { cn } from "../../../utils/cn";
 // import { usePathname } from "next/navigation";
 import { authors } from "./authors";
-import styles from "./moving-border.module.css";
 
 export function Button({
   borderRadius = "7rem",
@@ -168,7 +167,7 @@ export function Button({
                     initial="initial"
                     animate="animate"
                     variants={variants}
-                    className={`${styles.blurBackdrop}`}
+                    className={`blurBackdrop`}
                   >
                     <motion.h2 className="font-bold mx-12 my-1 font-[Merriweather]">
                       {item.name}

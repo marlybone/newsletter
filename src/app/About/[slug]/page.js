@@ -3,8 +3,6 @@ import React from "react";
 import { GridBackgroundDemo } from "./../../components/grid";
 import { BentoGridOne } from "../../components/bento";
 import { authorOne } from "../../components/authors";
-import { FadeIn } from "../../components/fadein";
-import styles from "../about.module.css";
 
 export default function About() {
   return (

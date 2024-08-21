@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
-import styles from "./moving-border.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactUs() {
@@ -56,16 +55,16 @@ export default function ContactUs() {
                 message: "Please enter atleast two characters",
               },
             })}
-            className={styles.boxInput}
+            className="boxInput"
             required
             name="firstName"
             aria-label="Name"
           ></input>
-          <span id={styles.bar} />
-          <label className={styles.label} htmlFor="username">
+          <span id="bar" />
+          <label className="label" htmlFor="username">
             Name
           </label>
-          <p className={styles.errorMsg}>{errors.firstName?.message}</p>
+          <p className="errorMsg">{errors.firstName?.message}</p>
         </div>
         <div className="relative">
           <input
@@ -76,27 +75,27 @@ export default function ContactUs() {
                 message: "Enter valid email",
               },
             })}
-            className={styles.boxInput}
+            className="boxInput"
             name="email"
             required
             aria-label="Email"
           />
-          <span id={styles.bar} />
-          <label id="label" className={styles.label} htmlFor="email">
+          <span id="bar" />
+          <label id="label" className="label" htmlFor="email">
             Email
           </label>
-          <p className={styles.errorMsg}>{errors.email?.message}</p>
+          <p className="errorMsg">{errors.email?.message}</p>
         </div>
         <div className="relative">
           <textarea
             name="message"
-            className={`${styles.boxInput}`}
-            id={styles.textareaInput}
+            className="boxInput"
+            id="textareaInput"
             required
             aria-label="Message"
           />
-          <span id={styles.bar} />
-          <label htmlFor="boxInput" id="label" className={styles.label}>
+          <span id="bar" />
+          <label htmlFor="boxInput" id="label" className="label">
             Message
           </label>
         </div>
@@ -140,7 +139,7 @@ const Button = ({ isSuccess }) => {
             {isSuccess ? "Thanks" : "Submit"}
           </motion.p>
           <motion.div
-            className={`${styles.checkBox} justify-center flex items-center p-2`}
+            className={`checkBox justify-center flex items-center p-2`}
             animate={{
               opacity: isSuccess ? "1" : "0",
               right: isSuccess ? "0px" : "-40px",

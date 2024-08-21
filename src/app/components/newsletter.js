@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./moving-border.module.css";
 import Image from "next/image";
 
 export default function Newsletter() {
@@ -22,10 +21,10 @@ export default function Newsletter() {
           />
           <div className="top-0 -inset-0">
             <h1
-              className={`${styles.luminosity} ${styles.Monoton} mt-8 md:text-[100px] sm:text-[80px] text-[50px] transition-all`}
+              className={`luminosity font-[Monoton] mt-8 md:text-[100px] sm:text-[80px] text-[50px] transition-all`}
             >
-              E<span className={styles.flickerfast}>x</span>pl
-              <span className={styles.flickerslow}>o</span>re
+              E<span className="flickerfast">x</span>pl
+              <span className="flickerslow">o</span>re
             </h1>
           </div>
           <div className="flex mt-24 my-16 ">

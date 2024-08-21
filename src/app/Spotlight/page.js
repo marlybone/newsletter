@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import client from "@sanity/sanity.client";
+import client from "../../../sanity/sanity.client";
 import { TagGridOne } from "../components/gradientBox";
 import Image from "next/image";
 
@@ -49,10 +49,10 @@ export default function SpotlightPage() {
   const filteredPosts = filterPosts(posts, searchQuery);
 
   return (
-    <>
+    <div>
       <div className="relative font-[Syne]">
         <Image
-          src="sapphire.jpg"
+          src="/sapphire.jpg"
           className="absolute w-full h-80 object-cover overflow-hidden"
           alt="Background Image"
           quality={100}
@@ -132,6 +132,6 @@ export default function SpotlightPage() {
             ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

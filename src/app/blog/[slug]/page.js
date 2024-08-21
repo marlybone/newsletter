@@ -63,7 +63,7 @@ const Post = async ({ params }) => {
     return <div>Loading...</div>;
   }
   return (
-    <section className={`${styles.Lato} flex justify-center py-6 mb-8`}>
+    <section className={`font-[Lato] flex justify-center py-6 mb-8`}>
       {console.log("Fetched post:", post)}
       {post &&
         post.map((post) => (
@@ -83,7 +83,7 @@ const Post = async ({ params }) => {
               <div className="mt-6 w-1/12">
                 <ShareLinks />
               </div>
-              <div className={`${styles.articleWrapper} w-11/12`}>
+              <div className={`articleWrapper w-11/12`}>
                 <div>
                   <h1 className="font-bold md:text-4xl text-3xl mt-12 flex text-center mb-8">
                     {post.title}

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "./moving-border.module.css";
 import Image from "next/image";
 
 export const SkeletonSix = () => {
@@ -22,7 +21,7 @@ export const SkeletonOne = ({}) => {
 
   return (
     <div
-      className={`${styles.blurBackdrop} shadow-custom md:col-span-2 row-span-1 rounded-xl justify-between flex flex-col space-y-2 w-auto`}
+      className={`blurBackdrop shadow-custom md:col-span-2 row-span-1 rounded-xl justify-between flex flex-col space-y-2 w-auto`}
     >
       <div className="flex flex-wrap w-auto relative mx-4 text-center overflow-hidden mt-3 align-center justify-center ">
         {content.map((item, i) => (

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import styles from "./moving-border.module.css";
 import ContactUs from "./contactus";
 
 export default function ContactForm() {
@@ -8,7 +7,7 @@ export default function ContactForm() {
     <>
       <div>
         <div
-          className={`${styles.contactBox} p-2 m-4 bg-white drop-shadow-xl max-w-6xl lg:h-[50vh] rounded-md bg-clip-padding backdrop-filter backdrop-blur-[1px] flex lg:justify-between self-center justify-center mx-auto flex-col lg:flex-row`}
+          className={`contactBox p-2 m-4 bg-white drop-shadow-xl max-w-6xl lg:h-[50vh] rounded-md bg-clip-padding backdrop-filter backdrop-blur-[1px] flex lg:justify-between self-center justify-center mx-auto flex-col lg:flex-row`}
         >
           <div className="flex flex-col p-2 lg:mt-2">
             <div>
@@ -31,7 +30,7 @@ export default function ContactForm() {
             </div>
 
             <div
-              className={`${styles.contactEmail} flex flex-row align-bottom p-2 mx-2 mb-4`}
+              className={`contactEmail flex flex-row align-bottom p-2 mx-2 mb-4`}
             ></div>
           </div>
 
