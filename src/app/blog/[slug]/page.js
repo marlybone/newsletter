@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./blog.module.css";
 import ShareLinks from "../../components/sharelinks";
 import client from "../../../../sanity/sanity.client";
 import { PortableText } from "@portabletext/react";

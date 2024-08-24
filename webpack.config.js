@@ -1,6 +1,8 @@
 const path = require('path');
 
-const env = process.env.NODE_ENV || 'development';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const env = process.env.NODE_ENV || 'production';
 
 module.exports = {
     mode: env,
@@ -29,6 +31,10 @@ module.exports = {
       },
       module: {
         rules: [
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+              },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -78,7 +84,19 @@ module.exports = {
                 }
               }
         ]
-      }
+      },
+      plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+          }),
+      ],
+      optimization: {
+        minimize: true,
+        minimizer: [
+          `...`,
+          new CssMinimizerPlugin(),
+        ],
+      },
   };
 
   
